@@ -118,3 +118,199 @@ if (M < 0) { // if => M 이 0보다 작다면
 
 console.log(H + " " + M);
 ```
+
+### 오븐 시계
+|문제제목|오븐 시계|
+|:---:|:---:|
+|문제 난이도|★☆☆☆☆|
+|문제 유형|기초문법|
+|추천 풀이 시간|10분|
+
+* 입력: A시 B분, 걸리는 시간: C분
+* 입력으로 주어진 시각을 "분" 의 형태로 바꾸기
+* "분"이 주어졌을 때, 시각을 알려주는 기능을 작성
+* 예시
+1. 입력: (17시 40분 + 80분) = (1060분 + 80분) = 1140분
+2. 1140를 1440으로 나눈 나머지를 취하기: 1140분 (Why => 하루는 1440분이다.)
+3. 이때, 60으로 나눈 **몫**을 시(hour)로 취하기: 19시
+4. 이때, 60으로 나눈 **나머지**를 분(minute)으로 취하기: 0분
+
+
+#### 문제
+KOI 전자에서는 건강에 좋고 맛있는 훈제오리구이 요리를 간편하게 만드는 인공지능 오븐을 개발하려고 한다. 인공지능 오븐을 사용하는 방법은 적당한 양의 오리 훈제 재료를 인공지능 오븐에 넣으면 된다. 그러면 인공지능 오븐은 오븐구이가 끝나는 시간을 분 단위로 자동적으로 계산한다.   
+
+또한, KOI 전자의 인공지능 오븐 앞면에는 사용자에게 훈제오리구이 요리가 끝나는 시각을 알려 주는 디지털 시계가 있다.  
+
+훈제오리구이를 시작하는 시각과 오븐구이를 하는 데 필요한 시간이 분단위로 주어졌을 때, 오븐구이가 끝나는 시각을 계산하는 프로그램을 작성하시오.  
+
+#### 입력
+첫째 줄에는 현재 시각이 나온다. 현재 시각은 시 A (0 ≤ A ≤ 23) 와 분 B (0 ≤ B ≤ 59)가 정수로 빈칸을 사이에 두고 순서대로 주어진다. 두 번째 줄에는 요리하는 데 필요한 시간 C (0 ≤ C ≤ 1,000)가 분 단위로 주어진다.
+
+#### 출력
+첫째 줄에 종료되는 시각의 시와 분을 공백을 사이에 두고 출력한다. (단, 시는 0부터 23까지의 정수, 분은 0부터 59까지의 정수이다. 디지털 시계는 23시 59분에서 1분이 지나면 0시 0분이 된다.)
+
+```
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split("\n");
+
+let [A,B] = input[0].split(" ").map(Number);
+let C = Number(input[1]);
+
+let totalM = (A * 60 + B + C) % 1440;
+let H = parseInt(totalm / 60);
+let M = totalM % 60;
+
+console.log(H + " " + M)
+```
+분명 맞게 한거 같은데 계속 런타임 에러가 발생했다ㅏ....
+```
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split("\n");
+
+let [A,B] = input[0].split(" ").map(Number);
+let C = Number(input[1]);
+
+let totalM = (A * 60 + B + C) % 1440;
+let H = Number(totalm / 60);
+let M = totalM % 60;
+
+console.log(H + " " + M)
+```
+혹시나 해서 Number 로 바꿔줬는데 이것도 아니였다.
+```
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split("\n");
+
+let [A,B] = input[0].split(" ").map(Number);
+let C = Number(input[1]);
+
+let totalM = (A * 60 + B + C) % 1440;
+let H = Number(totalm / 60);
+let M = totalM % 60;
+
+console.log(`${H} ${M}`)
+```
+옛날에 처음 배울때는 굳이 공백을 저렇게 표현하지 않았어서 바꿔 보았더니 여전..
+```
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split("\n");
+
+let [A,B] = input[0].split(" ").map(Number);
+let C = Number(input[1]);
+
+let totalM = (A * 60 + B + C) % 1440;
+let H = Math.floor(totalm / 60);
+let M = totalM % 60;
+
+console.log(`${H} ${M}`)
+```
+마지막 H 의 계산에서 Number 에서 나오는 값에 소수 부분 까지 포함되서 그런가 했는데
+그것도 아니였다.
+```
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split("\n");
+
+let [A,B] = input[0].split(" ").map(Number);
+let C = Number(input[1]);
+
+let totalM = (A * 60 + B + C) % 1440;
+let H = Math.floor(totalM / 60);
+let M = totalM % 60;
+
+console.log(`${H} ${M}`)
+```
+H = Math.floor(totalm / 60); => totalm 소문자... 혹시 몰라서 초반에 넣었던 식으로 오타만 수정해서 넣어봤다.
+```
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split("\n");
+
+let [A,B] = input[0].split(" ").map(Number);
+let C = Number(input[1]);
+
+let totalM = (A * 60 + B + C) % 1440;
+let H = parseInt(totalM / 60);
+let M = totalM % 60;
+
+console.log(H + " " + M)
+```
+정답이였다.. ㅋ
+```
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin','utf8').toString().split('\n');
+
+const [A, B] = input[0].split(' ').map(Number);
+const C = Number(input[1]);
+
+let totalM = (A * 60 + B + C) % 1440;
+const H = Math.floor(totalM / 60);
+const M = totalM % 60;
+
+console.log(`${H} ${M}`);
+```
+최종 수정 => 이후 다른 코드들을 보다 보니, 'utf8'을 추가하여 파일 내용을 텍스트로 읽을 때
+호환성, 가독성을 높이고 문자열 표현 대신 데이터로 직접 작업할 때 발생할 수 있는 잠재적 문제를
+방지하는 것이 좋다고 한다.
+
+
+### 주사위 세개
+|문제제목|주사위 세개|
+|:---:|:---:|
+|문제 난이도|★☆☆☆☆|
+|문제 유형|기초문법|
+|추천 풀이 시간|10분|
+
+* 주사위 3개를 던짐
+* 눈금 세 개가 모두 같으면 -> 10,000 + _N_ * 1,000
+* 눈금 두 개가 같으면 -> 1,000 + _N_ * 100
+* 눈금이 모두 다르면 -> _N_ * 100
+
+#### 문제
+1에서부터 6까지의 눈을 가진 3개의 주사위를 던져서 다음과 같은 규칙에 따라 상금을 받는 게임이 있다.   
+
+같은 눈이 3개가 나오면 10,000원+(같은 눈)×1,000원의 상금을 받게 된다. 
+같은 눈이 2개만 나오는 경우에는 1,000원+(같은 눈)×100원의 상금을 받게 된다. 
+모두 다른 눈이 나오는 경우에는 (그 중 가장 큰 눈)×100원의 상금을 받게 된다.  
+예를 들어, 3개의 눈 3, 3, 6이 주어지면 상금은 1,000+3×100으로 계산되어 1,300원을 받게 된다. 또 3개의 눈이 2, 2, 2로 주어지면 10,000+2×1,000 으로 계산되어 12,000원을 받게 된다. 3개의 눈이 6, 2, 5로 주어지면 그중 가장 큰 값이 6이므로 6×100으로 계산되어 600원을 상금으로 받게 된다.  
+
+3개 주사위의 나온 눈이 주어질 때, 상금을 계산하는 프로그램을 작성 하시오.  
+
+#### 입력
+첫째 줄에 3개의 눈이 빈칸을 사이에 두고 각각 주어진다. 
+
+#### 출력
+첫째 줄에 게임의 상금을 출력 한다.
+
+```
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().split(' ');
+
+let [a, b, c] = input[0].split(' ').map(Number);
+
+if (a == b && b == c) {
+    console.log(10000 + a * 1000);
+} else if (a == b || a == c) {
+    console.log(1000 + a * 100);
+} else if (b == c) {
+    console.log(1000 + b * 100);
+} else {
+    console.log(Math.max(a, b, c) * 100);
+}
+```
+이게 대체 왜 틀린..
+```
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+let [a, b, c] = input[0].split(' ').map(Number);
+
+if (a == b && b == c) {
+    console.log(10000 + a * 1000);
+} else if (a == b || a == c) {
+    console.log(1000 + a * 100);
+} else if (b == c) {
+    console.log(1000 + b * 100);
+} else {
+    console.log(Math.max(a, b, c) * 100);
+}
+```
+줄바꿈 기호 :)

@@ -1,3 +1,4 @@
 ## JS 문제 풀이
 - [JS 입출력 문제풀이](./JS%EC%9E%85%EC%B6%9C%EB%A0%A5%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4.md)
 - [JS 조건문 문제풀이](./JS%EC%A1%B0%EA%B1%B4%EB%AC%B8%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4.md)
+- [JS 반복문 문제풀이](./JS%EB%B0%98%EB%B3%B5%EB%AC%B8%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4.md)
