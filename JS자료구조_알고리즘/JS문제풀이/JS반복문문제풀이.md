@@ -165,13 +165,18 @@ console.log(answer);
 ```
 틀림
 ```
+<!-- fs 모듈 불러오기 -->
 let fs = require('fs');
 let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
+<!-- 테스트 넘버 받을 변수 -->
 let Test = Number(input[0]);
+<!-- 출력값 받을 변수 -->
 let answer = '';
 
-for (let t = 1; t <= Test; t++) {
+<!-- 초반에 문제 이해를 잘 못했는데 어차피 Test 에서 받을 변수가 100만 까지 있다면
+굳이 내가 100만 까지 정해줄 필요가 없는거였음 -->
+for (let t = 1; t <= Test; t++) {  
   let data = input[t].split(' ');
   let [A, B] = data.map(Number);
   answer += A + B + '\n';
