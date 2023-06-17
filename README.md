@@ -9,3 +9,4 @@
 - [JS자료구조_알고리즘](./JS%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/README.md)
 - [AWS](./AWS/README.md)
 - [React](./React/README.md)
+- [Redux](./Redux/README.md)
