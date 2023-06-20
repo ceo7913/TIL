@@ -11,3 +11,4 @@
 - [React](./React/README.md)
 - [Redux](./Redux/README.md)
 - [BlockChain](./BlockChain/README.md)
+- [TypeScript](./TypeScript/README.md)
