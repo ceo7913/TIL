@@ -13,3 +13,4 @@
 - [BlockChain](./BlockChain/README.md)
 - [TypeScript](./TypeScript/README.md)
 - [HTML](./HTML/README.md)
+- [GO](./GO/README.md)
