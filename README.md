@@ -14,3 +14,4 @@
 - [TypeScript](./TypeScript/README.md)
 - [HTML](./HTML/README.md)
 - [GO](./GO/README.md)
+- [JavaScript](./JavaScript/README.md)
