@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 
+        flex눈 direction에 따라 메인축과 상대축으로 나뉘어 진다.
+        direction이 정해진 방향 : 메인측
+        반대축 : 상대축
+
+        row: x축(가로축) 왼쪽부터 진행(기본값)
+        -reverse : 가로축의 반대(오른쪽)
+
+        column: y축(세로축) 위에서 아래로 진행
+        -reverse : 세로축의 반대(아래에서 위로 진행)
+        
+        */
+        .container{
+         display: flex;
+         flex-direction: column;
+         /* flex-direction 기본값은 row */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    
+</body>
+</html>
