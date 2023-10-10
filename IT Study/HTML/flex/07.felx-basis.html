@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 
+        flex-basis
+        영역값(width, height)를 의미하며, 기본적인 item의 사이즈르 설정한다.
+        direction의 방향에 따라서 width, height가 정해진다.
+        
+        사이즈(width, hegiht)와 basis의 차이점
+
+        1. direction에 따라서 기준을 바꾸기 때문에 width, height 개념이 없다.
+        2. min-*과 같은 역할을 해주기 때문에 basis보다 내용이 길어지게 되면 자동으로 영역을 늘려준다.
+        (width, height)는 고정의 수치를 가짐
+        3. width와 basis가 섞이는 경우 basis를 우선순위로 높게 가져간다.
+        4. 기본값 auto
+        5. 단위는 px, %, rem, em, vw, vh 등 단위의 모든 것 사용 가능 
+
+        */
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .item{
+            flex-basis: 200px;
+            /* width: 100px; */
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <div class="box">box</div>
+        </div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+
+</body>
+
+</html>

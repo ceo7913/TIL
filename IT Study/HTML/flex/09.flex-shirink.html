@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 
+        shirink
+        item이 유연하게 감소
+        기본값은 1이며, 0일 경우 줄어들지 않는다.
+
+        grow와 반대로 값이 클수록 원래 영역에서 줄어드는 비중이 더 커진다.
+        기준이 모호하기 때문에 grow에 비해서 사용빈도가 높지는 않다.
+        기본값을 그대로 사용하는 경우가 많다.
+
+        */
+
+        .container{
+            display: flex;
+        }
+        .item{
+            flex-basis: 500px;
+        }
+        .content1 .item:nth-of-type(1){
+            flex-shrink: 5;
+        }
+        .content1 .item:nth-of-type(2){
+            flex-shrink: 1;
+        }
+        .content1 .item:nth-of-type(3){
+            flex-shrink: 1;
+        }
+        .content2 .item{
+            flex-shrink: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container content1">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    <div class="container content2">
+        <div class="item">Lorem.</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem, ipsum dolor.</div>
+    </div>
+    
+</body>
+</html>

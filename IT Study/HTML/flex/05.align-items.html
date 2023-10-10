@@ -7,6 +7,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
     <style>
+        /* 
+
+        상대축에 대한 정렬
+        strecth : 부모요소에 높이값을 받아서 길이가 늘어감(기본값)
+        다른 값이 들어오게 되면 item 자체의 높이 값으로 변환한다.
+
+
+        */
+
+    .container{
+        display: flex;
+        height: 500px;
+        align-items: center;
+        justify-content: center;
+        /* 가로 세로 가운데 정렬 */
+    }
     </style>
 </head>
 <body>
@@ -15,6 +31,5 @@
         <div class="item">Lorem, ipsum.</div>
         <div class="item">Lorem, ipsum dolor.</div>
     </div>
-    
 </body>
 </html>
