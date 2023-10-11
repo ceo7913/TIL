@@ -21,11 +21,66 @@
             margin: 0px;
             padding: 0px;
         }
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            padding: 12px;
+            box-sizing: border-box;
+            margin: 0px auto;
+            background-color: lightgray;
+        }
+        .content01{
+            width: 60%;
+            overflow: hidden;
+            background: gray;
+            float: left;
+        }
+        .content01 > div{
+            width: 25%;
+            height: 200px;
+            float: left;
+            background: lightpink;
+        }
+        .content02{
+            width: 20%;
+            height: 200px;
+            background-color: cyan;
+            float: left;
+
+        }
+        .content03{
+            width: 20%;
+            height: 200px;
+            float: left;
+            background: lightgreen;
+        }
+        @media screen and (max-width:1200px) {
+            .content01,
+            .content02,
+            .content03{
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        @media screen and (max-width:1024px) {
+            .content01 > div{
+                width: 50%;
+            }
+        }
+        @media screen and (max-width:600px) {
+            .content01 > div{
+                width: 100%;
+                margin-bottom: 12px;
+            }
+            .content01 .content01-4{
+                margin-bottom: 0px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="contaienr">
+    <div class="container">
         <div class="content01">
             <div class="content01-1">
                 content01-1
