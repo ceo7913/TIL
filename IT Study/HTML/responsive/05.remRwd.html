@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem 퍼센테이지 변환</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body, html{
+            font-size: 0.5208333333333333vw;
+            /* 
+            rem 사용시 폰트사이즈 변환 법
+            10(적용할 폰트사이즈의 크기) / 1920(보여주려는 화면 사이즈) * 100
+            
+            ex) 10 / 1920 = 1920 사이즈에서 10px 의 폰트사이즈를 보여줌
+
+            */
+        }
+        .box{
+            width: 100rem; /*기본 폰트사이즈 16px 즉 100rem 은 1600px*/
+            height: 20rem;
+            background-color: aqua;
+        }
+        @media screen and (max-width : 1400px) {
+            html, body{
+                /* 10 % 1400(보여주려는 화면 사이즈) * 100 */
+                font-size:0.0714285714285714 ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+</body>
+</html>

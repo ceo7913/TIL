@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 디자인 패턴</title>
+    <style>
+        /* 
+        유동형 레이아웃
+        비중을 많이 차지하는 레이아웃 형태
+        디자인을 새로 하지 않는 컨텐츠의 크기만 조절해서
+        아래로 떨어트리는 기법
+
+        컨텐츠의 중요도에 따라서 일부 컨텐츠가 생략되는 컨텐츠가 발생할 수 도 있으며,
+        생략된 컨텐츠의 영역을 다른 컨텐츠가 차지하는 방식이다.
+
+        다양한 화면의 크기에서 일관되고 쉽게 읽히는 것이 가장 큰 목적으로 보고 있다.
+        */
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            background-color: lightgray;
+            margin: 0px auto;
+            padding: 12px;
+            box-sizing: border-box;
+        }
+        .content01{
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            background-color: gray;
+            overflow: hidden;
+        }
+        .content01 > div{
+            width: 50%;
+            float: left;
+            height: 100%;
+        }
+        .content01-1{
+            background-color: lightgreen;
+        }
+        .content01-2{
+            background-color: lightpink;
+        }
+        .content02{
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            box-sizing: border-box;
+            background-color: gray;
+            overflow: hidden;
+        }
+        .content02 > div {
+            width: 49%;
+            height: 300px;
+            float: left;
+            background-color: lightpink;
+        }
+        .content02-1{
+            margin-right: 2%;
+        }
+        .content03{
+            width: 100%;
+            height: 300px;
+            background-color: gray;
+        }
+        @media screen and (max-width : 1024px) {
+            .content01-1{
+                display: none;
+            }
+            .content01 .content01-2{
+                width: 100%;
+            }
+            .content02 > div{
+                width: 100%;
+            }
+            .content02 .content02-1{
+                margin-right: 0px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content01">
+            <div class="content01-1">
+                content1-1
+            </div>
+            <div class="content01-2">
+                content1-2
+            </div>
+        </div>
+        <!-- content 01 done -->
+        <div class="content02">
+            <div class="content02-1">
+                content2-1
+            </div>
+            <div class="content02-2">
+                content2-2
+            </div>
+        </div>
+        <!-- content 02 done -->
+        <div class="content03">
+            content03
+        </div>
+        <!-- content 03 done -->
+    </div>
+</body>
+
+</html>
