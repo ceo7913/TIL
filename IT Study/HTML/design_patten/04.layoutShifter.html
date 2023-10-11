@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 디자인 패턴</title>
+    <style>
+        .container{
+            width: 100%;
+            max-width: 1200px;
+            margin: 0px auto;
+            padding: 12px;
+            background: red;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .header{
+            width: 100%;
+            height: 100px;
+            margin-bottom: 12px;
+            background: gray;
+        }
+        .content{
+            width: 100%;
+            background: gray;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .footer{
+            width: 100%;
+            height: 150px;
+            background: gray;
+        }
+        /* content */
+        .content01{
+            width: 30%;
+            float: left;
+            margin-right: 1%;
+            background-color: lightcoral;
+            height: 300px;
+        }
+        .content02{
+            width: 69%;
+            float: left;
+            background: lightcoral;
+            margin-bottom: 10px;
+        }
+        .content02 > div{
+            width: 49%;
+            height: 145px;
+            float: left;
+            background: lightpink;
+        }
+        .content02 .content02-1{
+            margin-right: 2%;
+        }
+        .content03{
+            width: 69%;
+            background: lightcoral;
+            float: left;
+        }
+        .content03 > div{
+            width: 49%;
+            float: left;
+            background: lightpink;
+            height: 145px;
+        }
+        .content03 .content03-1{
+            margin-right: 2%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header"></header>
+        <main class="content">
+            <div class="content01"></div>
+            <div class="content02">
+                <div class="content02-1"></div>
+                <div class="content02-2"></div>
+            </div>
+            <div class="content03">
+                <div class="content03-1"></div>
+                <div class="content03-2"></div>
+            </div>
+            <div class="content04"></div>
+            <div class="content05">
+                <div class="content05-1"></div>
+                <div class="content05-2"></div>
+                <div class="content05-3"></div>
+            </div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
