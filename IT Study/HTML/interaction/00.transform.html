@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        transform
+        생성되어 있는 객체를 회전하거나 혹은 크기를 조절하거나 위치값을 변경시키는 
+        변형 css
+
+        기본값으로 활용 할 수 있으며, 이벤트적인 요소에서도 활용할 수 있다.
+        
+        1.rotate(deg) 객체 회전 속성
+        객체를 '중심' 으로 작성된 수치(deg)만큼 회전
+
+        rotate() - x축과 y축의 그룹속성
+        rotate3d() - x축 y축 z축에 대한 그룹속성
+
+        2. scale : 객체 크기 속성
+        객체를 '중심'으로 작성된 수치만큼 비율을 늘리거나 축소시킨다.
+        기본값 1(100%) 이며, 1보다 크면 확대 1보다 작으면 축소된다(소숫점)
+
+        크기는 객체의 기본 크기를 기준으로 하며, 위치값은 변하지 않는다.
+        스케일을 사용할 경우 안에 있는 컨텐츠(내용)도 영향을 받는다.
+
+        transform-origin : 객체의 기준점을 바꾸는 css
+        rotate나 scale같은 경우 객체를 중심으로 회전하기 때문에 기준점을 바꾸는 경우가
+        생긴다.
+        기본값은 50% 50%
+        특정 좌표값(top, left, right, bottom, center)로 주거나 px %로도 가능하다.
+        항상 첫번째ㅔ 값은 left 두번째 값은 top
+        값이 입력되지 않은 경우 기본값으로 처리
+
+
+        3. skew : 객체 비틀기 속성
+        z축은 존재하지 않으며, 해당 방향으로 각도만큼 비틀기를 한다.
+        그룹속성에서 값이 하나일 경우 y축은 적용하지 않는다.
+        x축만 적용된다 둘 다 변경하려면 값을 모두 넣어줘야 한다.
+
+
+        4. transition 객체 이동속성
+        %나 px단위로 이동할 수 있으며, 양수는 왼->오
+        음수는 오 -> 왼
+        z축에서는 %단위를 사용할 수 없다.
+
+        position과 같은 좌표의 이동값을 옮기는 속성이지만
+        %로 이동할 경우 translate는 자기 자신의 크기를 기준으로 하지만
+        position은 부모요소의 영역값을 기준으로 좌표값이 정해진다.
+
+        
+
+        벤더프리픽스
+        -css3 대부분의 속성들은 실험적인 요소들이 많기 때문에 브라우저마다 호환하는
+        범위가 다르다(caniuse) 브라우저마다 똑같은 효과를 적용한 화면을 출력하기 위해서
+        벤더프리픽스 기법을 사용한다.
+
+        -webkit- 사파리 크롬
+        -o- 오패라
+        -ms- 익스, 엣지
+        -moz- 파이어폭스
+
+        해당 기능들을 실험적인 요소에 사용하도록 권고하고 있으며,
+        업데이트를 통해서 기본 권고안에 포함하거나 완벽하게 호환이 된 상태라면
+        생략해도 무방하다.
+
+
+        
+        */
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin-bottom: 20px;
+        }
+
+        .rotate{
+            -o-transform:  rotateY(45deg);/*오페라*/
+            -ms-transform:  rotateY(45deg);/*마이크로 소프트*/
+            -moz-transform:  rotateY(45deg);/*파이어폭스*/
+            -webkit-transform:  rotateY(45deg);/*사파리, 크롬*/
+            transform: rotateY(45deg);/*단위는 deg*/
+        }
+
+        .scale{
+            transform: scale(1.5);
+            transform-origin: left top;
+        }
+        .skew{
+            transform: skew(45deg, 30deg)
+        }
+        .translate{
+            transform: translateX(50%);
+        }
+        .position{
+            position: relative;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="rotate">객체를 회전시키는 속성</div>
+    <div class="scale">객체의 크기를 비율로 정하는 속성</div>
+    <div class="skew">객체를 비틀기 하는 속성</div>
+    <div class="translate">위치 이동 속성</div>
+    <div class="position"></div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo-element</title>
+    <style>
+        /*
+        가상 요소
+        태그(body)상에서는 존재 하지 않지만 화면상에서는 존재하고 있는 것처럼 보이는
+        어떠한 가상의 컨텐츠를 생성하는 기법
+
+        
+        선택자:before 선택자의 내용(컨텐츠) 바로 앞에 요소를 생성
+        선택자:after 선택자의 내용 바로 뒤에 요소를 생성
+
+        가상요소로 생성하는 컨텐츠는 리더기가 읽지 못하는 경우가 있다.
+        중요한 내용을 넣는것보다는 꾸며주는 요소의 의미로 생성하는 경우에 많이 쓰인다.
+
+        태그로 꾸며주는 요소를 만들수 있지만 내용이 없는 빈 태그는 깡통태그라고 해서
+        사이트 구조에 좋지 않은 영향을 준다. 
+
+        싱글콜론(:)과 더블클론(::)의 차이점
+        html5로 넘어오면서 가상요소와 가상선택자를 구별하기 위해서
+        가상요소는 더블, 가상선택자는 싱글로 바뀌었다.
+
+        더블클론은 일부 css3를 지원하지 않는 하위 브라우저는 더블클론으로 작성했을때
+        인식하지 못한다.
+        
+        */
+        .parent{
+            width: 200px;
+            height: 200px;
+            background: coral;
+        }
+        .parent:before{
+            content: '중요한 내용';
+            width: 100%;
+            height: 20px;
+            background: pink;
+            display: block;
+        }
+        .parent:after{
+            content: "";
+            width: 100%;
+            height: 30px;
+            background:pink;
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+
+        parent
+        <span></span>
+
+    </div>
+</body>
+</html>

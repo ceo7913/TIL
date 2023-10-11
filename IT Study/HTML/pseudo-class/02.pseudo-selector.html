@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo-selector</title>
+    <style>
+        /*
+        가상 선택자
+        -사용자의 행동에 영향을 받는 요소를 생성(이벤트)
+        -특정한 위치의 순번을 가진 선택자를 찾을때(selector)를 
+        통틀어서 가상 선택자라고 한다.
+
+        이벤트 요소
+        a태그에만 들어가는 이벤트 선택자
+        :visited : 방문했던 링크 페이제 대한 선택자
+        :link 아직 방문하지 않은 링크 페이지에 대한 선택자
+        a태그에만 적용되는 이벤트
+
+        모든 태그에 적용가능한 이벤트
+        :hover : 마우스 이벤트
+        :active : 마우스 클릭 이벤트
+        :focust : 키보드 이벤트로 해당 객체거 포커싱 되어 있을때 활성화
+        포커스는 특정한 행동을 하는 객체(버튼, 입력, 이동)과 같은 상호작용을
+        발생시키는 태그에만 적용할 수 있다.
+
+        */
+        /*
+        a:visited{
+            color: black;
+        }
+        a:link{
+            color: aqua;
+        }
+        */
+        a{
+            color: coral;
+        }
+
+        p:hover{
+            color: red;
+        }
+        p:active{
+            color: blue;
+        }
+        a:focus{
+            color: orange;
+        }
+
+        /*
+        가상 선택자
+        특정한 순번을 찾는 선택자
+        nth-child(n) :n은 순번을 의미하며, 특정 숫자가 아닌
+        짝수와 홀수로 구분해서 지정할 수도 있다.
+        odd : 홀수
+        even : 짝수
+
+        숫자뒤에 n이 붙게 되면 해당 숫자의 배수로 지속적으로 선택한다.
+
+        nth-child(n)의 가장 큰 특징은 태그와 선택자와 관계없이
+        부모요소에서 해당하는 순번만 만족한다.
+
+        nth-of-type(n) 부모요소를 기준으로 자식요소인 선태자 태그중에서만
+        순번을 찾는다.(type과 순번 모두 만족)
+        
+        */
+        ul li:nth-child(5n){
+            background: coral;
+        }
+
+        p:nth-of-type(2){
+            background: coral;
+        }
+
+
+
+    
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com">나를 클릭!</a>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <a href="http://www.nate.com">나를 클릭!</a>
+    
+    <a href="http://www.daum.net">나를 클릭!</a>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+
+
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+</body>
+</html>

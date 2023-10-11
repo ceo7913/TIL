@@ -1,0 +1,134 @@
+body,html{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.inner{
+    width: 1000px;
+    margin: 0px auto;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+}
+
+
+/*header*/
+.h-container{
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 1px #ffffff;
+    background: #0D4633;
+}
+.logo{
+    width: 270px;
+    height: 40px;
+    background: lightgray;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+.h-sns-menu{
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: lightgrey;
+}
+.h-menu{
+    width: 240px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    background: lightgray;
+}
+
+.gnb{
+    width: 100%;
+    height: 43px;
+    background: #0D4633;
+}
+.gnb ul li{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+.gnb ul li a{
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 43px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/*main*/
+.container{
+    width: 100%;
+    background: #F7F0DA;
+}
+.visual{
+    width: 100%;
+    height: 460px;
+    background: lightgray;
+}
+
+.container > .inner{
+    padding: 30px 0px 80px;
+}
+
+.banner-wrapper{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.banner-left{
+    float: left;
+    width: 394px;
+}
+.slider{
+    width: 100%;
+    height: 400px;
+    background: pink;
+    margin-bottom: 10px;
+}
+.delevery{
+    width: 100%;
+    height: 170px;
+    background: pink;
+}
+
+.banner-right{
+    float: right;
+    width: 596px;
+}
+.item-pick{
+    width: 100%;
+    height: 400px;
+    background: pink;
+    margin-bottom: 10px;
+}
+.item-banner{
+    width: 100%;
+    height: 170px;
+    background: pink;
+}
+
+.ad{
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    position: absolute;
+    top: 0px;
+    right: -70px;
+}
