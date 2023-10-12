@@ -1,0 +1,40 @@
+/*
+조건문
+if
+
+작성방식
+1. if(조건문, true 일 때, false일 때 값) = 축약
+
+2. if 조건문{
+    조건문을 만족할때 값
+   }@else if 조건문 {조건을 만족할 때 값}
+*/
+
+$color : pink; // title 마다 다른 컬러를 출력하게 하기
+$titleType : title;
+
+.box{
+    background: if($color == eee, red, yellow );
+    width: 100px;
+    height: 100px;
+}
+p{
+    $titleType  : sub;
+
+    @if $titleType ==title{
+        font-size:40px;
+        color: #000000;
+        font-weight: bold;
+    }@else if $titleType == subTitle{
+        font-size: 30px;
+        color: #666666;
+        font-weight: bold;
+    }@else if $titleType == text{
+        color:#999999;
+        font-weight: nomal;
+        font-size: 20px;
+    }@else{
+        font-size: 16px;
+        color: blue;
+    }
+}

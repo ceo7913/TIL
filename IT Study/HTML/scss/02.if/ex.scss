@@ -1,0 +1,27 @@
+/*
+변수하나 생성해서 변수가 true 면 
+background : white
+color : black
+
+flase 면 background black
+color : white 로 변환
+*/
+
+$box : true;
+// $box : (background:blue, color:red);
+
+.box{
+    $box : false;
+
+    @if $box == true{
+        background: blue;
+        color: red;
+    }@else if $box == false{
+        background: red;
+        color: blue;
+    }
+    width: 100px;
+    height: 100px;
+    border: solid 2px gray;
+    padding: 10px;
+}
