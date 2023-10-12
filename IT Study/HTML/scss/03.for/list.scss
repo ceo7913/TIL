@@ -1,0 +1,42 @@
+/*
+list 여러개의 값을 하나의 변수에 나열해서 담는 방법
+
+문법
+$변수명 : 값1, 값2, 값3 ...
+$변수명 : (값1, 값2, 값3 ...)
+$변수명 : 값1 값2 값3
+*/
+
+$listItem : apple, orange, lemon;
+$size: 20px, 30px, 40px;
+$weight: normal, regular, large;
+
+p{
+    // index : 리스트 안에 있는 특정 값의 순번을 호출(순번은 1부터 시작)
+    background: index($listItem, orange);
+
+    // length : 리스트 안에 있는 값의 갯수를 호출
+    background: length($listItem);
+
+    // nth : 리스트 안에 있는 특정 순번에 있는 값의 갯수를 호출
+    background: nth($listItem, 2);
+
+    // set-nth 리스트의 특정 순번에 있는 값을 바꿈
+    background: set-nth($listItem, 2, melon);
+    
+    // 여러개의 리스트들을 하나의 리스트 안에서 합침
+    background: zip($size, $listItem, $weight);
+}
+
+$fontSize : 10px, 12px, 14px, 16px, 18px, 20px, 22px, 24px;
+@for $i from 1 through length($fontSize){
+    $font : nth($fontSize, $i);
+    $class : font-size-#{$font};
+
+    .#{$class}{
+        font-size: $font;
+        line-height: $font * 1.5;
+        padding: 6px;
+        border: solid 1px #000000
+    }
+}
