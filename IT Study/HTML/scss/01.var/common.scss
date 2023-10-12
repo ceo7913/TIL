@@ -1,0 +1,44 @@
+/*
+var = variable 변수
+특정한 주소에 값을 할당하는 방법 (스크립트 사용하는 방법)
+
+변수의 선언 방법 
+$변수명 :값
+1. 변수명에는 숫자로 시작할 수 없다.
+2. 대문자로 시작할 수 없다. (카멜기법 사용)
+3. 한글을 사용할 수 없다.
+4. 특수문자 사용 금지 (-,_)는 예외
+
+변수에 들어가는 데이터 유형
+1. 숫자(Number) : 10, 10px, 10%, 10rem, 10em ...
+3. 문자(String) : 'red', 'images...'
+3. 컬러값 : 'red', '#fffffff', reb, rgba
+4. boolean : true / false
+5. list(array) : (1, 2, 3...), 1, 2, 3...
+6. null : 비어있는 값 
+
+지역변수와 전역변수
+전역변수는 특정한 영역이 아닌 전체에 선언된 변수로 파일내부에 모든 선택자에게 적용가능
+지역변수는 특정 선택자 안에 선언된 변수로 선언된 영역안에서만 사용할 수 있으며, 영역밖에서는 변수를 가져올 수 없다.
+지역변수를 전역변수로 교체할때에는 값 뒤에서 !global 을 추가
+
+*/
+
+$bgColorPink : #ff9efb;
+$font30 : 30px;
+
+p{
+    background:  $bgColorPink;
+    font-size: $font30;
+}
+
+h1{
+    // 변수를 선언과 동시에 적용 => 지역변수는 전역에 선언하기 전에는 다른 곳에 사용할 수 없다.
+    // 전역으로 설정하거나 !global 을 뒤에 넣어준다.
+    $bgColorCoral : coral!global;
+    background: $bgColorCoral;
+}
+
+div{
+    background: $bgColorCoral;
+}
