@@ -1,0 +1,31 @@
+$item : (
+    item1 : (
+        color : coral,
+        border-width: 2px,
+        background-color : pink,
+    ),
+    item2 : (
+        color : cyan,
+        border-width: 1px,
+        background-color : skyblue,
+    ),
+    item3 : (
+        color : green,
+        border-width: 3px,
+        background-color : lime,
+    )
+);
+
+@for $i from 1 through length($item){
+    // nth() = 배열안에 있는 특정 순번에 있는 값을 출력
+    // 여기서 $i 는 1부터 $item 의 길이만큼 순회하는 작용을 한다.
+    $class : nth(map-keys($item), $i);
+    $props : map-get($item, $class);
+    
+    .#{$class}{
+        color : map-get($props, color);
+        border : solid map-get($props, border-width) #000000;
+        background-color : map-get($props, background-color);
+        padding: 10px;
+    }
+}

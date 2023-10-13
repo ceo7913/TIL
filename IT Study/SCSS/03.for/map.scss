@@ -1,0 +1,27 @@
+/*
+map 리스트 형식의 변수를 반복하는 반복문
+
+리스트 맵의 차이점
+list에서 ()를 사용하면 map형식으로 된다.
+
+$변수명 : 값1, 값2, 값3 ... 리스트 형식(배열방식)
+$변수명 : (속성1: 값1, 속성2:값2, 속성3:값3 ...) 맵형식(객체방식)
+*/
+// coffe : 속성, brown 은 값
+$menu : (coffee : brown, tea : green, drink : orange);
+$menu2 : (fanta : yellow, milk : white);
+
+$menu3 : map-merge($menu, $menu2); // 두개까지의 map을 하나의 맵으로 합침
+$menu4 : map-remove($menu3, 'coffee', 'milk'); // map3 에서 뒤에 넣은 속성값 제외 시킴
+
+.menu-coffee{
+    // map-get : 해당 변수에 있는 속성의 값을 출력하는 메서드
+    background: map-get($menu, 'coffee');
+    // map-keys : 맵 안에있는 키(속성)를 반환하는 메서드 (값은 x)
+    background: map-keys($menu);
+    // map-values : 맵 안에있는 값을 반환하는 메서드 (속성(key)은 x)
+    background: map-values($menu);
+
+    background: map-values($menu3);
+    background: map-values($menu4);
+}
