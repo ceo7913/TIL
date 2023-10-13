@@ -1,0 +1,53 @@
+// /*
+//     각 영역마다 다른 flex 의 속성을 적용 
+
+//     header 에는 flex-basais 30%, padding : 20px, background : gray
+//     main 에는 flex-basais 45%, padding : 30px, background : lightgray
+//     side 에는 flex-basais 20%, padding : 10px, background : black
+//     footer 에는 flex-basis : 10%, padding : 20px, background : gray
+
+//     각각의 inner 에는 각 영역의 basis 를 전달하기 
+//     margin : padding 의 /2 의 값 적용
+//     background-color : #ffffff 통일
+// */
+
+$section : (
+    header:(
+        basis: 30%,
+        padding: 20px,
+        background: gray
+    ),
+    main:(
+        basis: 45%,
+        padding: 30px,
+        background: lightgray
+    ),
+    side:(
+        basis: 20%,
+        padding: 10px,
+        background: black
+    ),
+    footer:(
+        basis: 10%,
+        padding: 20px,
+        background: gray
+    ),
+);
+
+// $content 와 $value 를 section 에서 값을 가져와서 할당
+// 여기서 @each $content, $value in $section 에서 $content, 와 $value 의 이름은 상관 없지만
+// 앞에 나오는게 상위 컨텐츠 뒤에 나오는게 하위 컨텐츠 이다.
+@each $content, $value in $section{
+    .section-#{$content}{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: map-get($value, background);
+
+        .inner{
+            flex: 0 0 map-get($value, basis); 
+            margin: 0px map-get($value, padding / 2);
+            padding:40px;
+            background: #ffffff;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*
+    each : map과 list 를 반복하는 반복문의 종류
+
+    for문과 each문의 차이점
+    for문은 특정 시작과 끝값을 지정해줘야한다.
+    each문은 목록이나 맵의 항목을 반복하는 반복문
+*/
+p:nth-of-type(1) {
+  color: coral;
+}
+p:nth-of-type(2) {
+  color: pink;
+}
+p:nth-of-type(3) {
+  color: lightblue;
+}
+p:nth-of-type(4) {
+  color: lightgray;
+}
+p:nth-of-type(5) {
+  color: purple;
+}
+p:nth-of-type(6) {
+  color: green;
+}
+p:nth-of-type(7) {
+  color: yellow;
+}
+p:nth-of-type(8) {
+  color: lightpink;
+}
+
+/*
+    @each $변수 in 데이터 {
+      실행문
+    }
+
+    참조 : https://hyeyeong1011.github.io/2020-02-19-post19/
+*/
+p:nth-of-type(1) {
+  font-size: 20px;
+}
+p:nth-of-type(2) {
+  font-size: 25px;
+}
+p:nth-of-type(3) {
+  font-size: 30px;
+}
+p:nth-of-type(4) {
+  font-size: 35px;
+}
+p:nth-of-type(5) {
+  font-size: 40px;
+}
+p:nth-of-type(6) {
+  font-size: 45px;
+}
+p:nth-of-type(7) {
+  font-size: 50px;
+}
+p:nth-of-type(8) {
+  font-size: 55px;
+}
