@@ -5,7 +5,7 @@
 }
 .section-header .inner {
   flex: 0 0 30%;
-  margin: 0px;
+  margin: 0px 10px;
   padding: 40px;
   background: #ffffff;
 }
@@ -17,7 +17,7 @@
 }
 .section-main .inner {
   flex: 0 0 45%;
-  margin: 0px;
+  margin: 0px 15px;
   padding: 40px;
   background: #ffffff;
 }
@@ -29,7 +29,7 @@
 }
 .section-side .inner {
   flex: 0 0 20%;
-  margin: 0px;
+  margin: 0px 5px;
   padding: 40px;
   background: #ffffff;
 }
@@ -41,7 +41,7 @@
 }
 .section-footer .inner {
   flex: 0 0 10%;
-  margin: 0px;
+  margin: 0px 10px;
   padding: 40px;
   background: #ffffff;
 }

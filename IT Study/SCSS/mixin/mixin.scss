@@ -17,12 +17,39 @@
     font-size : $fontSize;
     color: $fontColor;
     font-weight: bold
-}
-// 매개변수의 기본값도 지정 가능하다.
+};
+// 매개변수의 기본값도 지정 가능하다. 이렇게 되면 새로운 값을 넣을 수 있고 값이 없다면 기본값을 출력
+// 매개변수의 갯수에 대한 제한은 없지만 순서만 주의하면 된다.
+// 값이 하나라도 모자라면 에러를 출력한다.
 @mixin font03($fontSize : 20px){
     font-size:$fontSize;
     color:purple
+};
+
+@mixin circle($size, $radius : 0){
+    width: $size;
+    height: $size;
+    border : solid 1px black;
+    @if $radius != 0{
+        border-radius: $radius;
+    }
+};
+
+@mixin ellips($lineHeight : 16px, $line : 1){
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @if($line > 1){
+        line-height: $lineHeight;
+        max-height: $lineHeight *$line;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;        
+    }@else{
+        white-space: nowrap;
+    }
 }
+
 .text{
     @include font;
 }
@@ -34,4 +61,40 @@
 }
 .text04{
     @include font03();
+}
+
+.box{
+    @include circle(100px, 30px);
+}
+.box02{
+    @include circle(50px)
+}
+
+.ellips,
+.ellips02{
+    width: 800px;
+    margin: 24px auto;
+}
+
+// 한줄일때 텍스트를 가려주는 조건
+// .ellips{
+//     white-space: nowrap; // 텍스트 자동 줄바꿈 속성 => 기본값 wrap
+//     overflow: hidden;
+//     text-overflow: ellipsis; // 숨겨진 텍스트가 있다는것을 보여주도록 ... 을 추가해줌 => 기본값 clip
+// }
+
+// .ellips02{
+//     // 공통조건
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     line-clamp: 2; // 몇줄까지 보여줄 것 인지
+//     max-height: 48px; // line-height 의 2배
+//     line-height: 24px; // font 사이즈의 1.5배가 일반적
+// }
+
+.ellips{
+    @include ellips(32px, 2)
 }

@@ -1,0 +1,58 @@
+/*
+    3가지 버튼에 배경컬러, 폰트컬러, 패딩, 보더를 각각 생성
+
+    class 가 submit 이면 파랑색배경
+    cancle 이면 회색배경
+    error 는 빨간색 배경
+*/
+
+// @mixin button($class){
+//     color: lightgreen;
+//     padding: 16px;
+//     border: solid 2px black;
+//     // background: $backGround;
+//     @if($class == submit){
+//         background: blue;
+//     }@else if($class == cancle){
+//         background: gray;
+//     }@else{
+//         background: red;
+//     }
+// }
+
+// .submit{
+//     @include button(submit);
+// }
+// .cancle{
+//     @include button(cancle);
+// }
+// .error{
+//     @include button(error)
+// }
+
+@mixin btnStyle($type, $bgColor, $fontColor, $padding, $border){
+    color: $fontColor;
+    background: $bgColor;
+    border:$border;
+    padding: $padding;
+    @if $type == 'submit'{
+        border-color: blue;
+    }@else if($type == 'cancle'){
+        border-color:gray
+    }@else if $type == 'erro'{
+        border-color: red;
+    };
+}
+
+.btn-container{
+    .submit{
+        @include btnStyle('submit',coral ,white ,20px ,solid 1px blue);
+    };
+    .cancle{
+        @include btnStyle('cancle',pink ,white ,30px ,solid 1px )
+    };
+    .error{
+        @include btnStyle('error',gray ,white ,40px ,solid 1px )
+    }
+
+}

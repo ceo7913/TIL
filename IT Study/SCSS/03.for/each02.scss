@@ -45,7 +45,8 @@ $section : (
 
         .inner{
             flex: 0 0 map-get($value, basis); 
-            margin: 0px map-get($value, padding / 2);
+            // margin: 0px map-get($value, padding / 2); 연산을 위해서는 아래 수식이 정답
+            margin: 0px map-get($value, padding) / 2;
             padding:40px;
             background: #ffffff;
         }

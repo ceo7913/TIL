@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/*
+    3가지 버튼에 배경컬러, 폰트컬러, 패딩, 보더를 각각 생성
+
+    class 가 submit 이면 파랑색배경
+    cancle 이면 회색배경
+    error 는 빨간색 배경
+*/
+.btn-container .submit {
+  color: white;
+  background: coral;
+  border: solid 1px blue;
+  padding: 20px;
+  border-color: blue;
+}
+.btn-container .cancle {
+  color: white;
+  background: pink;
+  border: solid 1px;
+  padding: 30px;
+  border-color: gray;
+}
+.btn-container .error {
+  color: white;
+  background: gray;
+  border: solid 1px;
+  padding: 40px;
+}
