@@ -1,0 +1,37 @@
+/*
+    페이지 전체에서 재사용을 목적으로 제작하는 코드를 정리하는 메서드
+    함수 개념으로 보기 때문에 if문이나 for문처럼 다른 스크립트를 이용해서 제작할 수 있다.
+
+    생성 : @mixin 변수명{반환할 스타일}
+    호출 : @include 변수명
+*/
+
+@mixin font{
+    font-size: 50px;
+    font-weight: bold;
+    color: #666666;
+    line-height: 1.5;
+}
+// 매개변수를 지정하고 아래처럼 추가할 수 있게 해줌
+@mixin font02($fontSize, $fontColor){
+    font-size : $fontSize;
+    color: $fontColor;
+    font-weight: bold
+}
+// 매개변수의 기본값도 지정 가능하다.
+@mixin font03($fontSize : 20px){
+    font-size:$fontSize;
+    color:purple
+}
+.text{
+    @include font;
+}
+.text02{
+    @include font02(100px, coral);
+}
+.text03{
+    @include font02(30px, lightblue);
+}
+.text04{
+    @include font03();
+}
