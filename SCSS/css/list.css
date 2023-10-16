@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/*
+list 여러개의 값을 하나의 변수에 나열해서 담는 방법
+
+문법
+$변수명 : 값1, 값2, 값3 ...
+$변수명 : (값1, 값2, 값3 ...) // map 형태의 list 요소
+$변수명 : 값1 값2 값3
+*/
+p {
+  background: 2;
+  background: 3;
+  background: orange;
+  background: apple, melon, lemon;
+  background: 20px apple normal, 30px orange regular, 40px lemon large;
+}
+
+.font-size-10px {
+  font-size: 10px;
+  line-height: 15px;
+  padding: 6px;
+  border: solid 1px #000000;
+}
+
+.font-size-12px {
+  font-size: 12px;
+  line-height: 18px;
+  padding: 6px;
+  border: solid 1px #000000;
+}
+
+.font-size-14px {
+  font-size: 14px;
+  line-height: 21px;
+  padding: 6px;
+  border: solid 1px #000000;
+}
+
+.font-size-16px {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 6px;
+  border: solid 1px #000000;
+}
+
+.font-size-18px {
+  font-size: 18px;
+  line-height: 27px;
+  padding: 6px;
+  border: solid 1px #000000;
+}
+
+.font-size-20px {
+  font-size: 20px;
+  line-height: 30px;
+  padding: 6px;
+  border: solid 1px #000000;
+}
+
+.font-size-22px {
+  font-size: 22px;
+  line-height: 33px;
+  padding: 6px;
+  border: solid 1px #000000;
+}
+
+.font-size-24px {
+  font-size: 24px;
+  line-height: 36px;
+  padding: 6px;
+  border: solid 1px #000000;
+}

@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GENESIS</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- https://boxicons.com/  아이콘 사용-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
+    <ul class="skip-menu">
+        <li><a href="#" title="상단 컨텐츠 바로가기 메뉴">상단 컨텐츠</a></li>
+        <li><a href="#" title="메인 컨텐츠 바로가기 메뉴">메인 컨텐츠</a></li>
+        <li><a href="#" title="하단 컨텐츠 바로가기 메뉴">하단 컨텐츠</a></li>
+    </ul>
+
+    <header class="h-container" id="header">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#" title="홈으로 이동">
+                    <img src="./images/logo.png" alt="브랜드">
+                </a>
+            </h1>
+            <!-- _preset.scss 에 pc에 스타일을 걸어두고 사이즈가 줄면 줄어들게 만듦 -->
+            <nav class="gnb pc">
+                <ul class="gnb-list">
+                    <li><a href="#" title="대메뉴">모델</a></li>
+                    <li><a href="#" title="대메뉴">구매</a></li>
+                    <li><a href="#" title="대메뉴">체험</a></li>
+                    <li><a href="#" title="대메뉴">멤버스</a></li>
+                    <li><a href="#" title="대메뉴">제네시스</a></li>
+                </ul>
+            </nav>
+            <div class="suppot-menu">
+                <a href="#" class="sup-link">
+                    <spa class="text">고객센터</span>
+                    <img src="./images/genesis-kr-gnb-support-icon-01-tablet-17x17-ko.png" 
+                    alt="고객센터" class="tablet">
+                </a>
+                <a href="#" class="sup-link">
+                    <spa class="text">마이페이지</span>
+                    <img src="./images/genesis-kr-gnb-mypage-icon-01-tablet-34x38-ko.png" 
+                    alt="마이페이지" class="tablet">
+                </a>
+                <a href="#" class="search-btn">
+                    <span class="blind">검색하기 버튼</span>
+                    <img src="./images/icon-search-small.png">
+                </a>
+            </div>
+            <!-- suppot-menu -->
+            <a href="#" class="ham-btn">
+                <div>
+                    <!-- i 태그 -->
+                    <i class="line01"></i>
+                    <i class="line02"></i>
+                    <span class="blind">전체메뉴버튼</span>
+                </div>
+            </a>
+        </div>
+    </header>
 </body>
 </html>

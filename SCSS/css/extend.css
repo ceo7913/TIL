@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/*
+    extend 
+    특정 선택자의 스타일을 가져올 때 (부분적이 아니라 전체를 출력함)
+
+    단점
+    선언되는 위치를 알 수 없다.
+    중첩되는 스타일이 생길 수 있다.
+    값을 변경하는 방법이 덮어 씌우는 방법 밖에 없다.
+
+    간단한 구조에서는 사용하는데 제약은 없지만 
+    구조가 복잡해 지는 상황에서는 사용성에 명확한 제한이 생기므로
+    @mixin 을 조금 더 선호하는 편
+
+    다만 과도한 사용이 될 경우 css 코드가 복잡해지고, 유지관리가 어려워 진다.
+*/
+.box, .box03, .box02 {
+  width: 300px;
+  height: 300px;
+  border: solid 1px black;
+  border-radius: 10px;
+}
+
+.box02 {
+  background: lightgreen;
+}
+
+.box03 {
+  background: lightcoral;
+}

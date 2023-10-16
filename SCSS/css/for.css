@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/*
+for문 = 반복문
+for문, each, while, map
+
+for문 작성법
+@for $변수명 from(시작) thought(종료) {반복할 코드, 변수명은 보통 index의 약자로 i를 많이 사용( 
+스크립트에서도 동일)}
+
+@for $변수명 from(시작) to(종료){반복할 코드}
+
+*/
+.list {
+  padding: 24px;
+  background: gray;
+  margin-bottom: 24px;
+}
+
+.list02 {
+  padding: 24px;
+  background: lightgray;
+}
+
+.list li:nth-of-type(1) {
+  background-color: coral;
+  width: 50px;
+}
+
+.list li:nth-of-type(2) {
+  background-color: coral;
+  width: 100px;
+}
+
+.list li:nth-of-type(3) {
+  background-color: coral;
+  width: 150px;
+}
+
+.list li:nth-of-type(4) {
+  background-color: coral;
+  width: 200px;
+}
+
+.list li:nth-of-type(5) {
+  background-color: coral;
+  width: 250px;
+}
+
+.list li:nth-of-type(6) {
+  background-color: coral;
+  width: 300px;
+}
+
+.list li:nth-of-type(7) {
+  background-color: coral;
+  width: 350px;
+}
+
+.list li:nth-of-type(8) {
+  background-color: coral;
+  width: 400px;
+}
+
+.list li:nth-of-type(9) {
+  background-color: coral;
+  width: 450px;
+}
+
+.list li:nth-of-type(10) {
+  background-color: coral;
+  width: 500px;
+}
+
+.list02 li:nth-of-type(1) {
+  background-color: pink;
+  width: 50px;
+}
+
+.list02 li:nth-of-type(2) {
+  background-color: pink;
+  width: 100px;
+}
+
+.list02 li:nth-of-type(3) {
+  background-color: pink;
+  width: 150px;
+}
+
+.list02 li:nth-of-type(4) {
+  background-color: pink;
+  width: 200px;
+}
+
+.list02 li:nth-of-type(5) {
+  background-color: pink;
+  width: 250px;
+}
+
+.list02 li:nth-of-type(6) {
+  background-color: pink;
+  width: 300px;
+}
+
+.list02 li:nth-of-type(7) {
+  background-color: pink;
+  width: 350px;
+}
+
+.list02 li:nth-of-type(8) {
+  background-color: pink;
+  width: 400px;
+}
+
+.list02 li:nth-of-type(9) {
+  background-color: pink;
+  width: 450px;
+}
