@@ -461,3 +461,18 @@ body, html {
   background: transparent;
   border-color: #ffffff;
 }
+.visual-wrapper .pause-btn {
+  width: 20px;
+  height: 20px;
+  font-size: 24px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.visual-wrapper .pause-btn .bx-play {
+  display: none;
+}

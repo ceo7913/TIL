@@ -103,4 +103,19 @@
             }
         }
     }
+    .pause-btn{
+        width: 20px;
+        height: 20px;
+        font-size: 24px;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        .bx-play{
+            display: none;
+        }
+    }
 }
