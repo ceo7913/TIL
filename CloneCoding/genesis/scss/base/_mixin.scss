@@ -14,6 +14,48 @@
 }
 
 // 반응형 분기 마다 변수 선언
+@mixin linkBtn($color){
+    color: $color;
+    font-size: 16px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    &:after{
+        content: "";
+        width: 7px;
+        height: 12px;
+        display: block;
+        background: url('../../images/ico-arrow-white.png') no-repeat center center / 7px;
+        transform: rotate(180deg);
+    }
+    // link-text-btn 호버시 text에 이벤트를 보여주는 css
+    span{
+        display: block;
+        width: 100%;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        &:after{
+            content: "";
+            width: 0%;
+            height: 1px;
+            background: $color;
+            display: block;
+            position: absolute;
+            left: 0px;
+            bottom: -6px;
+        }
+        &:hover{
+            &:after{
+                transition: 500ms;
+                width: 100%;
+            }
+        }
+    }
+}
 $laptop : 1600px;
 $laptopSmall : 1400px;
 $tablet : 1024px;

@@ -1,6 +1,5 @@
 .container{
     padding-top: 70px;
-
 }
 
 .visual-wrapper{
@@ -22,5 +21,86 @@
         백그라운드에 있는 cover, contain 으로 멀티미디어 요소들의 사이즈를 조절할 수 있다.
         */
         object-fit: cover;
+    }
+    .visual-item{
+        width: 100%;
+        height: 100%;
+    }
+    .visual-text{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        padding-left: 330px;
+        padding-top: 60px;
+        height: 100%;
+        box-sizing: border-box;
+        &:after{
+            content: "";
+            width: 330px;
+            height: 70px;
+            box-sizing: border-box;
+            border-top: solid 3px $white;
+            border-bottom: solid 3px $white;
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .sub-text{
+            font-size: 26px;
+            font-family: $titleLight;
+            color: $white;
+        }
+        .title{
+            font-size: 80px;
+            font-family: $titleLight;
+            color: $white;
+            font-weight: 100;
+            margin: 20px 0px 24px 0px;
+        }
+        .link-box{
+            position: absolute;
+            bottom: 200px;
+            display: flex;
+            gap: 60px;
+            a{
+                @include linkBtn($white)
+            }
+        }
+    }
+// visual-text done
+    .visual-controls{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 120px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        .dot-list{
+            display: flex;
+            gap: 20px;
+            li{
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+                background: rgba(255,255,255,0.7);
+                // 이렇게 해야 기존에 있던 dot 들이 영역을 이미 차지하고 있어서 on 되어도 틀어지지 않음
+                border: solid 2px transparent;
+                /*
+                    background-clip
+                    배경 이미지나 배경 컬러를 영역의 어디까지 설정하는지에 대한 속성
+
+                    border-box : 테두리 영역과 그 안쪽까지 채워줌
+                    content-box : 컨텐츠 내용만 영역으로 채움
+                    padding-box : 안쪽 여백 영역만큼만 채움
+                */
+                background-clip: padding-box;
+                &.on{
+                    background: transparent;
+                    border-color: $white;
+                }
+            }
+        }
     }
 }
