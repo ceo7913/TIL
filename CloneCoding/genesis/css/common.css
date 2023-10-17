@@ -142,6 +142,21 @@ body, html {
   display: none;
 }
 
+@media screen and (max-width: 1600px) {
+  .inner {
+    padding: 0px 100px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .inner {
+    padding: 0px 75px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .inner {
+    padding: 0px 20px;
+  }
+}
 @media screen and (max-width: 768px) {
   .pc {
     display: none;
@@ -153,6 +168,11 @@ body, html {
 .h-container {
   width: 100%;
   height: 70px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  background: #111111;
 }
 .h-container .inner {
   display: flex;
@@ -261,4 +281,68 @@ body, html {
   left: 0px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1600px) {
+  .logo {
+    margin-right: 50px;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .gnb .gnb-list {
+    gap: 40px;
+  }
+  .suppot-menu a .text {
+    display: none;
+  }
+  .suppot-menu a img {
+    display: block;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .h-container {
+    height: 60px;
+  }
+  .h-container .logo {
+    width: 85px;
+  }
+  .gnb {
+    display: none;
+  }
+  .suppot-menu .sup-link,
+  .suppot-menu .search-btn {
+    display: none;
+  }
+  .ham-btn {
+    margin-left: 0px;
+  }
+  .ham-btn:before {
+    display: none;
+  }
+}
+.container {
+  padding-top: 70px;
+}
+
+.visual-wrapper {
+  width: 100%;
+  height: calc(100vh - 70px);
+  min-height: 620px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.visual-wrapper img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  /* 
+  object-fit : 멀티미디어 요소 (이미지, 비디오)
+  백그라운드에 있는 cover, contain 으로 멀티미디어 요소들의 사이즈를 조절할 수 있다.
+  */
+  -o-object-fit: cover;
+     object-fit: cover;
 }
