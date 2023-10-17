@@ -49,6 +49,21 @@ body, html{
     display: none;
 }
 
+@include laptop{
+    .inner{
+        padding: 0px 100px;
+    }
+}
+@include laptopSmall{
+    .inner{
+        padding: 0px 75px;
+    }
+}
+@include tablet{
+    .inner{
+        padding: 0px 20px;
+    }
+}
 @include mobile{
     .pc{
         display: none;

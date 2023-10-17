@@ -3,6 +3,11 @@
 .h-container{
     width: 100%;
     height: 70px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    background: $black;
     .inner{
         display: flex;
         // 수직정렬
@@ -51,7 +56,6 @@
         }
         img{
             width: 17px;
-            
         }
     }
     img{
@@ -119,5 +123,52 @@
         top: 50%;
         transform: translateY(-50%);
     
+    }
+}
+@include laptop{
+    .logo{
+        margin-right: 50px;
+        width: 100px;
+    }
+}
+@include laptopSmall{
+    .gnb{
+        .gnb-list{
+            gap: 40px;
+        }
+    }
+    .suppot-menu{
+        // 
+        a{
+            .text{
+                display: none;
+            }
+            img{
+                display: block;
+            }
+        }
+    }
+}
+@include tablet{
+    .h-container{
+        height: 60px;
+        .logo{
+            width: 85px;
+        }
+    }
+    .gnb{
+        display: none;
+    }
+    .suppot-menu{
+        .sup-link,
+        .search-btn{
+            display: none;
+        }
+    }
+    .ham-btn{
+        margin-left: 0px;
+        &:before{
+            display: none;
+        }
     }
 }
