@@ -147,7 +147,7 @@ body, html {
     padding: 0px 100px;
   }
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1360px) {
   .inner {
     padding: 0px 75px;
   }
@@ -289,7 +289,7 @@ body, html {
     width: 100px;
   }
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1360px) {
   .gnb .gnb-list {
     gap: 40px;
   }
@@ -385,7 +385,7 @@ body, html {
 }
 .visual-wrapper .visual-text .link-box {
   position: absolute;
-  bottom: 200px;
+  bottom: 22%;
   display: flex;
   gap: 60px;
 }
@@ -432,7 +432,7 @@ body, html {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 120px;
+  bottom: 13%;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -475,4 +475,95 @@ body, html {
 }
 .visual-wrapper .pause-btn .bx-play {
   display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .visual-wrapper .visual-text {
+    padding-left: 248px;
+    padding-top: 70px;
+  }
+  .visual-wrapper .visual-text:after {
+    width: 248px;
+  }
+  .visual-wrapper .visual-text .sub-text {
+    font-size: 20px;
+  }
+  .visual-wrapper .visual-text .title {
+    font-size: 60px;
+    margin: 10px 0px 16px 0px;
+  }
+  .visual-wrapper .visual-text .link-box a {
+    font-size: 14px;
+  }
+  .visual-wrapper .visual-controls {
+    gap: 20px;
+  }
+  .visual-wrapper .visual-controls .dot-list {
+    gap: 12px;
+  }
+  .visual-wrapper .visual-controls .dot-list li {
+    width: 6px;
+    height: 6px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .visual-wrapper {
+    height: 0px;
+    padding-top: 60%;
+    min-height: 0px;
+  }
+  .visual-wrapper .visual-item {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .visual-wrapper .visual-text {
+    padding: 90px 0px 0px 224px;
+  }
+  .visual-wrapper .visual-text:after {
+    width: 224px;
+  }
+  .visual-wrapper .visual-text .sub-text {
+    font-size: 18px;
+  }
+  .visual-wrapper .visual-text .title {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .visual-wrapper .visual-text {
+    padding: 12px 0px 0px 60px;
+  }
+  .visual-wrapper .visual-text:after {
+    display: none;
+  }
+  .visual-wrapper .visual-text .link-box a {
+    font-size: 12px;
+  }
+  .visual-wrapper .visual-controls {
+    bottom: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .visual-wrapper {
+    height: calc(100vh - 60px);
+    padding-top: 0px;
+  }
+  .visual-wrapper .visual-text {
+    padding: 40px 0px 0px 20px;
+  }
+  .visual-wrapper .visual-text .title {
+    font: 42px;
+  }
+  .visual-wrapper .visual-text .link-box {
+    flex-direction: column;
+    gap: 20px;
+    bottom: 80px;
+  }
+  .visual-wrapper .visual-text .link-box a {
+    font-size: 16px;
+  }
+  .visual-wrapper .visual-controls {
+    bottom: 24px;
+  }
 }

@@ -60,7 +60,7 @@
         }
         .link-box{
             position: absolute;
-            bottom: 200px;
+            bottom: 22%;
             display: flex;
             gap: 60px;
             a{
@@ -73,7 +73,8 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 120px;
+        // 120 / 900 * 100 = 13.3... 비율 계산
+        bottom: 13%; // 120px
         display: flex;
         align-items: center;
         gap: 30px;
@@ -116,6 +117,107 @@
         cursor: pointer;
         .bx-play{
             display: none;
+        }
+    }
+}
+@include laptop{
+    .visual-wrapper{
+        .visual-text{
+            padding-left: 248px;
+            padding-top: 70px;
+            &:after{
+                width: 248px;
+            }
+            .sub-text{
+                font-size: 20px;
+            }
+            .title{
+                font-size: 60px;
+                margin: 10px 0px 16px 0px;
+            }
+            .link-box{
+                a{
+                    font-size: 14px;
+                }
+            }
+        }
+        .visual-controls{
+            gap: 20px;
+            .dot-list{
+                gap: 12px;
+                li{
+                    width: 6px;
+                    height: 6px;
+                }
+            }
+        }
+    }
+}
+
+@include laptopSmall{
+    .visual-wrapper{
+        // height 를 0px로 만들어주지 않으면 여백이 생긴다.
+        height: 0px;
+        padding-top: 60%;
+        min-height: 0px;
+        .visual-item{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .visual-text{
+            padding: 90px 0px 0px 224px;
+            &:after{
+                width: 224px;
+            }
+            .sub-text{
+                font-size: 18px;
+            }
+            .title{
+                font-size: 48px;
+            }
+        }
+    }
+}
+
+@include tablet{
+    .visual-wrapper{
+        .visual-text{
+            padding: 12px 0px 0px 60px;
+            &:after{
+                display: none;
+            }
+            .link-box{
+                a{
+                    font-size: 12px;
+                }
+            }
+        }
+        .visual-controls{
+            bottom: 10%;
+        }
+    }
+}
+@include mobile{
+    .visual-wrapper{
+        height: calc(100vh - 60px);
+        padding-top: 0px;
+        .visual-text{
+            padding: 40px 0px 0px 20px;
+            .title{
+                font: 42px;
+            }
+            .link-box{
+                flex-direction: column;
+                gap: 20px;
+                bottom: 80px;
+                a{
+                    font-size: 16px;
+                }
+            }
+        }
+        .visual-controls{
+            bottom: 24px;
         }
     }
 }
