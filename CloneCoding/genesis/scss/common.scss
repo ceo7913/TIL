@@ -4,17 +4,18 @@
 
     컴파일이 필요하지 않은 scss 파일은 파일명 앞에 '_'를 붙이면 컴파일 제외 대상이 됨
 */ 
+
+/*base*/
 @import '../scss/base/reset';
 
-// base
 @import '../scss/base/var';
 @import '../scss/base/fontFace';
 @import '../scss/base/mixin';
 @import '../scss/base/preset';
 
-// layout
+/*layout*/
 @import '../scss/layout/header';
 @import '../scss/layout/footer';
 
-// page
+/*page*/
 @import '../scss/page/main';

@@ -1,5 +1,4 @@
 // 헤더와 푸터는 보통 페이지에 상관없이 따라오기 때문에 따로 분류해서 관리해 준다. 
-
 .h-container{
     width: 100%;
     height: 70px;
@@ -11,7 +10,7 @@
     .inner{
         display: flex;
         // 수직정렬
-        align-items:  center;
+        align-items: center;
     }
 }
 .logo{
@@ -30,7 +29,7 @@
             height: 100%;
             color: rgba(255,255,255,0.7);
             transition: 300ms;
-            font-size: 15px;
+            font-size : 15px;
             &:hover{
                 color: rgba(255,255,255,1);
             }
@@ -101,7 +100,7 @@
             top: 100%;
         }
     }
-    // 햄버거 호버했을때 각각 로테이트 해서 x 자로 만드는 css
+     // 햄버거 호버했을때 각각 로테이트 해서 x 자로 만드는 css
     &:hover{
         .line01{
             top: 50%;
@@ -112,17 +111,18 @@
             transform: rotate(-45deg);
         }
     }
+
     &:before{
         content: "";
         width: 1px;
         height: 20px;
-        background: rgba(255,255,255,0.3);
+        background: rgba(255,255,255,1);
         display: inline-block;
         position: absolute;
         left: 0px;
         top: 50%;
         transform: translateY(-50%);
-    
+        
     }
 }
 @include laptop{
@@ -131,14 +131,13 @@
         width: 100px;
     }
 }
-@include laptopSmall{
+@include laptop02{
     .gnb{
         .gnb-list{
             gap: 40px;
         }
     }
     .suppot-menu{
-        // 
         a{
             .text{
                 display: none;
@@ -148,7 +147,9 @@
             }
         }
     }
+    
 }
+
 @include tablet{
     .h-container{
         height: 60px;

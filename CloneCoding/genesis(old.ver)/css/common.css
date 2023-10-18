@@ -1,0 +1,569 @@
+@charset "UTF-8";
+/*
+    scss 는 컴포넌트 방식으로 여러개의 파일을 나눠서 작성하기 때문에 통합하는 과정이 필요
+    동일한 scss 파일을 import 할 때에는 확장자 명을 생략해도 가능
+
+    컴파일이 필요하지 않은 scss 파일은 파일명 앞에 '_'를 붙이면 컴파일 제외 대상이 됨
+*/
+/* v2.0 | 20110126
+  http://meyerweb.com/eric/tools/css/reset/ 
+  License: none (public domain)
+
+  reset.css 가 추가되어야 하는 이유
+  margin, table 등 디자인이 부자여느러운 것을 없애기 위해 reset CSS 파일이 있다. 
+  이는 브라우저의 스타일을 초기화하기 위해 사용하는 파일이다. 
+  크로스브라우징을 구현할 때 유용. 대표적인 사이트로는 cssreset가 있다.
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /* font: inherit; */
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+@font-face {
+  font-family: "genesis-head-light";
+  src: url("../../fonts/GenesisSansHeadKRLight.eot");
+  src: url("../../fonts/GenesisSansHeadKRLight.eot#iefix") format("embededopentype"), url("../../fonts/GenesisSansHeadKRLight.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "genesis-head";
+  src: url("../../fonts/GenesisSansHeadKRRegular.eot");
+  src: url("../../fonts/GenesisSansHeadKRRegular.eot#iefix") format("embededopentype"), url("../../fonts/GenesisSansHeadKRLight.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "genesis-text";
+  src: url("../../fonts/GenesisSansTextKRRegular.eot");
+  src: url("../../fonts/GenesisSansTextKRRegular.eot") format("embededopentype"), url("../../fonts/GenesisSansTextKRRegular.woff2") format("woff2");
+  font-size: normal;
+  font-weight: 300;
+}
+.inner {
+  width: auto;
+  height: 100%;
+  padding: 0px 140px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  z-index: -1;
+  border: none;
+}
+
+body, html {
+  font-size: 10px;
+  font-family: "genesis-text", sans-serif;
+  line-height: 1;
+  background: #111111;
+}
+
+.skip-menu li a {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1px;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  color: #ffffff;
+  text-align: center;
+}
+.skip-menu li a:focus {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .inner {
+    padding: 0px 100px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .inner {
+    padding: 0px 75px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .inner {
+    padding: 0px 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}
+.h-container {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  background: #111111;
+}
+.h-container .inner {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 125px;
+  margin-right: 68px;
+}
+
+.gnb {
+  height: 100%;
+}
+.gnb .gnb-list {
+  display: flex;
+  gap: 60px;
+  height: 100%;
+}
+.gnb .gnb-list li a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 300ms;
+  font-size: 15px;
+}
+.gnb .gnb-list li a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.suppot-menu {
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+  gap: 30px;
+}
+.suppot-menu a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: 300ms;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 14px;
+}
+.suppot-menu a:hover {
+  color: rgb(255, 255, 255);
+}
+.suppot-menu a img {
+  width: 17px;
+}
+.suppot-menu img {
+  display: none;
+}
+.suppot-menu .search-btn img {
+  display: block;
+}
+
+.ham-btn {
+  width: 66px;
+  height: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding: 0px 22px;
+  box-sizing: border-box;
+  margin-left: 22px;
+}
+.ham-btn div {
+  width: 100%;
+  height: 13px;
+  position: relative;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+}
+.ham-btn div i {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0px;
+  transition: 500ms;
+}
+.ham-btn div .line01 {
+  top: 0px;
+}
+.ham-btn div .line02 {
+  top: 100%;
+}
+.ham-btn:hover .line01 {
+  top: 50%;
+  transform: rotate(45deg);
+}
+.ham-btn:hover .line02 {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+.ham-btn:before {
+  content: "";
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1600px) {
+  .logo {
+    margin-right: 50px;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .gnb .gnb-list {
+    gap: 40px;
+  }
+  .suppot-menu a .text {
+    display: none;
+  }
+  .suppot-menu a img {
+    display: block;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .h-container {
+    height: 60px;
+  }
+  .h-container .logo {
+    width: 85px;
+  }
+  .gnb {
+    display: none;
+  }
+  .suppot-menu .sup-link,
+  .suppot-menu .search-btn {
+    display: none;
+  }
+  .ham-btn {
+    margin-left: 0px;
+  }
+  .ham-btn:before {
+    display: none;
+  }
+}
+.container {
+  padding-top: 70px;
+}
+
+.visual-wrapper {
+  width: 100%;
+  height: calc(100vh - 70px);
+  min-height: 620px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.visual-wrapper img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  /* 
+  object-fit : 멀티미디어 요소 (이미지, 비디오)
+  백그라운드에 있는 cover, contain 으로 멀티미디어 요소들의 사이즈를 조절할 수 있다.
+  */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.visual-wrapper .visual-item {
+  width: 100%;
+  height: 100%;
+}
+.visual-wrapper .visual-text {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding-left: 330px;
+  padding-top: 60px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.visual-wrapper .visual-text:after {
+  content: "";
+  width: 330px;
+  height: 70px;
+  box-sizing: border-box;
+  border-top: solid 3px #ffffff;
+  border-bottom: solid 3px #ffffff;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.visual-wrapper .visual-text .sub-text {
+  font-size: 26px;
+  font-family: "genesis-head-light", sans-serif;
+  color: #ffffff;
+}
+.visual-wrapper .visual-text .title {
+  font-size: 80px;
+  font-family: "genesis-head-light", sans-serif;
+  color: #ffffff;
+  font-weight: 100;
+  margin: 20px 0px 24px 0px;
+}
+.visual-wrapper .visual-text .link-box {
+  position: absolute;
+  bottom: 22%;
+  display: flex;
+  gap: 60px;
+}
+.visual-wrapper .visual-text .link-box a {
+  color: #ffffff;
+  font-size: 16px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.visual-wrapper .visual-text .link-box a:after {
+  content: "";
+  width: 7px;
+  height: 12px;
+  display: block;
+  background: url("../../images/ico-arrow-white.png") no-repeat center center/7px;
+  transform: rotate(180deg);
+}
+.visual-wrapper .visual-text .link-box a span {
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.visual-wrapper .visual-text .link-box a span:after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: -6px;
+}
+.visual-wrapper .visual-text .link-box a span:hover:after {
+  transition: 500ms;
+  width: 100%;
+}
+.visual-wrapper .visual-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 13%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.visual-wrapper .visual-controls .dot-list {
+  display: flex;
+  gap: 20px;
+}
+.visual-wrapper .visual-controls .dot-list li {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  border: solid 2px transparent;
+  /*
+      background-clip
+      배경 이미지나 배경 컬러를 영역의 어디까지 설정하는지에 대한 속성
+
+      border-box : 테두리 영역과 그 안쪽까지 채워줌
+      content-box : 컨텐츠 내용만 영역으로 채움
+      padding-box : 안쪽 여백 영역만큼만 채움
+  */
+  background-clip: padding-box;
+}
+.visual-wrapper .visual-controls .dot-list li.on {
+  background: transparent;
+  border-color: #ffffff;
+}
+.visual-wrapper .pause-btn {
+  width: 20px;
+  height: 20px;
+  font-size: 24px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.visual-wrapper .pause-btn .bx-play {
+  display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .visual-wrapper .visual-text {
+    padding-left: 248px;
+    padding-top: 70px;
+  }
+  .visual-wrapper .visual-text:after {
+    width: 248px;
+  }
+  .visual-wrapper .visual-text .sub-text {
+    font-size: 20px;
+  }
+  .visual-wrapper .visual-text .title {
+    font-size: 60px;
+    margin: 10px 0px 16px 0px;
+  }
+  .visual-wrapper .visual-text .link-box a {
+    font-size: 14px;
+  }
+  .visual-wrapper .visual-controls {
+    gap: 20px;
+  }
+  .visual-wrapper .visual-controls .dot-list {
+    gap: 12px;
+  }
+  .visual-wrapper .visual-controls .dot-list li {
+    width: 6px;
+    height: 6px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .visual-wrapper {
+    height: 0px;
+    padding-top: 60%;
+    min-height: 0px;
+  }
+  .visual-wrapper .visual-item {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .visual-wrapper .visual-text {
+    padding: 90px 0px 0px 224px;
+  }
+  .visual-wrapper .visual-text:after {
+    width: 224px;
+  }
+  .visual-wrapper .visual-text .sub-text {
+    font-size: 18px;
+  }
+  .visual-wrapper .visual-text .title {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .visual-wrapper .visual-text {
+    padding: 12px 0px 0px 60px;
+  }
+  .visual-wrapper .visual-text:after {
+    display: none;
+  }
+  .visual-wrapper .visual-text .link-box a {
+    font-size: 12px;
+  }
+  .visual-wrapper .visual-controls {
+    bottom: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .visual-wrapper {
+    height: calc(100vh - 60px);
+    padding-top: 0px;
+  }
+  .visual-wrapper .visual-text {
+    padding: 40px 0px 0px 20px;
+  }
+  .visual-wrapper .visual-text .title {
+    font: 42px;
+  }
+  .visual-wrapper .visual-text .link-box {
+    flex-direction: column;
+    gap: 20px;
+    bottom: 80px;
+  }
+  .visual-wrapper .visual-text .link-box a {
+    font-size: 16px;
+  }
+  .visual-wrapper .visual-controls {
+    bottom: 24px;
+  }
+}

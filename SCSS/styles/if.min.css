@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/*
+조건문
+if
+
+작성방식
+1. if(조건문, true 일 때, false일 때 값) = 축약
+
+2. if 조건문{
+    조건문을 만족할때 값
+   }@else if 조건문 {조건을 만족할 때 값}
+*/
+.box {
+  background: yellow;
+  width: 100px;
+  height: 100px;
+}
+
+p {
+  font-size: 16px;
+  color: blue;
+}

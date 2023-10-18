@@ -1,0 +1,115 @@
+// mixin 보다 중요도가 높거나 값이 변하지 않는경우
+.inner {
+    width: auto;
+    height: 100%;
+    padding: 0px 140px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.blind{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px,1px,1px,1px);
+    overflow: hidden;
+    z-index: -1;
+    border: none;
+}
+
+body, html{
+    font-size: 10px;
+    font-family: $text;
+    line-height: 1;
+    background: $black;
+}
+
+.skip-menu li a{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1px;
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    color: $white;
+    text-align: center;
+    // 본인 참조해서 focus 될 때 (focus : tap 키(키보드)를 눌렀을때 발동되는 이벤트)
+    &:focus{
+        width: 100%;
+        height: 50px;
+        font-size: 24px;
+        line-height: 50px;
+    }
+}
+
+.dic-btn{
+    width: 100%;
+    height: 56px;
+    border: solid 1px $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    box-sizing: border-box;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    transition: 500ms;
+    font-size: 16px;
+    z-index: 1;
+    margin-top: 40px;
+    transform: translateY(10px);
+    &:after{
+        content: "";
+        width: 0px;
+        height: 100%;
+        background: $white;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity: 0;
+        z-index: -1;
+        transition: width 0ms 500ms, opacity 500ms 0ms;
+    }
+    &:hover:after{
+        width: 100%;
+        opacity: 1;
+        transition: width 500ms 0ms, opacity 0ms;
+    }
+    &:hover{
+        color: #151515;
+        
+    }
+}
+
+.mobile{
+    // pc 기반이기 때문에 none 으로 설정해놨다가 특정 디바이스에서 실행될때 실행될 수 있게
+    display: none;
+}
+
+@include laptop{
+    .inner{
+        padding: 0px 100px;
+    }
+}
+@include laptopSmall{
+    .inner{
+        padding: 0px 75px;
+    }
+}
+@include tablet{
+    .inner{
+        padding: 0px 20px;
+    }
+}
+@include mobile{
+    .pc{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+}
+

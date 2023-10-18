@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*
+map 리스트 형식의 변수를 반복하는 반복문
+
+리스트 맵의 차이점
+list에서 ()를 사용하면 map형식으로 된다.
+
+$변수명 : 값1, 값2, 값3 ... 리스트 형식(배열방식)
+$변수명 : (속성1: 값1, 속성2:값2, 속성3:값3 ...) 맵형식(객체방식)
+*/
+.menu-coffee {
+  background: brown;
+  background: coffee, tea, drink;
+  background: brown, green, orange;
+  background: brown, green, orange, yellow, white;
+  background: green, orange, yellow;
+}

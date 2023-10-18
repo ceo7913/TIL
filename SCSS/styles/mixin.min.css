@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/*
+    페이지 전체에서 재사용을 목적으로 제작하는 코드를 정리하는 메서드
+    함수 개념으로 보기 때문에 if문이나 for문처럼 다른 스크립트를 이용해서 제작할 수 있다.
+
+    생성 : @mixin 변수명{반환할 스타일}
+    호출 : @include 변수명
+*/
+.text {
+  font-size: 50px;
+  font-weight: bold;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.text02 {
+  font-size: 100px;
+  color: coral;
+  font-weight: bold;
+}
+
+.text03 {
+  font-size: 30px;
+  color: lightblue;
+  font-weight: bold;
+}
+
+.text04 {
+  font-size: 20px;
+  color: purple;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: solid 1px black;
+  border-radius: 30px;
+}
+
+.box02 {
+  width: 50px;
+  height: 50px;
+  border: solid 1px black;
+}
+
+.ellips,
+.ellips02 {
+  width: 800px;
+  margin: 24px auto;
+}
+
+.ellips {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 32px;
+  max-height: 64px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

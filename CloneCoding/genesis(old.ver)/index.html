@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENESIS</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- https://boxicons.com/  아이콘 사용-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <ul class="skip-menu">
+        <li><a href="#" title="상단 컨텐츠 바로가기 메뉴">상단 컨텐츠</a></li>
+        <li><a href="#" title="메인 컨텐츠 바로가기 메뉴">메인 컨텐츠</a></li>
+        <li><a href="#" title="하단 컨텐츠 바로가기 메뉴">하단 컨텐츠</a></li>
+    </ul>
+<!-- header start -->
+    <header class="h-container" id="header">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#" title="홈으로 이동">
+                    <img src="./images/logo.png" alt="브랜드">
+                </a>
+            </h1>
+            <!-- _preset.scss 에 pc에 스타일을 걸어두고 사이즈가 줄면 줄어들게 만듦 -->
+            <nav class="gnb pc">
+                <ul class="gnb-list">
+                    <li><a href="#" title="대메뉴">모델</a></li>
+                    <li><a href="#" title="대메뉴">구매</a></li>
+                    <li><a href="#" title="대메뉴">체험</a></li>
+                    <li><a href="#" title="대메뉴">멤버스</a></li>
+                    <li><a href="#" title="대메뉴">제네시스</a></li>
+                </ul>
+            </nav>
+            <div class="suppot-menu">
+                <a href="#" class="sup-link">
+                    <span class="text">고객센터</span>
+                    <img src="./images/genesis-kr-gnb-support-icon-01-tablet-17x17-ko.png" 
+                    alt="고객센터" class="tablet">
+                </a>
+                <a href="#" class="my-link">
+                    <span class="text">마이페이지</span>
+                    <img src="./images/genesis-kr-gnb-mypage-icon-01-tablet-34x38-ko.png" 
+                    alt="마이페이지" class="tablet">
+                </a>
+                <a href="#" class="search-btn">
+                    <span class="blind">검색하기 버튼</span>
+                    <img src="./images/icon-search-small.png">
+                </a>
+            </div>
+            <!-- suppot-menu -->
+            <a href="#" class="ham-btn">
+                <div>
+                    <!-- i 태그 -->
+                    <i class="line01"></i>
+                    <i class="line02"></i>
+                    <span class="blind">전체메뉴버튼</span>
+                </div>
+            </a>
+        </div>
+    </header>
+<!-- header done -->
+
+    <main class="container" id="content">
+        <section class="visual-wrapper">
+<!-- visual item start -->
+            <div class="visual-item">
+                <img src="./images/main-visual01.jpg" alt="자동차" class="pc">
+                <img src="./images/visual01-mobile.jpg" alt="자동차" class="mobile">
+                <div class="visual-text">
+                    <div class="title-box">
+                        <p class="sub-text">GENESIS</p>
+                        <h2 class="title">G80</h2>
+                        <p class="sub-text">2024년형 출시</p>
+                    </div>
+                    <div class="link-box">
+                        <a href="#" title="상세 페이지 바로가기" class="link-text-btn">
+                            <span>더 알아보기</span>
+                        </a>
+                        <a href="#" title="상세 페이지 바로가기" class="link-text-btn">
+                            <span>견적내기</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+<!-- visual item done -->
+<!-- visual-controls start -->
+            <div class="visual-controls">
+                <ul class="dot-list">
+                    <!-- 슬라이드바 버튼이 선택됐을때 class="on" -->
+                    <li class="on"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <button class="pause-btn">
+                    <i class='bx bx-play'>
+                        <span class="blind">슬라이드 자동 시작 버튼</span>
+                    </i>
+                    <i class='bx bx-pause'>
+                        <span class="blind">슬라이드 자동 일시정지 버튼</span>
+                    </i>
+                </button>
+            </div>
+<!-- visual-controls done -->
+        </section>
+        <section class="model-wrapper">
+            <div class="inner">
+                <div class="title-box">
+                    <h2 class="title">OUR MODELS</h2>
+                    <p class="text">
+                        역동적이면서도 우아한 디자인과 최첨단 기술을 탑재한 제네시스 브랜드의 라인업을 살펴보세요.
+                    </p>
+                </div>
+                <!--title-box-->
+                <div class="category pc">
+                    <a href="#" title="제네시스 카테고리 선택">ALL</a>
+                </div>
+                <div class="category-m mobile" >
+                    <ul class="category-list">
+                        <li class="on"><a href="#">ALL</a></li>
+                        <li><a href="#">SEDAN</a></li>
+                        <li><a href="#">SUV</a></li>
+                    </ul>
+                </div>
+
+                <div class="model-list-wrapper">
+                    <ul class="model-list">
+                        <li class="under ev">
+                            <div class="content-box">
+                                <p class="text">LONG WHEEL BASE</p>
+                                <h3 class="title">G90</h3>
+                                <div class="icon-list">
+                                    <img src="./images/EV.png" alt="전동화 모델" class="icon-ev">
+                                    <img src="./images/new.png" alt="신형 모델" class="icon-new">
+                                </div>
+                            </div>
+                                <img src="./images/g90.png" alt="제네시스 g90 롱 휠 베이스">
+
+                                <a href="#" title="상세 페이지 이동" class="dic-btn">자세히 보기</a>
+                            
+                        </li>
+
+                        <li>
+                            <div class="content-box">
+                                <p class="text">LONG WHEEL BASE</p>
+                                <h3 class="title">G90</h3>
+                                <div class="icon-list">
+                                    <img src="./images/EV.png" alt="전동화 모델" class="icon-ev">
+                                    <img src="./images/new.png" alt="신형 모델" class="icon-new">
+                                </div>
+                                </div>
+                                <img src="./images/g90.png" alt="제네시스 g90 롱 휠 베이스">
+
+                                <a href="#" title="상세 페이지 이동" class="dic-btn">자세히 보기</a>
+                            
+                        </li>
+
+                        <li>
+                            <div class="content-box">
+                                <p class="text">LONG WHEEL BASE</p>
+                                <h3 class="title">G90</h3>
+                                <div class="icon-list">
+                                    <img src="./images/EV.png" alt="전동화 모델" class="icon-ev">
+                                    <img src="./images/new.png" alt="신형 모델" class="icon-new">
+                                </div>
+                            </div>
+                                <img src="./images/g90.png" alt="제네시스 g90 롱 휠 베이스">
+
+                                <a href="#" title="상세 페이지 이동" class="dic-btn">자세히 보기</a>
+                            
+                        </li>
+                    </ul>
+                    <div class="model-dot-wrapper">
+                        <ul class="model-dot-list">
+                            <li class="on"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="icon-wrapper">
+            <div class="inner">
+                <h2 class="blind">서비스 문의</h2>
+                <ul class="icon-list">
+                    <li>
+                        <a href="#" class="icon-qui">
+                            <span>견적 내기</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="icon-sales">
+                            <span>구매 상담 신청</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="icon-drive">
+                            <span>시승 신청</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="icon-catalog">
+                            <span>카탈로그</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

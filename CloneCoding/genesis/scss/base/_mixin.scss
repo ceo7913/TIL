@@ -1,4 +1,4 @@
-@mixin ellipse($lineHeight : 10px, $line : 1){
+@mixin ellipse($lineHiehgt : 10px, $line : 1){
     overflow: hidden;
     text-overflow: ellipsis;
     // 1줄 초과의 텍스트 처리
@@ -6,8 +6,8 @@
         display: -webkit-box;
         -webkit-line-clamp: $line;
         -webkit-box-orient: vertical;
-        line-height: $lineHeight;
-        max-height: $lineHeight * $line;
+        line-height : $lineHiehgt;
+        max-height: $lineHiehgt * $line;
     }@else{
         white-space: nowrap;
     }
@@ -28,7 +28,7 @@
         width: 7px;
         height: 12px;
         display: block;
-        background: url('../../images/ico-arrow-white.png') no-repeat center center / 7px;
+        background: url(../../images/ico-arrow-white.png) no-repeat center center / 7px;
         transform: rotate(180deg);
     }
     // link-text-btn 호버시 text에 이벤트를 보여주는 css
@@ -38,6 +38,7 @@
         position: relative;
         top: 0px;
         left: 0px;
+
         &:after{
             content: "";
             width: 0%;
@@ -46,7 +47,7 @@
             display: block;
             position: absolute;
             left: 0px;
-            bottom: -6px;
+            bottom: -6px;        
         }
         &:hover{
             &:after{
@@ -54,32 +55,38 @@
                 width: 100%;
             }
         }
+
     }
+
+
 }
 $laptop : 1600px;
-$laptopSmall : 1360px;
+$laptop02 : 1360px;
 $tablet : 1024px;
 $mobile : 768px;
 
 @mixin laptop{
-    @media screen and (max-width : $laptop) {
+    @media screen and (max-width : $laptop){
         // 선언된 mixin 안에 새로운 스타일을 적용할 때 사용하는 기법
         // 기존 mixin 이 가지고 있는 스타일 외에 선택자나 속성등을 새로 추가할 때
         @content;
     }
 }
-@mixin laptopSmall{
-    @media screen and (max-width : $laptopSmall) {
+
+@mixin laptop02{
+    @media screen and (max-width : $laptop02){
         @content;
     }
-}
+};
+
 @mixin tablet{
-    @media screen and (max-width : $tablet) {
-        @content;
+    @media screen and (max-width : $tablet){
+        @content
     }
-}
+};
+
 @mixin mobile{
-    @media screen and (max-width : $mobile) {
+    @media screen and (max-width : $mobile){
         @content;
     }
-}
+};

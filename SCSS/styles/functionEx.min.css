@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/*
+    매개변수로 받아오는 값을 곱해서 
+    function(매개변수){매개변수 * 매개변수}
+
+    1. 각각의 선택자에 들어오는 function 은 width에만 적용
+    2. 각각의 선택자에 들어오는 매개변수는 height 와 line-height 에 적용 할 것 
+*/
+.box {
+  width: calc(30px* 30px);
+  height: 50px;
+  background: coral;
+  line-height: 50px;
+}
