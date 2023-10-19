@@ -354,7 +354,87 @@
     }
 }
 
+.award-wrapper{
+    padding-bottom: 250px;
+    .title-box{
+        padding-left: 330px;
+        margin-bottom: 80px;
+        .title{
+            color: $white;
+            font-size: 42px;
+            font-family: $titleLight;
+            font-weight: 100;
+        }
+    }
+    .award-item{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        .award-dot{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            flex-direction: column;
+            .award-dot-list{
+                padding-left: 330px;
+                padding-right: 140px;
+                display: flex;
+                li{
+                    // 계산해서 정확한 값을 내기 애매한 경우
+                    width: calc(100% / 6);
+                    border-top: solid 1px rgba(255,255,255,0.7);
+                    padding: 18px 0px;
+                    a{
+                        display: block;
+                        color: rgba(255,255,255,0.7);
+                        font-size: 14px;
+                        width: 90%;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            .pause-btn{
+                width: 54px;
+                height: 54px;
+                // no-repeat : 이미지 반복 안함 center center 이미지 정중앙 / 54px 이미지 사이즈;
+                background: url(../../images/ico-pause-default.png) no-repeat center center / 54px;
+                position: absolute;
+                bottom: 0px;
+                right: 70px;
+                border-radius: 100%;
+                border: solid 2px rgba(255,255,255,0.7);
+                cursor: pointer;
+            }
+        }
+        .text-box{
+            width: 520px;
+            position: absolute;
+            left: 0px;
+            bottom: 130px;
+            padding-left: 330px;
+            .content-title{
+                font-size: 42px;
+                color: $white;
+                line-height: 1.5;
+                font-weight: 100;
+                font-family: $titleLight;
+                /*
+                    word-break: 단어의 분리 설정 속성
+                    normal : cjk(china,japan,korea 아시아) 단어 기준
+                    break-all : 글자 기준
+                    keep-all : 단어기준 (띄어쓰기 기준으로 줄바꿈) 
+                */
 
+                word-break: keep-all;
+            }
+
+        }
+    }
+}
 
 
 
