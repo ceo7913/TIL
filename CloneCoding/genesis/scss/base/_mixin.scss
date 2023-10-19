@@ -14,10 +14,10 @@
 }
 
 // 반응형 분기 마다 변수 선언
-@mixin linkBtn($color){
+@mixin linkBtn($color: $white, $type : 'v1'){
     color: $color;
     font-size: 16px;
-    display: flex;
+    display: inline-flex; /* 100% 영역을 컨텐츠 만큼 차지함*/
     gap: 6px;
     align-items: center;
     position: relative;
@@ -55,15 +55,36 @@
                 width: 100%;
             }
         }
+        @if $type == 'v2'{
+            &:before{
+                content: "";
+                height: 1px;
+                width: 100%;
+                background: $color;
+                display: block;
+                position: absolute;
+                left: 0px;
+                bottom: -6px;
+            }
+            &:hover:before{
+                display: none;
+            }
+        }
 
     }
-
-
 }
 $laptop : 1600px;
 $laptop02 : 1360px;
 $tablet : 1024px;
 $mobile : 768px;
+
+.link-box{
+    .link-text-btn{
+        &.v2{
+            @include linkBtn($white, 'v2');
+        }
+    }
+}
 
 @mixin laptop{
     @media screen and (max-width : $laptop){
