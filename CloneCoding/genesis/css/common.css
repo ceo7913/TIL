@@ -947,6 +947,26 @@ body, html {
   width: 240px;
 }
 
+.sns-wrapper {
+  padding: 150px 0px 120px;
+  background: #ffffff;
+}
+.sns-wrapper .title-box {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.sns-wrapper .title-box .sub-title {
+  color: #111111;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.sns-wrapper .title-box .title {
+  color: #111111;
+  font-size: 54px;
+  font-family: "genesis-head-light", sans-serif;
+  font-weight: 100;
+}
+
 @media screen and (max-width: 1600px) {
   .visual-wrapper .visual-text {
     padding-left: 248px;

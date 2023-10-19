@@ -524,6 +524,25 @@
     }
 }
 
+.sns-wrapper{
+    padding: 150px 0px 120px;
+    background: $white;
+    .title-box{
+        text-align: center;
+        margin-bottom: 80px;
+        .sub-title{
+            color: $black;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .title{
+            color: $black;
+            font-size: 54px;
+            font-family: $titleLight;
+            font-weight: 100;
+        }
+    }
+}
 
 @include laptop{
     .visual-wrapper{
