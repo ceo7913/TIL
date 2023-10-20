@@ -110,9 +110,9 @@ body,html{
 
 @include mobile{
     .pc{
-        display: none;
+        display: none !important;
     }
     .mobile{
-        display: block;
+        display: block !important;
     }
 }
