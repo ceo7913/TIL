@@ -542,6 +542,76 @@
             font-weight: 100;
         }
     }
+    .sns-list{
+        display: flex;
+        gap: 8px;
+        cursor: pointer;
+        li{
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+                .sns-img{
+                    position: relative;
+                    top: 0px;
+                    left: 0px;
+                    padding-top: 100%;
+                    overflow: hidden;
+                    img{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        transition: 500ms;
+                    }
+                }
+                .text-box{
+                    position: absolute;
+                    left: 0px;
+                    bottom: 0px;
+                    transition: 300ms;
+                    padding: 0px 40px 30px 70px;
+                    opacity: 0;
+                    transition: 300ms;
+                    z-index: 5;
+                    >.bx{
+                        font-size: 24px;
+                        color: $white;
+                        position: absolute;
+                        top: -8px;
+                        left: 30px;
+                    }
+                    .text{
+                        color: $white;
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                        // line-height: 1.8;
+                        @include ellipse(28px, 2) // mixin.scss 1번째 줄
+                    }
+                }
+                &:after{
+                    // 호버했을때 나올 블러 생성
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    display: block;
+                    background: rgba(0,0,0,0);
+                    transition: 300ms;
+                }
+                &:hover:after{
+                    background: rgba(0,0,0,0.7);
+                }
+                &:hover .sns-img img{
+                    transform: translate(-50%,-50%) scale(1.2)
+                }
+                &:hover .text-box{
+                    opacity: 1;
+                }
+        }
+    }
 }
 
 @include laptop{
@@ -680,6 +750,22 @@
             }
         }
     }
+    .sns-wrapper{
+        padding: 140px 0px 110px;
+        .title-box{
+            margin-bottom: 60px;
+            .sub-title{
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            .title{
+                font-size: 42px;
+            }
+        }
+        .sns-list{
+            padding: 0px 24px 20px 64px;
+        }
+    }
 }
 
 
@@ -802,6 +888,21 @@
                 width: 188px;
                 height: 46px;
             }
+        }
+    }
+    .sns-wrapper{
+        padding: 130px 0px 100px;
+        .title-box{
+            margin-bottom: 40px;
+            .sub-title{
+                font-size: 12px;
+            }
+            .title{
+                font-size: 26px;
+            }
+        }
+        .sns-list{
+            padding: 0px 24px 20px 64px;
         }
     }
 }

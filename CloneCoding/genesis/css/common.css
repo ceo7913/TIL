@@ -966,6 +966,80 @@ body, html {
   font-family: "genesis-head-light", sans-serif;
   font-weight: 100;
 }
+.sns-wrapper .sns-list {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+.sns-wrapper .sns-list li {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.sns-wrapper .sns-list li .sns-img {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding-top: 100%;
+  overflow: hidden;
+}
+.sns-wrapper .sns-list li .sns-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 500ms;
+}
+.sns-wrapper .sns-list li .text-box {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  transition: 300ms;
+  padding: 0px 40px 30px 70px;
+  opacity: 0;
+  transition: 300ms;
+  z-index: 5;
+}
+.sns-wrapper .sns-list li .text-box > .bx {
+  font-size: 24px;
+  color: #ffffff;
+  position: absolute;
+  top: -8px;
+  left: 30px;
+}
+.sns-wrapper .sns-list li .text-box .text {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 28px;
+  max-height: 56px;
+}
+.sns-wrapper .sns-list li:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  background: rgba(0, 0, 0, 0);
+  transition: 300ms;
+}
+.sns-wrapper .sns-list li:hover:after {
+  background: rgba(0, 0, 0, 0.7);
+}
+.sns-wrapper .sns-list li:hover .sns-img img {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+.sns-wrapper .sns-list li:hover .text-box {
+  opacity: 1;
+}
 
 @media screen and (max-width: 1600px) {
   .visual-wrapper .visual-text {
@@ -1078,6 +1152,22 @@ body, html {
     width: 200px;
     height: 50px;
   }
+  .sns-wrapper {
+    padding: 140px 0px 110px;
+  }
+  .sns-wrapper .title-box {
+    margin-bottom: 60px;
+  }
+  .sns-wrapper .title-box .sub-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .sns-wrapper .title-box .title {
+    font-size: 42px;
+  }
+  .sns-wrapper .sns-list {
+    padding: 0px 24px 20px 64px;
+  }
 }
 @media screen and (max-width: 1360px) {
   .visual-wrapper {
@@ -1179,6 +1269,21 @@ body, html {
   .event-wrapper .text-box .dic-btn {
     width: 188px;
     height: 46px;
+  }
+  .sns-wrapper {
+    padding: 130px 0px 100px;
+  }
+  .sns-wrapper .title-box {
+    margin-bottom: 40px;
+  }
+  .sns-wrapper .title-box .sub-title {
+    font-size: 12px;
+  }
+  .sns-wrapper .title-box .title {
+    font-size: 26px;
+  }
+  .sns-wrapper .sns-list {
+    padding: 0px 24px 20px 64px;
   }
 }
 @media screen and (max-width: 1024px) {
