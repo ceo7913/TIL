@@ -16,5 +16,5 @@
 - [GO](./GO/README.md)
 - [JavaScript](./JavaScript/README.md)
 - [Library](./Library/README.md)
-- [SCSS](./SCSS/scss.md)
+- [SCSS](./SCSS/SCSS.md)
 - [View](./View/READEME.md)
