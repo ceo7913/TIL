@@ -444,7 +444,7 @@ body, html {
 }
 .f-container .f-sns .inner .f-sns-left .f-sns-list a {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   transition: 500ms;
 }
 .f-container .f-sns .inner .f-sns-left .f-sns-list li:hover a {
@@ -463,7 +463,7 @@ body, html {
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: transparent;
+  background: transparent;
   border: none;
   cursor: pointer;
 }
@@ -498,6 +498,129 @@ body, html {
   font-size: 20px;
   cursor: pointer;
 }
+.f-container .f-sitemap {
+  background: #151515;
+  padding: 90px 0px;
+}
+.f-container .f-sitemap .f-sitemap-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0px;
+}
+.f-container .f-sitemap .f-sitemap-list .item {
+  width: 25%;
+}
+.f-container .f-sitemap .f-sitemap-list .item strong {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.f-container .f-sitemap .f-sitemap-list .item strong a {
+  color: #ffffff;
+}
+.f-container .f-sitemap .f-sitemap-list .item .f-sitemap-btn {
+  display: none;
+  width: 100%;
+  color: #ffffff;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border: none;
+  border-top: solid 1px rgba(255, 255, 255, 0.7);
+  background: transparent;
+  align-items: center;
+  cursor: pointer;
+}
+.f-container .f-sitemap .f-sitemap-list .item .sub-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.f-container .f-sitemap .f-sitemap-list .item .sub-menu li a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  transition: 500ms;
+}
+.f-container .f-sitemap .f-sitemap-list .item .sub-menu li:hover a {
+  color: rgb(255, 255, 255);
+}
+.f-container .f-compony {
+  padding: 30px 0px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.7);
+}
+.f-container .f-compony .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.f-container .f-compony .inner .f-cp-list {
+  display: flex;
+  align-items: center;
+}
+.f-container .f-compony .inner .f-cp-list li {
+  padding: 0px 24px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.f-container .f-compony .inner .f-cp-list li:first-of-type {
+  padding-left: 0px;
+}
+.f-container .f-compony .inner .f-cp-list li:last-of-type {
+  padding-right: 0px;
+}
+.f-container .f-compony .inner .f-cp-list li:after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.f-container .f-compony .inner .f-cp-list li:last-of-type:after {
+  display: none;
+}
+.f-container .f-compony .inner .f-cp-list li a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 500ms;
+}
+.f-container .f-compony .inner .f-cp-list li:hover a {
+  color: rgb(255, 255, 255);
+}
+.f-container .f-compony .inner .f-cp-list .privacy a {
+  color: #c36f51;
+}
+.f-container .f-compony .inner .f-cp-list .privacy:hover a {
+  color: #ed794f;
+}
+.f-container .f-compony .inner .f-cp-sns {
+  display: flex;
+  align-items: center;
+  padding: 0px 14px;
+  gap: 20px;
+}
+.f-container .f-compony .inner .f-cp-sns li a {
+  font-size: 30px;
+  padding: 5px;
+  color: #ffffff;
+}
+.f-container .f-genesis {
+  padding: 30px 0px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.7);
+}
+.f-container .f-genesis .inner {
+  display: flex;
+  align-items: center;
+}
+.f-container .f-genesis .inner .f-gnensis-list {
+  display: flex;
+  gap: 48px;
+}
 
 @media screen and (max-width: 1024px) {
   .f-container .f-notice {
@@ -506,6 +629,40 @@ body, html {
   .f-container .f-notice .inner {
     gap: 60px;
     flex-direction: column;
+  }
+  .f-container .f-sitemap {
+    padding: 0px;
+  }
+  .f-container .f-sitemap .f-sitemap-list {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .f-container .f-sitemap .f-sitemap-list .item {
+    width: 100%;
+  }
+  .f-container .f-sitemap .f-sitemap-list .item strong,
+  .f-container .f-sitemap .f-sitemap-list .item .sub-menu {
+    display: none;
+  }
+  .f-container .f-sitemap .f-sitemap-list .item .f-sitemap-btn {
+    display: flex;
+    font-size: 14px;
+  }
+  .f-container .f-compony .inner {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .f-container .f-compony .inner .f-cp-list {
+    flex-wrap: wrap;
+    width: 230px;
+    gap: 24px 0px;
+    justify-content: center;
+  }
+  .f-container .f-compony .inner .f-cp-list li {
+    padding: 0px 12px;
+  }
+  .f-container .f-compony .inner .f-cp-list li a {
+    font-size: 11px;
   }
 }
 /*page*/
