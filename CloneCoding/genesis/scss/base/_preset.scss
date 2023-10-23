@@ -34,6 +34,8 @@ body,html{
     line-height: 0px;
     color: $white;
     text-align: center;
+    z-index: 9999;
+    background: $black;
     // 본인 참조해서 focus 될 때 (focus : tap 키(키보드)를 눌렀을때 발동되는 이벤트)
     &:focus{
         width: 100%;
