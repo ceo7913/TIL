@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리형 연산자</title>
+    <script>
+        /*
+            논리형 연산자 
+
+            true or false 의 값을 반환
+            && : 두 가지 조건이 모두 만족할때 true(and 조건문)
+            || : 두 가지 중 하나의 조건만 만족해도 true (or 조건문)
+        */
+
+        let a = 10 > 5 // true
+        let b = 10 < 5 // false
+        let c = 5 == '5' // true
+
+        console.log(a, b, c);
+        
+        console.log(a && b); // false => 하나만 만족 했기 때문에
+        console.log(a && c); // true => 둘다 만족
+        console.log(a || b); // true => 둘중 하나는 만족
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

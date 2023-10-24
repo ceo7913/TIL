@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증감 연산자</title>
+    <script>
+         /*
+            증감(증가 or 감소) 연산자
+
+         */
+
+         // const a = 5;
+         // ++a;
+         // console.log(a); TypeError: 상수 변수에 할당되었습니다.
+
+         let a = 5;
+         ++a; // a = a+1
+         console.log(a); // 6 
+
+         let b = a++; // (후위연산자)값을 넘기고 이후에 계산식을 진행하기 때문에 a 의 값을 그대로 출력후 계산
+         let c = ++a; // (전위연산자)계산식을 먼저 진행하고 값을 출력 = 내가 원하는 값을 그대로 출력
+         console.log(b); // 6
+         console.log(c); // 8
+
+        // 때문에 보편적으로는 전위 연산자를 더 자주 사용
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

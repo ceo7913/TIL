@@ -1,2 +1,4 @@
 ## JavaScript
-- [JS 선행](./js%EC%84%A0%ED%96%89.md)
+- [JS 선행](JS선행.md)
+- [JS데이터 타입](./JS데이터타입.md)
+- [JS 변수](./JS변수.md)
