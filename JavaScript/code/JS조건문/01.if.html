@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            점수계산
+            조건1. 국어점수와 영어점수 '둘다' 90점 이상 = a학점
+            조건2. 국어점수와 영어점수의 '합이' 170점 이상 = b학점
+            조건3. 국어점수와 영어점수 '둘 중 하나' 라도 90점이면 = c학점
+            조건4. 그외 나머지는 모두 d 학점
+
+            점수는 직접 입력하거나 혹은 prompt 로 입력해도 됨
+        */
+
+        let kor = prompt('국어점수')
+        let eng = prompt('영어점수')
+
+        kor = parseInt(kor)
+        eng = parseInt(eng)
+        // parseInt() = 함수는 문자열 인자를 파싱하여 특정 진수(수의 진법 체계에서 기준이 되는 값)의 정수를 반환
+
+        if(kor >= 90 && eng >= 90){
+            console.log('a학점');
+        }else if(kor+eng >= 170){ // 괄호가 굳이 필요없음
+            console.log('b학점');
+        }else if(kor >= 90 || eng >= 90){
+            console.log('c학점');
+        }else{
+            console.log('d학점');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -12,7 +12,7 @@
 - object(객체)
 - function(함수)
 
-#### 문자열(String)
+### 문자열(String)
        
 문자열 타입(String)
 텍스트는 보통 '' 과 "" 안에 텍스트를 넣어서 사용 (무엇을 사용해도 상관없다. 보편적으로는 ''를 더 자주 사용)
@@ -56,7 +56,7 @@ console.log(a);
 문자열의 연결은 연산자 '+' 를 사용한다.   
 
 
-#### 숫자형 타입(Number)
+### 숫자형 타입(Number)
 
 다른 프로그래밍 언어(C,Java...)와 다르게 실수, 소수, 정수를 구분하지 않고 하나의 숫자열 타입만 사용한다.
 
@@ -84,7 +84,7 @@ console.log(h, typeof(h)); // 0.25 'number'
 console.log(i, typeof(i)); // NaN 'number'
 ```
 
-#### 참, 거짓(boolean)
+### 참, 거짓(boolean)
 - 논리값 true 와 false 로만 결과값을 출력
 - 조건문에 자주 사용되는 유형
 
@@ -104,7 +104,7 @@ let isPlay = true // 상태값으로 변수명을 만들때에는 보통 앞에 
 ```
 
 
-#### 비어있는 값 (undefined, null)
+### 비어있는 값 (undefined, null)
 
 undefined (정의 되지 않음)
 1. 초기화 단계의 변수를 참조했을때 나오는 값 (값이 할당되지 않았음을 의미)
