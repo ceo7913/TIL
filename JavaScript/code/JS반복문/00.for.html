@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <script>
+        /*
+            반복문
+            초기값 먼저 설정한 후에 조건을 만족하는 동안 일정 코드를 반복해서 실행하는 메서드
+
+            for(초기값; 조건식; 증감식){조건을 만족하는 동안 실행할 코드}
+            반복문 실행 순서
+            1. 초기식(변수의 선언)
+            2. 조건문의 값이 참인지 확인 후 증감식을 실행
+            3. 증감식이 실행된 값이 {}에 코드에 대입되서 실행
+            4. 조건식이 만족하지 않을때 까지(flase 를 출력) 2~3번 반복 실행
+
+            반복문에서 중요한 점
+            종료되는 시점을 설정해주는게 가장 중요(무한루프 방지)
+            종료되는 시점이 없거나 연산할 수 없는 조건이라면 무한루프에 걸리게 된다.
+            
+        */
+
+        // for(let i = 0; i <= 5; i++){ // for문 안에서 사용되는 지역 변수 'i'
+        //     document.write(i+'<br>');
+        // } 
+
+        // for(let i = 0; i <= 10; i = i+2){
+        //     document.write(i+'<br>');
+        // }
+        // 단순한 증감식이 아닌 특정 숫자를 대입해서 증감식에 설정할 수 있다.
+
+        for(let i = 0; i <= 5; i++){ // i가 한번 반복할때 j는 5번 반복 ex) i = 1 j = 0,1,2,3,4
+            for(let j = 0; j <5; j++ ){
+                console.log('i:'+i, 'j:'+j);
+            }
+        }
+        // for문 안에 for문을 반복하는 중첩 반복문도 작성 가능하다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문으로 태그 반복하기</title>
+    <script>
+        // for(let i = 1; i <= 30; i++){
+        //     document.write(i+'<br>')
+        // }
+
+        let list = '<select>';
+            
+            for(let i = 1; i <= 30; i++){
+                list += '<option>'+ i + '</option>'
+            }
+            list += '</select>' // 닫는 태그까지 작성해주는것이 좋다.
+            document.write(list);
+            // 출력 요소는 반복문 밖에서 작성 => for문이랑 같이 반복해서 출력되면서 누적
+            // 보통 결과값은 for문 밖에서 출력하는 것이 좋다.
+    </script>
+</head>
+<body>
+</body>
+</html>
