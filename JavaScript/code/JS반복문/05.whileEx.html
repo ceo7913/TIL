@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            1~10 까지의 랜덤한 숫자를 하나 출력
+            랜덤한 숫자를 맞출때까지 prompt 창이 계속 출력
+            입력한 값이 정답보다 낮으면 down, 정답보다 높으면 up 을 출력(console로 출력)
+            숫자를 맞추면 랜덤숫자의 정답과 실패 횟수를 출력
+        */
+
+        let randomNum = Math.floor((Math.random()*10)+1) // +1 은 최솟값을 지정한거라고 보면 된다. *10 은 최대값
+        // Math.random = 0~1 까지의 실수만 출력 즉 1은 안나옴
+        console.log(randomNum);
+
+        let num; // 사용자가 입력할 정답을 담아줄 변수
+        let count = 0; // 카운트를 담아줄 변수
+
+        while(num !== randomNum){ // num 과 randomNum 이 같을때 까지 반복해야 하기 때문에 반복 조건은 같지 않아야 한다.
+            num = parseInt(prompt('1~10 까지의 랜덤한 숫자를 입력하세요')); 
+            // parseInt 를 사용한 이유는prompt 로 받아오는 값을 number 타입으로 변환해줘야 '!==' 조건을 성립할 수 있다.
+            count++
+
+            if(num < randomNum){
+                console.log('up');
+            }else if(num > randomNum){
+                console.log('down');
+            }
+        }
+        document.write('맞춤, 정답은' + randomNum + '이며' + count +'회 시도함')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
