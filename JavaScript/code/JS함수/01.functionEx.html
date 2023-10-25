@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            구구단을 출력할건데 사용자가 원하는 단수를 받아서 출력하기
+            (prompt) 로 받으면 됨
+
+        */
+
+        function gugudan(count){
+            for(let i = 1; i < 10; i++){
+                document.write(count + 'X' + i + '=' + (count*i) + '<br>');
+            }           
+        }
+
+        gugudan(parseInt(prompt('단수를 입력하세요.')));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

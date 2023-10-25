@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            함수의 선언 방식
+            1. 함수 선언식 / function name(){} / 가장 기본적인 방식
+            2. 함수 표현식 / const name = function(){} / 선언은 let 보다 const 로 함
+            3. 생성자 함수 / const name = new function(){} 
+            4. 화살표 함수 / function name = () => {} / es6에 새로 추가된  문법
+            5. 즉시 실행 함수 / (function(){})() / 즉시 실행 조건
+        */
+
+        // Case 1
+        function sum(a,b){
+            return a+b;
+        } 
+        console.log(sum(1,2));
+        
+        // Case 2
+        const sum02 = function(a,b){
+            return a*b;
+        }
+        console.log(sum02(5,3));
+        /*
+            함수 표현식은 변수명으로만 호출해야 하며 함수에 이름을 넣는 경우 상관은 없지만
+            아무런 기능을 하지않고 에러를 호출한다.
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
