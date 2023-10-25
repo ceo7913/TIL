@@ -14,13 +14,13 @@
             5. 즉시 실행 함수 / (function(){})() / 즉시 실행 조건
         */
 
-        // Case 1
+        // 함수 선언식
         function sum(a,b){
             return a+b;
         } 
         console.log(sum(1,2));
         
-        // Case 2
+        // 함수 표현식
         const sum02 = function(a,b){
             return a*b;
         }
@@ -29,6 +29,32 @@
             함수 표현식은 변수명으로만 호출해야 하며 함수에 이름을 넣는 경우 상관은 없지만
             아무런 기능을 하지않고 에러를 호출한다.
         */
+
+        // 생성자 함수
+        const User = new function(){
+            this.name = 'ljw';
+            this.job = '학생'
+            // 생성자 함수에서 this 는 생성자를 뜻한다.
+        }
+        //  생성자 함수는 일반 함수와 구별하기 위해서 생성자 함수는 대문자로 시작한다.
+        console.log(User.job);
+        //  생성자 함수는 내용을 object 로 관리한다.
+
+        // 즉시 실행 함수
+        (function items(){
+            let a = 2;
+            let b = 3;
+            return console.log(a*b);
+        }()); // 기명 즉시 실행 함수
+
+        (function(){
+            let a = 2;
+            let b = 3;
+            return console.log(a*b);
+        }()); // 익명 즉시 실행 함수
+
+       
+
     </script>
 </head>
 <body>
