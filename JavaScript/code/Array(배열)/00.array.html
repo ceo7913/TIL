@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            배열
+            여러개의 값을 나열해서 하나의 변수에 담아서 호출하는 객체
+            배열에 들어간 객체들은 자동으로 순번을 배정받게 되며, 순번은 항상 0번부터 출력
+        */
+
+        let rv01 = '웬디';
+        let rv02 = '조이';
+        let rv03 = '슬기';
+        let rv04 = '아이린';
+        let rv05 = '예린';
+
+        // 배열의 형태
+        let rv = ['웬디', '조이', '슬기', '아이린', '예린'];
+        // 각각의 독립적인 요소로 보기 때문에 순번을 배정 받는다.
+
+        // 이렇게 되면 하나하나 구분된 요소가 아닌 하나의 문자로 인식 때문에 순번을 가질 수 없다.
+        let rvList = '웬디, 조이, 슬기, 아이린, 예리'
+
+        // document.write('레드벨벳의 멤버는' + rv01 + rv02 + rv03 + rv04 + '로 이루어짐')
+        document.write('레드벨벳의 멤버는 ' + rv + ' 입니다.<br><br>');
+        document.write('레드벨벳의 멤버수는 ' + rv.length + '명 입니다.<br><br>');
+        document.write(rv[0] + '<br><br>');
+
+        for(let i = 0; i < rv.length; i++){
+            document.write(rv[i]+'<br>');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

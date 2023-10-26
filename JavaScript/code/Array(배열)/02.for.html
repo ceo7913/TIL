@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 반복문</title>
+    <script>
+        /*
+            for in, for of 는 
+            객체의 배열에서 반복할때 사용하는 메서드
+            for문 보다는 늦게 만들어진 문법
+        */
+
+        let car = ['현대', '기아', '쌍용', '벤츠', '볼보', '아우디'];
+        // for 문으로 배열 출력하기
+        for(let i = 0; i < car.length; i++){
+            document.write(car[i]+'<br>')
+        }
+
+        // for in 으로 출력
+        // for(let 변수명 in 배열명){실행코드}
+
+        for(let i in car){
+            document.write(car[i]+'<br>')
+        }
+        // 위와 결과값은 같다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
