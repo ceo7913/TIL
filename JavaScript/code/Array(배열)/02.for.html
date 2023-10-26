@@ -13,17 +13,35 @@
 
         let car = ['현대', '기아', '쌍용', '벤츠', '볼보', '아우디'];
         // for 문으로 배열 출력하기
-        for(let i = 0; i < car.length; i++){
-            document.write(car[i]+'<br>')
-        }
+        // for(let i = 0; i < car.length; i++){
+        //     document.write(car[i]+'<br>')
+        // }
 
-        // for in 으로 출력
-        // for(let 변수명 in 배열명){실행코드}
+        // // for in 으로 출력
+        // // for(let 변수명 in 배열명){실행코드}
 
         for(let i in car){
             document.write(car[i]+'<br>')
         }
         // 위와 결과값은 같다.
+
+        // for of 로 배열 호출하기
+        // for(let 변수명 of 배열명){실행코드}
+        for(let i of car){
+            document.write(i + '<br>')
+            // 만약 for in 에서 이런 실행 코드를 실행 시키면 index의 순번만 나열됨 (0,1,2...)
+            // fot of 에서 for in 에서 사용했던 car[i] 라는 실행코드가 들어간다면 undefined 가 출력됨
+        }
+        /*
+            for in 과 for of 는 무언가를 반복하는가는 같다.
+            단, 무엇을 반복하는지가 '다르다'
+
+            for in 은 반복 가능한 속성을 순서대로 반복 (index 에 접근해서 index 를 반복)
+            for of 는 반복하도록 정의한 값을 반복 (value 를 반복)
+
+            for in 은 객체를 반복할 때 자주 사용
+            for of 는 배열을 반복할 때 자주 사용
+        */
     </script>
 </head>
 <body>
