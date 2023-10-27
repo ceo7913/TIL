@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            로또번호 생성
+            1. 1~45 까지 랜덤한 숫자 출력
+            2. 6개의 숫자를 출력해야 함
+            3. 6개의 숫자는 중복이 없어야함
+        */
+
+        let lottoNum = [] // 로또 번호값이 들어올 배열의 선언
+        let maxLotto = 6;
+
+        for(let i = 0; i < maxLotto; i++){
+            let num = Math.floor(Math.random()*45)+1;
+
+            if(lottoNum.indexOf(num) === -1){
+                lottoNum.push(num)
+            }else{
+                // 중복되는 숫자가 lotooNum 에 있다면 지워야 한다 또한 배열이 채워지지 않았기 때문에
+                // 다시 돌아가는 조건이 되기도 한다.
+                i--
+            }
+        }
+        /*
+            indexOf() 문자열 중에서 특정한 위치의 문자열을 찾고 검색된 문자열의 '위치를 반환' 
+            보통 인덱스 번호를 찾는 메서드는 값이 없을 경우 -1을 반환 하기 때문에 
+            **중복되는 값을 찾을때 많이 사용되는 공식**
+        */
+        lottoNum.sort(function(a,b){
+            return a - b
+        })
+
+        document.write('이번주 로또 번호는' + lottoNum + '입니다.')
+        let num1 = [1,2,3,4,5];
+        console.log(num1.indexOf(10));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
