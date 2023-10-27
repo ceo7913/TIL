@@ -10,8 +10,20 @@
             같은 라인에 있는 요소를 형제라고 하며,
             하위는 자식
             상위는 부모
-            
         */
+
+        window.onload = function(){
+            let my = document.querySelector('.child3');
+
+            let prev = my.previousElementSibling // 요소만 탐색
+            let prev2 = my.previousSibling; // 모든 노드를 탐색하므로 공백이나 텍스트가 나올 수 있다.
+
+            console.log(prev); // child2
+            console.log(prev2); // #text
+
+            let next = my.nextElementSibling;
+            console.log(next); // child4 => 즉 my 의 다음 형제 요소
+        }
     </script>
 </head>
 <body>
