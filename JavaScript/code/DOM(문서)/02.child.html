@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자식요소의 참조</title>
+    <script>
+        window.onload = function(){
+            /*
+                부모요소 안에 자식요소로 객체를 찾거나, 삭제하거나, 수정하거나 하는 선택자 메서드
+
+                appendChild() = 자식요소로 추가
+                removeChild() = 자식요소를 삭제
+                replaceChild() = 자식요소를 수정
+            */
+
+            let parent = document.querySelector('.parent');
+
+            // 객체 생성
+            let child01 = document.createElement('div');
+            // 부모요소인 parent 안에 추가 (참조)
+            parent.appendChild(child01)
+            // child01 에 class 추가
+            child01.className = 'child'
+            // child01 에 내용 추가
+            child01.innerHTML = '5'
+
+            let child02 = '<div class="child">6</div>'
+            // parent.appendChild(child02) // 타입에러 node 타입이 아니라 텍스트 타입이기 때문에 추가 불가
+            // parent.innerHTML = child02 // innerHTML 은 추가의 개념보다는 교체의 개념이라 이렇게 추가하면 기존에 있던 내용들이 삭제되고 새로운 내용만 추가됨
+            parent.innerHTML += child02 // (parent.innerHTML = parent.innerHTML + child02) 이러면 온전히 추가할 수 있다.
+            // 즉 기존의 내용에 추가하고 싶은 경우 연산자를 넣어서 추가한다.
+            
+            document.body.removeChild(parent) // 자식요소를 삭제하므로 참조자는 반드시 부모 요소가 되어야 한다.
+
+            let a = parent.childNodes;
+            console.log(a); // 11
+            // childNodes 는 텍스트와 노드(태그) 모두 포함해서 출력
+            // (노드 사이에 있는 공백, 텍스트도 포함시키기 때문에 갯수가 달라질 수 있다.)
+            
+            let b = parent.childElementCount;
+            console.log(b); // 6 
+            // childElementCount 는 
+            // **공백이나 텍스트와 같은 비노드를 제외**한 순수 부모의 직계 자식요소 수만 반환
+            // 그래서 가장 정확한 값을 출력해준다.
+
+            let c = parent.firstChild;
+            console.log(c);
+            // 첫번째 자식요소 출력 그런데
+            // firstChild 는 공백이나 텍스트가 나올 수 있음
+
+            let d = parent.firstElementChild;
+            console.log(d);
+            // firstChild 와 같이 첫번째 자식요소를 출력하지만
+            // **공백이나 텍스트같은 비노드는 읽지 않는다.**
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+    </div>
+</body>
+</html>
