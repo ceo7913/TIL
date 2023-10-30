@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            마우스 객체 이벤트 종류
+            clientX
+            clientY
+            마우스 이벤트가 발생했을때 '현재 창(브라우저)'을 기준으로 x축과 y축의 좌표를 반환
+            문서가 아닌 화면이 기준이기 때문에 문서의 길이에 영향을 받지 않는다.
+        */
+       window.onload = function(){
+        const text01 = document.querySelector('.text01')
+        const text02 = document.querySelector('.text02')
+        const text03 = document.querySelector('.text03')
+        const text04 = document.querySelector('.text04')
+        const box = document.querySelector('.box')
+
+        // 문서내에 위치값을 나타내려고 하기 때문에 document 를 잡는다.
+        document.addEventListener('mousemove', function(e){
+            /*
+                마우스 관련 이벤트는 매개변수 event(e)로 요소들을 받아야 하기 때문에 매개변수가 항상
+                존재해야 한다. 보통 e 나 event 로 사용한다.
+            */
+            console.log(e);
+            let x1 = e.clientX; // 현재 화면을 기준으로 잡는다.
+            let y1 = e.clientY;
+
+            /*
+                pageX, pageY
+                마우스 이벤트가 발생 했을때 '문서를 기준으로' x축과 y축의 좌표를 반환
+                문서가 기준이기 때문에 문서의 길이에 영향을 받는다.
+            */
+            let x2 = e.pageX // document 기준으로 잡기 때문에 스크롤에 영향을 받음
+            let y2 = e.pageY
+
+            /*
+                screenX, screenY
+                마우스 이벤트가 발생했을때 '모니터(디바이스) 화면 기준'으로 x축과 y 축 좌표 반환
+                듀얼모니터의 경우 듀얼 모니터 전체값에서 절대값을 반환
+
+                디바이스의 크기가 기준이기 때문에 디바이스의 크기 종류가 다양해진 현재에는 자주 사용하지는 못함
+            */
+            let x3 = e.screenX;
+            let y3 = e.screenY;
+
+            text01.innerHTML = 'x축:' + x1 + ',' + 'y축:' + y1
+            text02.innerHTML = 'x축:' + x2 + ',' + 'y축:' + y2
+            text03.innerHTML = 'x축:' + x3 + ',' + 'y축:' + y3
+        })
+
+        box.addEventListener('click', function(e){
+            /*
+                offsetX, offsetY
+                이벤트 대상이 기준이 되며, 이벤트 대상안에서 클릭한 위치를 반환
+                client, page 는 화면의 왼쪽 상단 끝이 0,0
+                offset 은 클릭한 객체의 왼쪽 상단 끝이 0,0
+            */
+            let x4 = e.offsetX;
+            let y4 = e.offsetY;
+
+            text04.innerHTML = 'x축:' + x4 + ',' + 'y축:' + y4;
+        })
+
+       }
+    </script>
+    <style>
+        body{
+            height: 200vh;
+        }
+        .text01,
+        .text02,
+        .text03,
+        .text04{
+            position: fixed;
+            left: 20px;
+        }
+        .text01{
+            top: 10px;
+        }
+        .text02{
+            top: 50px;
+        }
+        .text03{
+            top: 100px;
+        }
+        .text04{
+            top: 150px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            top: 500px;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <p class="text01"></p>
+    <p class="text02"></p>
+    <p class="text03"></p>
+    <p class="text04"></p>
+    <div class="box">box</div>
+</body>
+</html>

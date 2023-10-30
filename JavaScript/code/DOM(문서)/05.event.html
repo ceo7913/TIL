@@ -52,6 +52,33 @@
 
             let btn = document.querySelector('.btn');
 
+
+            // text.onclick = function(){
+            //     console.log('11');
+            // }
+            // text.onclick = function(){
+            //     console.log('22');
+            // }
+            // onclick 이벤트를 사용할 때는 이벤트를 중첩시킬 수 없다.
+            
+            text.addEventListener('click',function(){
+                console.log('11');
+            })
+            text.addEventListener('click',function(){
+                console.log('11');
+            })
+            // addEventListener 를 사용할 때에는 두가지의 이벤트를 중첩 시킨다.
+            
+            /*
+                이벤트를 직접 연결하는 .on이벤트명 방식과 addEventListener 로 이벤트를
+                연결할때 차이점은 같은 이벤트가 적용될 때 on이벤트는 중첩시키지 않지만
+                addEventListener 는 같은 이벤트여도 중첩으로 실행할 수 있다.
+
+                보통 바닐라JS 에서는 addEventListener 방식을 조금 더 선호 한다.
+                React 에서는 on이벤트명을 사용
+            */
+
+
             // text.addEventListener('mouseover', function(){  // 이벤트가 하나여도 addEventListener 를 사용할 수 있다.
             //     text.style.color = 'coral';
             //     text.style.backgroundColor = 'pink';
@@ -75,6 +102,7 @@
             function textColor(){  // 재사용 용의
                 text02.style.color = 'coral'
             }
+
        }
     </script>
 </head>
