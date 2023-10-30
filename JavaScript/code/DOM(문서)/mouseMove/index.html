@@ -45,22 +45,30 @@
 
         window.onload = function(){
             const canvas = document.querySelector('.canvas');
-            const divs = document.querySelector('div');
 
-            let imgSize = 50; // 출력될 이미지 갯수
+            // querySelector 는 복수로 객체를 선택할 수 없다.
+            // 때문에 querySelectorAll 을 사용한다.
+
+            let imgSize = 30; // 출력될 이미지 갯수
             let item = '' // 이미지가 들어갈 영역
 
-            for(let i=1; i<=imgSize; i++){ 
-                item += '<div style ="background-image: url(./videoImg/img'+i+'.png )"></div>'
+            for(let i = 1; i <= imgSize; i++){ 
+                item += '<div style ="background-image: url(./videoimg/img'+i+'.png )"></div>'
             }
             canvas.innerHTML = item;
+            const divs = document.querySelectorAll('div'); 
             // console.log(item.length);
 
             window.addEventListener('mousemove', function(e){
                 let x = e.pageX; // 현재 마우스의 위치
                 let winX = window.innerWidth; // 윈도의 크기
+                let percent = parseInt((x/winX)*imgSize)+1
+                // imgSize 기반 백분률 / +1 은 최솟값
 
-                console.log(x, winX);
+                for(let i = 0; i < imgSize; i++){
+                    divs[i].style.display = 'none'
+                }
+                divs[percent].style.display = 'block'
             })
         }
     </script>
