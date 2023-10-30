@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cd플레이어</title>
+    <link rel="stylesheet" href="common.css">
+    <script>
+        /*
+            1. 선택자 잡기
+            2. 어떤 이벤트를 사용할지
+            3. 이벤트 객체와 실행되는 객체를 어떻게 연결할 것인지?
+            4. 실행되는 객체에게 class 를 어떻게 전달할 것인지?
+        */
+       window.onload = function(){
+            const item = document.querySelectorAll('.item');
+
+            const next = document.querySelector('.next');
+            const prev = document.querySelector('.prev');
+
+            let count = 0; // 처음 시작할 index 번호
+            let itemNum = item.length; // 슬라이드는 유동적으로 값이 변할 수 있기 때문에 length 로 받아오는 것이 유용하다.
+            console.log(itemNum);
+
+
+            next.addEventListener('click', function(){
+                if(count < itemNum-1){
+                    // length 는 갯수로 셈을 하기 때문에 1 부터 시작 index 는 0 부터 시작하기 때문에 1의 갭이 생긴다는 것을 유의해야 한다. 
+                    count++ 
+                    console.log(count);
+                }else{
+                    count = 0;
+                    console.log(count);
+                }
+
+                for(let i = 0; i < itemNum; i++){
+                    if(count == i){
+                        item[i].classList.add('active') // item 안에 class='active' 를 add 하는 구문
+                    }else{
+                        item[i].classList.remove('active') // item 안에 class='active' 를 remove 하는 구문
+                    }
+                }
+            })
+       }
+    </script>
+
+    
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="item active">
+            <div class="disk">
+                <div class="disk-inner"></div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=nM0xDI5R50E" target="_blank" class="cover">
+                <img src="image/iu_0.jpg" alt="커버이미지">
+            </a>
+        </div>
+
+        <div class="item">
+            <div class="disk">
+                <div class="disk-inner"></div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=nM0xDI5R50E" target="_blank" class="cover">
+                <img src="image/iu_1.jpg" alt="커버이미지">
+            </a>
+        </div>
+
+        <div class="item">
+            <div class="disk">
+                <div class="disk-inner"></div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=nM0xDI5R50E" target="_blank" class="cover">
+                <img src="image/iu_2.jpg" alt="커버이미지">
+            </a>
+        </div>
+
+        <div class="item">
+            <div class="disk">
+                <div class="disk-inner"></div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=nM0xDI5R50E" target="_blank" class="cover">
+                <img src="image/iu_3.jpg" alt="커버이미지">
+            </a>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button class="prev">PREV</button>
+        <ul class="dot-list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button class="next">NEXT</button>
+    </div>
+    
+</body>
+</html>

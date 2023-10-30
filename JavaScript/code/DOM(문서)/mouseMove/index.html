@@ -45,18 +45,21 @@
 
         window.onload = function(){
             const canvas = document.querySelector('.canvas');
+            // const divs = document.querySelectorAll('div'); => 이 위치에서 선언을 해버리면 생성전에 div 를 참조 하기때문에
+            // 생성 후 참조하기 위해 생성 구문 아래에 선언한다.
+            
 
-            // querySelector 는 복수로 객체를 선택할 수 없다.
-            // 때문에 querySelectorAll 을 사용한다.
-
-            let imgSize = 30; // 출력될 이미지 갯수
+            let imgSize = 29; // 출력될 이미지 갯수
             let item = '' // 이미지가 들어갈 영역
 
-            for(let i = 1; i <= imgSize; i++){ 
-                item += '<div style ="background-image: url(./videoimg/img'+i+'.png )"></div>'
+            for(let i = 0; i <= imgSize; i++){ 
+                item += '<div style ="background-image: url(./videoimg/img'+(i+1)+'.png )"></div>'
             }
+            console.log(item);
             canvas.innerHTML = item;
-            const divs = document.querySelectorAll('div'); 
+            const divs = document.querySelectorAll('div');
+            // querySelector 는 복수로 객체를 선택할 수 없다.
+            // 때문에 querySelectorAll 을 사용한다. 
             // console.log(item.length);
 
             window.addEventListener('mousemove', function(e){
@@ -65,7 +68,7 @@
                 let percent = parseInt((x/winX)*imgSize)+1
                 // imgSize 기반 백분률 / +1 은 최솟값
 
-                for(let i = 0; i < imgSize; i++){
+                for(let i = 0; i <= imgSize; i++){
                     divs[i].style.display = 'none'
                 }
                 divs[percent].style.display = 'block'
