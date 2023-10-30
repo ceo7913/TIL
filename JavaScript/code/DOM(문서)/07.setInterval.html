@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            height: 100vh;
+            background: #dddddd;
+        }
+        .container{
+            width: 500px;
+            height: #ffffff;
+            padding: 24px;
+            border: solid 2px black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+    <script>
+        /*
+            setInterval(실행함수, 시간(ms)) // 기본으로 ms 단위이기 때문에 ms 단위는 생략하여도 된다.
+            = 지정된 시간마다 () 안에 코드들을 반복하는 함수
+
+            clearInterval(함수명) : 실행되고 있는 함수를 초기화 함
+
+            setTimeout(실행함수, 시간(ms 단위 생략)) = 지정된 시간이 경과 하면 함수를 실행 (1회성)
+            clearTimeout(함수명) 실행되는 함수를 초기화
+            
+                    function text (){
+                        console.log('안녕하세요');
+                    }
+                    
+                    setTimeout(text, 2000); // 2초뒤 함수 1번 실행
+                    setInterval(text,1000) // 1초마다 함수 반복 실행
+            
+        */
+        window.onload = function(){
+            const item = document.querySelector('input'); // 값을 받아올 input
+            const btn = document.querySelector('.btn'); // 계산을 시작할 버튼
+            const result = document.querySelector('.result');
+
+            let won = 0; // 현재 연봉이 얼마인지 모름 그래서 기본값 0 으로 초기화를 시켜줌 즉 연봉을 받아올 변수
+            let secWon = 0 // 1초에 받는 연봉을 받아올 변수
+            let timer; // setInterval 을 담아줄 변수
+
+            btn.addEventListener('click', function(){
+                calc()
+            });
+            function calc(){
+                clearInterval(timer)
+                /*
+                    setInterval, setTimeout 은 이벤트가 중첩되는 성격을 가지고 있기 때문에 항상
+                    이벤트를 시작함과 동시에 리셋시켜주는 clear 가 있어야 한다.
+                */
+                won = parseInt(item.value)*10000 // input 의 값은 모두 value 에 저장되므로 값을 받아올때에는 value 를 받아온다. / 만원단위로 받아오기 때문에 *10000 해준다.
+
+                let time = 0 // 최초 시작될 시간
+                secWon = won / 365 / 24 / 60 / 60
+                      // 금액 / 일 / 시 / 분 / 초
+ 
+                console.log(secWon);
+                timer = setInterval(function(){
+                    time ++
+                    // innerHTML 는 기존에 있던 객체를 지우고 넣는 방식
+                    result.innerHTML = '당신은 '+time+'초에 '+parseInt(time *secWon)+'원을 벌고 있습니다.'
+                },1000)
+            };
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>연봉을 입력하세요(만원)</h1>
+        <input type="text" value="3000">
+        <button class="btn">계산하기!</button>
+
+        <p class="result">당신은 1초에 얼마를 벌까요?</p>
+    </div>
+</body>
+</html>
