@@ -23,6 +23,7 @@
             let itemNum = item.length; // 슬라이드는 유동적으로 값이 변할 수 있기 때문에 length 로 받아오는 것이 유용하다.
             console.log(itemNum);
 
+            const dot = document.querySelectorAll('.dot-list li') // => dot-list 안에 li 들 호출 All 은 배열로 저장
 
             next.addEventListener('click', function(){
                 if(count < itemNum-1){
@@ -33,16 +34,53 @@
                     count = 0;
                     console.log(count);
                 }
+                itemCount()
 
-                for(let i = 0; i < itemNum; i++){
-                    if(count == i){
-                        item[i].classList.add('active') // item 안에 class='active' 를 add 하는 구문
-                    }else{
-                        item[i].classList.remove('active') // item 안에 class='active' 를 remove 하는 구문
-                    }
-                }
             })
+            
+            prev.addEventListener('click', function(){
+                if(count > 0){
+                    count --
+                }else{
+                    count = itemNum
+                }
+                itemCount()
+            })
+            /*
+                dot[0].addEventListener('click', function(){
+                    console.log('11');
+                })
+
+                querySelectorAll 은 배열로 받아오기 때문에 이렇게 받아오려면 
+                dot[0] 부터 다 만들어줘야 한다. 그렇기 때문에
+                이런경우는 for문을 사용한다.    
+            */
+
+            for(let i = 0; i < itemNum; i++){
+                dot[i].addEventListener('click',function(){
+                    count = i
+                    itemCount()
+                })
+            }
+
+            function itemCount(){
+                    for(let i = 0; i < itemNum; i++){
+                     if(count == i){
+                         item[i].classList.add('active') // item 안에 class='active' 를 add 하는 구문
+                         dot[i].classList.add('active') // dot(li) 에 class='active' 를 add 하는 구문
+                     }else{
+                         item[i].classList.remove('active') // item 안에 class='active' 를 remove 하는 구문
+                         dot[i].classList.remove('active') // dot(li) 에 class='active' 를 remove 하는 구문
+                     }
+                 }
+            }
+            /*
+                count == i 조건을 onload 후 바로 성립하기 때문에 첫번째 요소에 active 를 주지 않아도 
+                첫번째 요소에 자동으로 active 가 추가 된다.            
+            */
+            itemCount()
        }
+
     </script>
 
     
@@ -51,7 +89,7 @@
 <body>
 
     <div class="container">
-        <div class="item active">
+        <div class="item">
             <div class="disk">
                 <div class="disk-inner"></div>
             </div>
