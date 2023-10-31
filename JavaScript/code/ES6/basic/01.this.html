@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+    <script>
+        /*
+            기존 함수에서의 this는 함수를 호출하는 객체
+            화살표 함수에서는 항상 화살표 함수를 정의한 객체를 this 로 본다.
+        */
+
+        let a = this; // 전역변수의 this => 이런경우는 참조하는 함수가 없기 때문에 window 를 가르킨다.
+        // document 가 아닌이유는 문서상에서 호출하지 않기 때문
+        console.log(a); // Window
+
+        function test01(){
+            console.log(this);
+        }
+        test01() // Window
+
+        test02 = () =>{
+            console.log(this);
+        }
+        test02() // Window
+
+        window.onload = function(){
+            const btn1 = document.querySelector('.btn1');
+            const btn2 = document.querySelector('.btn2');
+
+            btn1.addEventListener('click',function(){
+                console.log(this); 
+                // <button class="btn1">버튼1</button>
+            })
+            btn2.addEventListener('click',()=>{
+                console.log(this); 
+                // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+            })
+            /*
+                일반 함수에서 this 는 자신을 호출한 객체를 this 로 인식하지만
+                화살표 함수에서는 **항상** window 를 참조한다.
+            */
+
+        }
+    </script>
+</head>
+<body>
+    <button class="btn1">버튼1</button>
+    <button class="btn2">버튼2</button>
+</body>
+</html>

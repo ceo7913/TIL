@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+    <script>
+        // 기본적인 함수 표현식
+        function test01(){
+            console.log('test01');
+        }
+        test01()
+
+        // 변수에 함수를 담아서 표현 => 변수 선언식
+        let test02 = function(){
+            console.log('test02');
+        }
+        test02()
+
+        /*
+            Es6 에서 새로 추가된 화살표 함수
+            앞에 let 이나 const 같은 scope 를 붙히는 경우도 있는데 react 에서 자주 사용하고
+            호출 방식은 같기 때문에 어떤 방식이는 문제는 없다.
+            다만 test03 이 함수로 호출되냐 let,const 를 가지고 변수로 호출되냐의 차이는 있다.  
+        */
+
+        test03 = () =>{ // '=>' 가 function 의 의미를 같는다.
+            console.log('test03');
+        }
+        test03();
+
+        // 표현식의 내용이 하나인 경우 {} 를 생략해도 된다.
+        test04 = () => console.log('test04');
+        test04();
+
+        // 매개변수가 들어가는 경우
+        test05 = (x) => console.log(x*x);
+        test05(10); 
+
+        test06 = x => console.log(x*x);
+        test06(3);
+        // 매개변수의 값이 하나일때에는 () 가 생략되어도 된다.
+
+        /*
+            화살표 함수와 일반함수의 차이점
+            
+            화살표 함수 = 간단한 기능이나 일관된 값을 유지하는 로직
+            로직이 복잡해지면 this 를 사용해야 되는경우가 있는데 이럴때는 단점
+
+            일반함수 = 복잡한 로직, 생성자 및 객체를 사용해야 할 때 
+            일반함수에서의 this 는 인스턴스를 의미
+
+            사용범위가 나눠지는 이유는 this 의 범위가 다르기 때문이다.
+
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
