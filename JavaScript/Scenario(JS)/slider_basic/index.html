@@ -7,7 +7,23 @@
     <title>Slider</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="./script.js"></script>
-
+    <script>
+        window.onload = () =>{
+            new Slider('#slider',{
+                btns : '.navi',
+                panel : '.panel',
+                speed : 500,
+                callback : (index)=>{ // this.opt.callback 으로 받아주면 괄호 안에는 index 번호가 들어가기 때문에
+                    // slider 가 진행될때 마다. (activeIndex+1) 이런식으로 +1 을 해준다면 style 로 받아서 
+                    // 하나씩 진행하는 형식을 만들 수 있다.
+                    let circle = document.querySelector('#circle');
+                    circle.className = '';
+                    circle.classList.add(`rot${index}`);
+                }, 
+                
+            })
+        }
+    </script>
 </head>
 <body>
     <main>
