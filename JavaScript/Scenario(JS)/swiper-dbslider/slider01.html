@@ -24,7 +24,7 @@
         }
         /*button custom*/
         .btns{
-            width: 150px;
+            width: 120px;
             height: 60px;
             color: white;
             font-weight: bold;
@@ -53,13 +53,21 @@
             z-index: -1;
         }
         .btns:hover::after{
-            width: 100%;
+            width: 120%;
         }
+        
         .btns:hover::before{
             background: cyan;
         }
         .btns:hover{
             color: #000;
+        }
+        
+        .swiper-button-prev{
+            justify-content: end;
+        }
+        .swiper-button-next{
+            justify-content: start;
         }
 
         .swiper-button-prev,
@@ -74,19 +82,131 @@
         {
             right: 0;
         }
+
+        /* dot */ 
+        .swiper-pagination{
+            bottom: 200px!important;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+        }
+        .swiper-pagination-bullet{
+            background: #fff;
+            width: 3px;
+            height: 20px;
+            transition: 400ms;
+            border-radius: 0;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active{
+            background: cyan;
+            height: 40px;
+        }
+        /* wall */
+        .wall{
+            position:absolute;
+            top: 0px;
+            width: 1px;
+            height: 100%;
+            background: #fff;
+        }
+        .wall.one{
+            left: 0px;
+        }
+        .wall.two{
+            left: 25%;
+        }
+        .wall.three{
+            left: 50%;
+        }
+        .wall.four{
+            left: 75%;
+        }
+
+        .swiper-slide-active .wall{
+            animation-name: wall_ani;
+        }
+        .swiper-slide-active .wall.one{
+            animation-duration: 500ms;
+        }
+        .swiper-slide-active .wall.two{
+            animation-duration: 750ms;
+        }
+        .swiper-slide-active .wall.three{
+            animation-duration: 1000ms;
+        }
+        .swiper-slide-active .wall.four{
+            animation-duration: 1250ms;
+        }
+        @keyframes wall_ani{
+            0%{
+                width: 100%;
+                background: #000;
+            }
+            100%{
+                width: 1px;
+                background: #000;
+            }
+        }
+        /* img show */
+        .swiper-slide-active img{
+            animation: img_ani 5000ms;
+        }
+        @keyframes img_ani{
+            0%{
+                transform: scale(1.05);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        /* progress bar */
+        .swiper-slide-active::after{
+            content: "";
+            width: 100%;
+            height: 20px;
+            background: cyan;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            animation: progress_ani 5000ms linear;
+        }
+        @keyframes progress_ani{
+            0%{
+                width: 0;
+            }
+            100%{
+                width: 100%;
+            }
+        }
     </style>
     <script>
         window.onload = () =>{
             const slider = new Swiper('.swiper-container',{
                 allowTuchMove : false, // swipe 기능 제거
-                speed : 1000,
+                speed : 5000,
                 loop : true,
+                effect :'creative',
+                creativeEffect:{
+                    prev:{
+                        opacity:0
+                    },
+                    next : {
+                        opacity:1
+                    },
+                },
                 autoplay :{
-                    delay : 3000,
+                    delay : 0,
                 },
                 navigation: {
                     prevEl : '.swiper-button-prev',
                     nextEl : '.swiper-button-next'
+                },
+                pagination : {
+                    el: '.swiper-pagination',
+                    clickable : true,
                 },
             })
         }
@@ -97,16 +217,29 @@
         <div class="swiper-wrapper"><!--swiper-container 다음에 와야 하는 클래스명 (ul 의 개념)-->
             <div class="swiper-slide item01"><!--swiper가 작동하는 가장 작은 단위의 클래스명 (li의 개념)-->
                 <img src="./images/visual1.png" alt="비쥬얼 이미지">
+                <div class="wall one"></div><!--swiper 커튼효과-->
+                <div class="wall two"></div>
+                <div class="wall three"></div>
+                <div class="wall four"></div>
             </div>
             <div class="swiper-slide item02">
                 <img src="./images/visual2.png" alt="비쥬얼 이미지">
+                <div class="wall one"></div>
+                <div class="wall two"></div>
+                <div class="wall three"></div>
+                <div class="wall four"></div>
             </div>
             <div class="swiper-slide item03">
                 <img src="./images/visual3.png" alt="비쥬얼 이미지">
+                <div class="wall one"></div>
+                <div class="wall two"></div>
+                <div class="wall three"></div>
+                <div class="wall four"></div>
             </div>
         </div><!--wrapper-->
         <div class="swiper-button-prev btns">PREV</div>
         <div class="swiper-button-next btns">NEXT</div>
+        <div class="swiper-pagination"></div>
     </div>
 </body>
 </html>
