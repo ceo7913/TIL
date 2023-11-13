@@ -1,0 +1,39 @@
+## JavaScript 시간, 날짜와 관련된 메서드
+시간과 관련된 메서드들의 모임이다. 
+기본적으로 모든 값들은 현재 시간을 기준으로 작성된다.  
+```
+let date = new Date(); // 현재 시간을 기준으로 date 가 생성됨
+```
+보통 카운트 다운을 할 때 사용
+
+```
+let date01 = new Date('2023/10/30/15:00:00') 
+console.log(date); // => Mon Nov 13 2023 13:41:54 GMT+0900 (한국 표준시)
+```
+시간을 직접 지정할수도 있다.
+
+```
+let year01 = date.getYear() // 1900년도에서 현재 연도를 뺀 값을 반환
+let year = date.getFullYear() //주어진 날짜의 현지 시간 기준 연도를 반환하는 메서드
+let month = date.getMonth()+1 // 월을 숫자로 반환 (해외에서는 1월 2월 세지 않기 때문에 월로 나왔을때 0부터 시작한다 때문에 +1 을 해야 값이 맞다.)
+let days = date.getDate(); // 일 => 이건 해외도 같기 때문에 1부터 시작함
+let day = date.getDay(); // 요일을 숫자로 반환 => 일요일이 일주일의 시작이기 때문에 일요일부터 0으로 시작함
+// console.log(year); // => 2023
+// console.log(month); // => 11
+// console.log(days); // => 13
+// console.log(day); // => 1
+```
+```
+let time = date.getHours() // 시간을 반환하고 24시간을 기준으로 한다.
+let min = date.getMinutes() // 분을 반환 한다.
+let sec = date.getSeconds() // 초를 반환 => 자동으로 카운트를 하지 않고 랜더링할때의 값을 한번만 읽는다.
+let miSec = date.getMilliseconds(); // 1초(1000ms)를 밀리세컨 단위로 반환(0~999ms)
+let times = date.getTime(); // 1970년도 부터 현재까지의 시간을 ms 단위로 표시
+console.log(time); // => 13
+console.log(min); // => 42
+console.log(sec); // => 57
+console.log(miSec); // => 670
+console.log(times); // => 1699850577670
+```        
+매개변수가 없는 경우는 현재 시간을 표시해준다. 
+
