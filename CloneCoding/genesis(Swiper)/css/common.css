@@ -228,12 +228,12 @@ body, html {
 }
 
 .slide-up {
-  transition: height 300ms, opacity 300ms;
+  transition: height 600ms, opacity 600ms;
   overflow: hidden;
 }
 
 .slide-down {
-  transition: height 300ms, opacity 300ms;
+  transition: height 600ms, opacity 600ms;
 }
 
 .mobile {
@@ -352,6 +352,13 @@ body, html {
   width: 100%;
   padding: 0px 140px;
   box-sizing: border-box;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 600ms, opacity 0ms 600ms;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model.on {
+  transition: height 600ms 150ms, opacity 0ms;
+  opacity: 1;
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item {
   width: 100%;
