@@ -7,6 +7,42 @@ function gnbMenu(){
     const mainMenu = document.querySelectorAll('.gnb-list > li > a');
     const subMenu = document.querySelectorAll('.subMenu-wrapper');
 
+    const tabMenu = document.querySelectorAll('.subMenu-left a');
+    const tabContent = document.querySelectorAll('.subMenu-right-model');
+
+    tabMenu.forEach((el)=>{
+        el.addEventListener('click',function(){ // 평소대로 화살표함수를 사용한다면 this 는 window 를 출력
+            // data-target 찾는법
+            const target = this.getAttribute('data-target')
+            console.log(target); // => data-target 중 선택한 name 
+            
+            tabContent.forEach((content)=>{
+                content.style.display = 'none'
+                content.classList.remove('on');
+            })
+            const activeTab = document.querySelector(`.subMenu-right-model.${target}`);
+            if(activeTab){
+                activeTab.style.display = 'block';
+                activeTab.classList.add('on');
+                const activeSwiper = activeTab.querySelector('.swiper-container').swiper;
+                if(activeSwiper){
+                    activeSwiper.update(); // 또 다른 swiper 설정 (update)
+                }else{
+                    new Swiper(activeTab.querySelector('.swiper-container'),{
+                        slidesPerView : 'auto',
+                        navigation : {
+                            prevEl : '.swiper-button-prev',
+                            nextEl : '.swiper-button-next'
+                        },
+                        allowTouchMove : false, // 스와이프 기능 중지
+                        speed : 0, // 슬라이드 넘어가는 transition 속도 0
+                        watchOverFlow : true, // 페이지가 하나일 경우 button 을 생성하지 않는다.
+                    })
+                }
+            }
+        })
+    })
+
     let isOpen = false;
     // console.log(mainMenu);
 

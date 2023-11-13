@@ -374,8 +374,33 @@ body, html {
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li {
   width: 30%;
-  height: 300px;
-  background: coral;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li .model-text {
+  font-family: "genesis-head-light", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li .model-text strong {
+  font-size: 30px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li .model-text p {
+  font-size: 16px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li .dic-btn {
+  height: 50px;
+  transform: translateY(0);
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li .dic-btn:hover {
+  color: #111111;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li .model-link {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .suppot-menu {
