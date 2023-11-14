@@ -19,10 +19,12 @@
 }
 .gnb{
     height: 100%;
+
     .gnb-list{
         display: flex;
         gap: 60px;
         height: 100%;
+        
         li a{
             display: flex;
             align-items: center;
@@ -38,6 +40,7 @@
             }
 
         } // li a
+        
         // drop-menu subMenu-left style
         .subMenu-wrapper{
             width: 100%;
@@ -48,7 +51,8 @@
             z-index: 99;
             border-top: solid 1px rgba(255,255,255,0.1);
             .subMenu-inner{
-                align-items: start;
+                align-items: flex-start;
+                
                 .subMenu{
                     padding: 50px 0px;
                     box-sizing: border-box;
