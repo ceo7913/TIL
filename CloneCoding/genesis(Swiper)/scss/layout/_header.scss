@@ -50,9 +50,9 @@
             left: 0;
             z-index: 99;
             border-top: solid 1px rgba(255,255,255,0.1);
+            transition: 300ms;
             .subMenu-inner{
                 align-items: flex-start;
-                
                 .subMenu{
                     padding: 50px 0px;
                     box-sizing: border-box;
@@ -215,6 +215,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    
     .search-btn{
         position: relative;
         background: $black;
@@ -236,8 +237,9 @@
             position: relative;
             width: 0; 
             padding-right: 0;
+            box-sizing: border-box;
             input{
-                width: 0;
+                width: 100%;
                 height: 30px;
                 background: $black;
                 border-radius: 5px;
@@ -268,9 +270,6 @@
             .search-inner{
                 width: 250px;
                 padding-left: 30px;
-                input{
-                    width: 250px;
-                }
                 .search-btn{
                     visibility: visible;
                 }
@@ -279,64 +278,97 @@
     }
 }
 
-.ham-btn{
+// 햄버거 버튼
+.sitemap-wrapper{
     width: 66px;
     height: 100%;
-    position: relative;
-    top: 0px;
-    left: 0px;
     padding: 0px 22px;
     box-sizing: border-box;
     margin-left: 22px;
-
-    div{
-        width: 100%;
-        height: 13px;
-        position: relative;
-        top: 50%;
-        left: 0px;
-        // 세로 정렬
-        transform: translateY(-50%);
-        i{
+    // 여기서 position 값을 잡아버리면 나올 페이지가 하위 요소이기 때문에
+    // 영역값이 화면 전체를 잡을 수 없다.
+    .ham-btn{
+        div{
             width: 100%;
-            height: 2px;
-            background-color: $white;
+            height: 13px;
+            position: relative;
+            top: 50%;
+            left: 0px;
+            // 세로 정렬
+            transform: translateY(-50%);
+            z-index: 100;
+            i{
+                width: 100%;
+                height: 2px;
+                background-color: $white;
+                position: absolute;
+                left: 0px;
+                transition: 500ms;
+            }
+            .line01{
+                top: 0px;
+            }
+            .line02{
+                top: 100%;
+            }
+        }
+         // 햄버거를 클릭했을때 각각 로테이트 해서 x 자로 만드는 css
+        &.on{
+            .line01{
+                top: 50%;
+                transform: rotate(45deg);
+            }
+            .line02{
+                top: 50%;
+                transform: rotate(-45deg);
+            }
+        }
+    
+        &:before{
+            content: "";
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,1);
+            display: inline-block;
             position: absolute;
             left: 0px;
-            transition: 500ms;
-        }
-        .line01{
-            top: 0px;
-        }
-        .line02{
-            top: 100%;
-        }
-    }
-     // 햄버거 호버했을때 각각 로테이트 해서 x 자로 만드는 css
-    &:hover{
-        .line01{
             top: 50%;
-            transform: rotate(45deg);
-        }
-        .line02{
-            top: 50%;
-            transform: rotate(-45deg);
+            transform: translateY(-50%);
+            
         }
     }
 
-    &:before{
-        content: "";
-        width: 1px;
-        height: 20px;
-        background: rgba(255,255,255,1);
-        display: inline-block;
+    .sitemap{
         position: absolute;
-        left: 0px;
-        top: 50%;
-        transform: translateY(-50%);
-        
+        top: 0;
+        left: 0;
+        background: $black;
+        height: 0px;
+        width: 100%;
+        z-index: 99;
+        transition: 500ms;
+        transform: translateY(-100%);
+        visibility: hidden;
+        opacity: 0;
+        padding: 0px 140px;
+        box-sizing: border-box;
+        overflow-y: auto; // 사이드 스크롤바 의 길이를 새롭게 받아올 수 있게 auto 로 바꿔준다.
+        // inner 영역값
+        .sitemap-inner{
+            position: relative;
+            width: 100%;
+            height: 1200px; // 임의값    
+        }
+        &.on{
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+            height: 100%;
+        }
     }
 }
+
+
 @include laptop{
     .logo{
         margin-right: 50px;

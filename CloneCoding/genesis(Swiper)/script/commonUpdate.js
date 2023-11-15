@@ -1,6 +1,7 @@
 window.onload = () => {
   gnbMenu();
   search();
+  sitemap();
 }
 
 function gnbMenu(){
@@ -114,39 +115,101 @@ function gnbMenu(){
   
 }
 
+// 검색기능
 function search(){
-    const searchBtn = document.querySelector('.search-wrapper > .search-btn'); // > 자식요소 1개
+    const searchBtn = document.querySelector('.search-wrapper > .search-btn');
     const searchWrapper = document.querySelector('.search-wrapper');
-    const header = document.querySelector('header');
-    
-    searchWrapper.addEventListener('click',(e)=>{
-        e.stopPropagation() // 이벤트 버블링 방지 / => 이벤트가 다른요소에 영향을 주는것을 방지
-    })
 
+    // tag
+    const header = document.querySelector('header');
+    const inputItem = document.querySelector('input')
+
+    const toggleSearch = (isShow) =>{
+        if(isShow){ // true 라면
+            searchWrapper.classList.add('on');
+            inputItem.focus(); // 포커스 기본세팅
+        }else{
+            searchWrapper.classList.remove('on');
+            inputItem.value = ''; // 검색내용 초기화
+        }
+    }
     searchBtn.addEventListener('click',(e)=>{
-        e.preventDefault(); // 기본 html 태그에 부여된 기본 이벤트 제거
-        searchWrapper.classList.add('on');
-        console.log('ck2');
+        toggleSearch(true);
+        e.stopPropagation(); // 이벤트 버블링 방지 / => 이벤트가 다른요소에 영향을 주는것을 방지
     })
     header.addEventListener('click',()=>{
-        searchWrapper.classList.remove('on');
-        console.log('ck');
+        toggleSearch(false);
     })
-    /*
-        이벤트 버블링 현상
-        ```
-            searchBtn.addEventListener('click',(e)=>{
-            e.preventDefault();
-            searchWrapper.classList.add('on');
-            console.log('ck2');
-            })
-            header.addEventListener('click',()=>{
-            searchWrapper.classList.remove('on');
-            console.log('ck');
-            })
-        ```
-        두가지 이벤트 동시 출력  
-        한 요소에 이벤트가 발생할때 이벤트가 동작되고
-        이어서 부모요소에 있는 이벤트도 같이 실행되는 현상  
-    */
+    searchWrapper.addEventListener('click',(e)=>{
+        e.stopPropagation();
+    })
+}
+
+// 햄버거 버튼 기능
+/*
+    function sitemap(){
+        const btn = document.querySelector('.ham-btn');
+        const sitemap =document.querySelector('.sitemap');
+        let isOpen = true;
+        
+        btn.addEventListener('click', function(e){ 
+            // 별개로 this 를 넣어줘야 하기 때문에 화살표 함수가 아니라 function 으로 들어간다.
+            e.preventDefault() // a 태그 이벤트 이기 때문에 기본동작 이벤트를 막기위해 넣어주는 것이 좋다.
+            let winH = window.innerHeight; 
+            document.body.style.overflowY = 'hidden';
+            // window 의 height 크기를 받아와서 inner 의 영역값이 100% 일때 
+            // 부모 요소가 아니라 window 를 기준으로 100% 를 잡을 수 있게 해준다.
+        
+             if(isOpen){
+                 // .ham-btn 에 class 'on' rotate 부여
+                 this.classList.add('on');
+                 sitemap.classList.add('on');
+                 sitemap.style.maxHeight = `${winH}px`;
+                 sitemap.style.height = `${winH}px`;
+                 document.body.style.overflowY = 'hidden';
+                 isOpen = false;
+             }else{
+                 this.classList.remove('on');
+                 sitemap.classList.remove('on');
+                 sitemap.style.maxHeight = '0'
+                 sitemap.style.height = '0'
+                 document.body.style.overflowY = 'auto';
+                 isOpen = true;
+             }
+         
+         })
+     }
+*/
+
+// sitemap function 리팩토링
+function sitemap(){
+    const btn = document.querySelector('.ham-btn');
+    const sitemap = document.querySelector('.sitemap');
+    let isOpen = true;
+
+    btn.addEventListener('click',function(e){
+        e.preventDefault() // a 태그 이벤트 이기 때문에 기본동작 이벤트를 막기위해 넣어주는 것이 좋다.
+
+        if(isOpen){
+            toggleSiteMap('open',sitemap);
+        }else{
+            toggleSiteMap('close',sitemap);
+        }
+        isOpen = !isOpen // isOpen 세팅
+        // isOpen 이 변경되는 구문을 넣어주지 않았기 때문에
+        // 로직의 순서상 isOpen 이 false 를 받아주기 위해 넣어줌
+        // 그냥 변경되는 구문을 넣어도 상관 없음
+        console.log(isOpen); // => 첫번째 클릭 : false / 두번째 클릭 : true / => 즉 초기값 true
+    })
+    function toggleSiteMap(action,el){
+        const winH = window.innerHeight;
+        const overFlowAction = action === 'open' ? 'hidden' : 'auto';
+        const maxH = action === 'open' ? `${winH}px` : '0';
+
+        btn.classList.toggle('on', action ==='open'); // add, remove 와 같은 역할을 해줌 => 대신 조건문 필요
+        el.classList.toggle('on', action ==='open');
+        el.style.maxHeight = maxH;
+        el.style.height = maxH
+        document.body.style.overflowY = overFlowAction;
+    }
 }

@@ -313,6 +313,7 @@ body, html {
   left: 0;
   z-index: 99;
   border-top: solid 1px rgba(255, 255, 255, 0.1);
+  transition: 300ms;
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner {
   align-items: flex-start;
@@ -514,9 +515,10 @@ body, html {
   position: relative;
   width: 0;
   padding-right: 0;
+  box-sizing: border-box;
 }
 .search-wrapper .search-item .search-inner input {
-  width: 0;
+  width: 100%;
   height: 30px;
   background: #111111;
   border-radius: 5px;
@@ -542,32 +544,27 @@ body, html {
   width: 250px;
   padding-left: 30px;
 }
-.search-wrapper.on .search-item .search-inner input {
-  width: 250px;
-}
 .search-wrapper.on .search-item .search-inner .search-btn {
   visibility: visible;
 }
 
-.ham-btn {
+.sitemap-wrapper {
   width: 66px;
   height: 100%;
-  position: relative;
-  top: 0px;
-  left: 0px;
   padding: 0px 22px;
   box-sizing: border-box;
   margin-left: 22px;
 }
-.ham-btn div {
+.sitemap-wrapper .ham-btn div {
   width: 100%;
   height: 13px;
   position: relative;
   top: 50%;
   left: 0px;
   transform: translateY(-50%);
+  z-index: 100;
 }
-.ham-btn div i {
+.sitemap-wrapper .ham-btn div i {
   width: 100%;
   height: 2px;
   background-color: #ffffff;
@@ -575,21 +572,21 @@ body, html {
   left: 0px;
   transition: 500ms;
 }
-.ham-btn div .line01 {
+.sitemap-wrapper .ham-btn div .line01 {
   top: 0px;
 }
-.ham-btn div .line02 {
+.sitemap-wrapper .ham-btn div .line02 {
   top: 100%;
 }
-.ham-btn:hover .line01 {
+.sitemap-wrapper .ham-btn.on .line01 {
   top: 50%;
   transform: rotate(45deg);
 }
-.ham-btn:hover .line02 {
+.sitemap-wrapper .ham-btn.on .line02 {
   top: 50%;
   transform: rotate(-45deg);
 }
-.ham-btn:before {
+.sitemap-wrapper .ham-btn:before {
   content: "";
   width: 1px;
   height: 20px;
@@ -599,6 +596,33 @@ body, html {
   left: 0px;
   top: 50%;
   transform: translateY(-50%);
+}
+.sitemap-wrapper .sitemap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #111111;
+  height: 0px;
+  width: 100%;
+  z-index: 99;
+  transition: 500ms;
+  transform: translateY(-100%);
+  visibility: hidden;
+  opacity: 0;
+  padding: 0px 140px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.sitemap-wrapper .sitemap .sitemap-inner {
+  position: relative;
+  width: 100%;
+  height: 1200px;
+}
+.sitemap-wrapper .sitemap.on {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+  height: 100%;
 }
 
 @media screen and (max-width: 1600px) {
