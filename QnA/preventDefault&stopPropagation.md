@@ -1,0 +1,1 @@
+## e.preventDefault() 와 stopPropagation() 의 차이
