@@ -1,5 +1,6 @@
 window.onload = () => {
-  gnbMenu()
+  gnbMenu();
+  search();
 }
 
 function gnbMenu(){
@@ -113,3 +114,39 @@ function gnbMenu(){
   
 }
 
+function search(){
+    const searchBtn = document.querySelector('.search-wrapper > .search-btn'); // > 자식요소 1개
+    const searchWrapper = document.querySelector('.search-wrapper');
+    const header = document.querySelector('header');
+    
+    searchWrapper.addEventListener('click',(e)=>{
+        e.stopPropagation() // 이벤트 버블링 방지 / => 이벤트가 다른요소에 영향을 주는것을 방지
+    })
+
+    searchBtn.addEventListener('click',(e)=>{
+        e.preventDefault(); // 기본 html 태그에 부여된 기본 이벤트 제거
+        searchWrapper.classList.add('on');
+        console.log('ck2');
+    })
+    header.addEventListener('click',()=>{
+        searchWrapper.classList.remove('on');
+        console.log('ck');
+    })
+    /*
+        이벤트 버블링 현상
+        ```
+            searchBtn.addEventListener('click',(e)=>{
+            e.preventDefault();
+            searchWrapper.classList.add('on');
+            console.log('ck2');
+            })
+            header.addEventListener('click',()=>{
+            searchWrapper.classList.remove('on');
+            console.log('ck');
+            })
+        ```
+        두가지 이벤트 동시 출력  
+        한 요소에 이벤트가 발생할때 이벤트가 동작되고
+        이어서 부모요소에 있는 이벤트도 같이 실행되는 현상  
+    */
+}

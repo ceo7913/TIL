@@ -302,6 +302,9 @@ body, html {
 .gnb .gnb-list li a:hover {
   color: rgb(255, 255, 255);
 }
+.gnb .gnb-list li a.on {
+  color: rgb(255, 255, 255);
+}
 .gnb .gnb-list .subMenu-wrapper {
   width: 100%;
   background: #151515;
@@ -312,7 +315,7 @@ body, html {
   border-top: solid 1px rgba(255, 255, 255, 0.1);
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner {
-  align-items: start;
+  align-items: flex-start;
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu {
   padding: 50px 0px;
@@ -343,6 +346,20 @@ body, html {
   font-size: 18px;
   font-family: "genesis-head", sans-serif;
 }
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-left ul li a .on {
+  color: rgb(255, 255, 255);
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu.subMenu-link .subMenu-left {
+  gap: 20px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu.subMenu-link .subMenu-left strong {
+  font-size: 24px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu.subMenu-link .subMenu-left p {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.5;
+}
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right {
   border-left: solid 1px rgba(255, 255, 255, 0.1);
   width: 100%;
@@ -357,7 +374,7 @@ body, html {
   transition: height 600ms, opacity 0ms 600ms;
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model.on {
-  transition: height 600ms 150ms, opacity 0ms;
+  transition: height 600ms 300ms, opacity 0ms;
   opacity: 1;
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item {
@@ -374,7 +391,6 @@ body, html {
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li {
   width: 30%;
-  background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   box-sizing: border-box;
 }
@@ -385,6 +401,7 @@ body, html {
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li .model-text strong {
   font-size: 30px;
+  font-weight: normal;
 }
 .gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-model .subMenu-item .swiper-slide ul li .model-text p {
   font-size: 16px;
@@ -401,6 +418,44 @@ body, html {
   flex-direction: column;
   gap: 12px;
   margin-top: 20px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-menu {
+  display: flex;
+  padding: 0px 40px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-menu li {
+  width: 20%;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-menu li a {
+  color: #ffffff;
+  font-size: 16px;
+  display: inline-flex; /* 100% 영역을 컨텐츠 만큼 차지함*/
+  gap: 6px;
+  align-items: center;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-menu li a span {
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-menu li a span:after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: -6px;
+}
+.gnb .gnb-list .subMenu-wrapper .subMenu-inner .subMenu .subMenu-right .subMenu-right-menu li a span:hover:after {
+  transition: 500ms;
+  width: 100%;
 }
 
 .suppot-menu {
@@ -428,6 +483,70 @@ body, html {
 }
 .suppot-menu .search-btn img {
   display: block;
+}
+
+.search-wrapper {
+  position: relative;
+  margin-left: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.search-wrapper .search-btn {
+  position: relative;
+  background: #111111;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.search-wrapper .search-item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.search-wrapper .search-item .search-inner {
+  background: #111111;
+  transition: 300ms;
+  position: relative;
+  width: 0;
+  padding-right: 0;
+}
+.search-wrapper .search-item .search-inner input {
+  width: 0;
+  height: 30px;
+  background: #111111;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #fff;
+  border: none;
+}
+.search-wrapper .search-item .search-inner .search-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  visibility: hidden;
+}
+.search-wrapper.on > .search-btn {
+  visibility: hidden;
+}
+.search-wrapper.on .search-item .search-inner {
+  width: 250px;
+  padding-left: 30px;
+}
+.search-wrapper.on .search-item .search-inner input {
+  width: 250px;
+}
+.search-wrapper.on .search-item .search-inner .search-btn {
+  visibility: visible;
 }
 
 .ham-btn {

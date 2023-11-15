@@ -208,6 +208,77 @@
     }
 }
 
+// 검색기능 css
+.search-wrapper{
+    position: relative;
+    margin-left: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .search-btn{
+        position: relative;
+        background: $black;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .search-item{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        .search-inner{
+            background: $black;
+            transition: 300ms;
+            position: relative;
+            width: 0; 
+            padding-right: 0;
+            input{
+                width: 0;
+                height: 30px;
+                background: $black;
+                border-radius: 5px;
+                box-sizing: border-box;
+                color: #fff;
+                border: none;
+            }
+            .search-btn{
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 30px;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                visibility: hidden; // 숨김 처리
+            }
+        }
+    }
+
+    // 동작 class
+    &.on{
+        >.search-btn{
+            visibility: hidden;
+        }
+        .search-item{
+            .search-inner{
+                width: 250px;
+                padding-left: 30px;
+                input{
+                    width: 250px;
+                }
+                .search-btn{
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
 .ham-btn{
     width: 66px;
     height: 100%;
