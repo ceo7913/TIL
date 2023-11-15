@@ -2,6 +2,7 @@ window.onload = () => {
   gnbMenu();
   search();
   sitemap();
+  visualSlider();
 }
 
 function gnbMenu(){
@@ -151,7 +152,7 @@ function search(){
         const btn = document.querySelector('.ham-btn');
         const sitemap =document.querySelector('.sitemap');
         let isOpen = true;
-        
+
         btn.addEventListener('click', function(e){ 
             // 별개로 this 를 넣어줘야 하기 때문에 화살표 함수가 아니라 function 으로 들어간다.
             e.preventDefault() // a 태그 이벤트 이기 때문에 기본동작 이벤트를 막기위해 넣어주는 것이 좋다.
@@ -159,7 +160,7 @@ function search(){
             document.body.style.overflowY = 'hidden';
             // window 의 height 크기를 받아와서 inner 의 영역값이 100% 일때 
             // 부모 요소가 아니라 window 를 기준으로 100% 를 잡을 수 있게 해준다.
-        
+
              if(isOpen){
                  // .ham-btn 에 class 'on' rotate 부여
                  this.classList.add('on');
@@ -176,7 +177,7 @@ function search(){
                  document.body.style.overflowY = 'auto';
                  isOpen = true;
              }
-         
+
          })
      }
 */
@@ -212,4 +213,28 @@ function sitemap(){
         el.style.height = maxH
         document.body.style.overflowY = overFlowAction;
     }
+}
+
+function visualSlider(){
+    const swiper = new Swiper('.visual-wrapper .swiper-container',{
+        speed: 1000,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+        },
+        effect: 'creative',
+        creativeEffect:{
+            // 슬라이드 될때 겹치면서 넘어오는 효과
+            prev:{
+                translate: ['-100%',0,0]
+            },
+            next:{
+                translate: ['50%',0,-1] // 두번째 y 속성 마지막 z 속성
+            }
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true, // 클릭시 해당 페이지로 swipe
+        }
+    });
 }
