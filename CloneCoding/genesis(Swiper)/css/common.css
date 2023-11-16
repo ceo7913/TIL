@@ -1191,6 +1191,12 @@ body, html {
 .visual-wrapper .visual-controls .pause-btn .bx-play {
   display: none;
 }
+.visual-wrapper .visual-controls .pause-btn.on .bx-pause {
+  display: none;
+}
+.visual-wrapper .visual-controls .pause-btn.on .bx-play {
+  display: block;
+}
 
 .model-wrapper {
   padding: 200px 0px 270px 190px;
@@ -1213,6 +1219,60 @@ body, html {
   width: 300px;
   margin-bottom: 90px;
   border-bottom: solid 2px #ffffff;
+}
+.model-wrapper .category .select-hide {
+  display: none;
+  visibility: hidden;
+}
+.model-wrapper .category .select {
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  color: #ffffff;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+}
+.model-wrapper .category .select-style {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #111111;
+  transition: 300ms;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.model-wrapper .category .select-style:after {
+  content: "";
+  background: url(../../images/w-ico-arrow-top.png) no-repeat center right/14px;
+  width: 14px;
+  height: 14px;
+  display: block;
+  transform: rotate(-180deg);
+  transition: 300ms;
+}
+.model-wrapper .category .select-style.on::after {
+  transform: rotate(0deg);
+}
+.model-wrapper .category .select-list {
+  position: absolute;
+  top: 100%;
+  display: none;
+  left: 0;
+  z-index: 99;
+  background: #111111;
+  width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+}
+.model-wrapper .category .select-list li {
+  padding: 14px 0px 14px 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.model-wrapper .category .select-list li:hover {
+  color: rgb(255, 255, 255);
 }
 .model-wrapper .category a {
   padding: 14px 0px 14px 10px;

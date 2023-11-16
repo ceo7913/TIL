@@ -159,6 +159,14 @@
             .bx-play{
                 display: none;
             }
+            &.on{
+                .bx-pause{
+                    display: none;
+                }
+                .bx-play{
+                    display: block;
+                }
+            }
         }
     }
 }
@@ -185,6 +193,63 @@
         width: 300px;
         margin-bottom: 90px;
         border-bottom: solid 2px $white;
+
+        // select 버튼 style
+        .select-hide{
+            display: none;
+            visibility: hidden;
+        }
+        .select{
+            display: inline-block;
+            position: relative;
+            font-size: 20px;
+            color: $white;
+            width: 100%;
+            height: 40px;
+            cursor: pointer;
+        }
+        .select-style{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $black;
+            transition: 300ms;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:after{
+                content: "";
+                background: url(../../images/w-ico-arrow-top.png) no-repeat center right / 14px;
+                width: 14px;
+                height: 14px;
+                display: block;
+                transform: rotate(-180deg);
+                transition: 300ms;
+            }
+            &.on::after{
+                transform: rotate(0deg);
+            }
+        }
+        .select-list{
+            position: absolute;
+            top: 100%;
+            display: none;
+            left: 0;
+            z-index: 99;
+            background: $black;
+            width: 100%;
+            border: solid 1px rgba(0,0,0,0.1);
+            li{
+                padding: 14px 0px 14px 10px;
+                color: rgba(255,255,255,0.5);
+                &:hover{
+                    color: rgba(255,255,255,1);
+                }
+            }
+        }
+
         a{
             padding: 14px 0px 14px 10px;
             color: $white;

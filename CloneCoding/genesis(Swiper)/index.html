@@ -624,46 +624,6 @@
 
     <main class="container" id="content">
         <section class="visual-wrapper">
-            <!-- <div class="visual-item">
-                <img src="./images/main-visual01.jpg" alt="자동차" class="pc">
-                <img src="./images/visual01-mobile.jpg" alt="자동차" class="mobile">
-                <div class="visual-text">
-                    <div class="title-box">
-                        <p class="sub-text">GENESIS</p>
-                        <h2 class="title">G80</h2>
-                        <p class="sub-text">2024년형 출시</p>
-                    </div>
-
-                    <div class="link-box">
-                        <a href="#" title="상세 페이지 바로가기" class="link-text-btn"><span>더 알아보기</span><i class='bx bx-chevron-right' ></i></a>
-                        <a href="#" title="상세 페이지 바로가기" class="link-text-btn"><span>견적내기</span><i class='bx bx-chevron-right' ></i></a>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="visual-controls">
-                <ul class="dot-list">
-                    <li class="on"></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>  
-                </ul>
-                <button class="pause-btn">
-                    <i class='bx bx-play'>
-                        <span class="blind">슬라이드 자동 시작 버튼</span>
-                    </i>
-                    <i class='bx bx-pause' >
-                        <span class="blind">슬라이드 자동 일시정지 버튼</span>
-                    </i>
-                </button>
-            </div> -->
-            <!-- swiper 이전 버전 △ -->
-
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -909,8 +869,7 @@
                     </button>
                 </div>
             </div><!--swiper-container-->
-        </section>
-<!-- visual-controls done -->
+        </section><!--visual-controls-->
 
         <section class="model-wrapper">
             <div class="inner">
@@ -922,7 +881,12 @@
                 </div>
 <!--title-box-->
                 <div class="category pc">
-                    <a href="#" title="제네시스 카테고리 선택">ALL</a>
+                    <!-- <a href="#" title="제네시스 카테고리 선택">ALL</a> -->
+                    <select>
+                        <option value="all" selected>ALL</option>
+                        <option value="sedan">SEDAN</option>
+                        <option value="suv">SUV</option>
+                    </select><!--select-->
                 </div>
                 <div class="category-m mobile" >
                     <ul class="category-list">
@@ -995,8 +959,8 @@
 
 
             </div>
-        </section>
-<!-- icon-wrapper start -->
+        </section><!--model-wrapper-->
+
         <section class="icon-wrapper">
             <div class="inner">
                 <h2 class="blind">서비스 문의</h2>
@@ -1023,10 +987,8 @@
                     </li>
                 </ul>
             </div>
-        </section>
-<!-- icon-wrapper done -->
+        </section><!--icon-wrapper-->
 
-<!-- award-wrapper start -->
         <section class="award-wrapper">
             <div class="title-box">
                 <h2 class="title">THE AWARD</h2>
@@ -1061,8 +1023,7 @@
                     </p>
                 </div>
             </div>
-        </section>
-<!-- award-wrapper done -->
+        </section><!--award-wrapper-->
 
 <!-- option-wrapper start -->
         <section class="option-wrapper">
