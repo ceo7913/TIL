@@ -1319,61 +1319,61 @@ body, html {
   gap: 40px;
   margin-bottom: 40px;
 }
-.model-wrapper .model-list-wrapper .model-list li {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide {
   background: #151515;
   padding: 40px;
   position: relative;
   top: 0px;
   left: 0px;
 }
-.model-wrapper .model-list-wrapper .model-list li .content-box {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide .content-box {
   position: relative;
   top: 0px;
   left: 0px;
   margin-bottom: 60px;
 }
-.model-wrapper .model-list-wrapper .model-list li .content-box .text {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide .content-box .text {
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
   margin-bottom: 14px;
   transition: 500ms;
 }
-.model-wrapper .model-list-wrapper .model-list li .content-box .title {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide .content-box .title {
   font-size: 30px;
   color: rgba(255, 255, 255, 0.7);
   transition: 500ms;
   font-family: "genesis-head-light", sans-serif;
   font-weight: 100;
 }
-.model-wrapper .model-list-wrapper .model-list li .content-box .icon-list {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide .content-box .icon-list {
   position: absolute;
   right: 0px;
   bottom: 0px;
   display: flex;
   gap: 10px;
 }
-.model-wrapper .model-list-wrapper .model-list li .content-box .icon-list img {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide .content-box .icon-list img {
   display: none;
 }
-.model-wrapper .model-list-wrapper .model-list li.under .content-box .text {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide.under .content-box .text {
   position: absolute;
   left: 0px;
   bottom: 0px;
   margin-bottom: 0px;
 }
-.model-wrapper .model-list-wrapper .model-list li.under .content-box .title {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide.under .content-box .title {
   padding-bottom: 30px;
 }
-.model-wrapper .model-list-wrapper .model-list li.ev .icon-list .icon-ev {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide.ev .icon-list .icon-ev {
   display: block;
 }
-.model-wrapper .model-list-wrapper .model-list li.new .icon-list .icon-new {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide.new .icon-list .icon-new {
   display: block;
 }
-.model-wrapper .model-list-wrapper .model-list li:hover .dic-btn {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide:hover .dic-btn {
   transform: translateY(0);
 }
-.model-wrapper .model-list-wrapper .model-list li:before {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide:before {
   content: "";
   width: 0px;
   height: 0px;
@@ -1385,13 +1385,13 @@ body, html {
   border-bottom: solid 1px #ffffff;
   opacity: 0;
 }
-.model-wrapper .model-list-wrapper .model-list li:hover:before {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide:hover:before {
   width: 100%;
   height: 100%;
   opacity: 1;
   transition: height 500ms, width 500ms 500ms;
 }
-.model-wrapper .model-list-wrapper .model-list li:after {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide:after {
   content: "";
   width: 0px;
   height: 0px;
@@ -1403,7 +1403,7 @@ body, html {
   opacity: 0;
   position: absolute;
 }
-.model-wrapper .model-list-wrapper .model-list li:hover:after {
+.model-wrapper .model-list-wrapper .model-list .swiper-slide:hover:after {
   width: 100%;
   height: 100%;
   opacity: 1;

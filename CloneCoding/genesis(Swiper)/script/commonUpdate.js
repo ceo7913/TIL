@@ -259,6 +259,11 @@ function visualSlider(){
 }// visualSlider
 
 function model(){
+    const tabContent = document.querySelectorAll('.model-list-wrapper');
+    tabContent.forEach((el)=>{
+        el.style.display = 'none';
+    })
+
     document.querySelectorAll('select').forEach((el)=>{
         const optNum = el.children.length; // => 3
         el.classList.add('select-hide') // 특정 클래스를 줘서 화면에서 제거
@@ -306,7 +311,7 @@ function model(){
             */
         }
         const listItems = list.children;
-        console.log(listItems); // => HTMLCollection(3) [li, li, li]
+        // console.log(listItems); // => HTMLCollection(3) [li, li, li]
 
         // styleSelect 를 클릭했을때 list 창 생성하기
         styleSelect.addEventListener('click',()=>{
@@ -324,8 +329,40 @@ function model(){
         // li 를 클릭하면 li 에 정보가 styleSelect에 전달하기
         list.addEventListener('click',(e)=>{
             const target = e.target;  // 클릭한 target 의 값 가져오기
-            if(target.tagName.toLowerCase() === 'li'){ // tagName => tagName 은 소문자가 아닌 대문자로 나옴 그렇기 때문에 toLowerCase() 를 사용해서 소문자로 변환해준다. 
+            if(target.tagName.toLowerCase() === 'li'){ 
+                // tagName => tagName 은 소문자가 아닌 대문자로 나옴 그렇기 때문에 
+                // toLowerCase() 를 사용해서 소문자로 변환해준다. 
+                styleSelect.textContent = target.textContent;
+                el.value = target.getAttribute('date-target');
+                console.log(el.value);
+                                    
+                const activeItemClass = target.getAttribute('date-target');
+                const activeItem = document.querySelector(`.model-list-wrapper.${activeItemClass}`);
+
+                list.style.display = 'none';
                 
+                tabContent.forEach((el)=>{
+                    el.style.display = 'none';
+                }) // 초기값을 다시 잡아주면서, 선택요소외에 block 요소가 없게 한다.
+                activeItem.style.display = 'block';
+
+                const swiperContainer = activeItem.querySelectorAll('.model-list-wrapper .swiper-container');
+                swiperContainer.forEach((item)=>{
+                    if(!item.classList.contains('swiper-initialized')){
+                        new Swiper(item,{
+                            // 모바일 기준 768보다 작을때의 값
+                            slidesPerView: 1,
+                            spaceBetween: 0,
+                            breakpoints:{
+                                768:{
+                                    // 768 보다 커졌을때의 값
+                                    slidesPerView: 3,
+                                    spaceBetween: 40,
+                                }
+                            }
+                        })  
+                    }
+                })
             }
         })
     })
