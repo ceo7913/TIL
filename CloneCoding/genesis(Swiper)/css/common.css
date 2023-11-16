@@ -1314,9 +1314,10 @@ body, html {
 .model-wrapper .category-m .category-list li.on {
   opacity: 1;
 }
+.model-wrapper .model-list-wrapper {
+  overflow: hidden;
+}
 .model-wrapper .model-list-wrapper .model-list {
-  display: flex;
-  gap: 40px;
   margin-bottom: 40px;
 }
 .model-wrapper .model-list-wrapper .model-list .swiper-slide {
@@ -1325,6 +1326,7 @@ body, html {
   position: relative;
   top: 0px;
   left: 0px;
+  box-sizing: border-box;
 }
 .model-wrapper .model-list-wrapper .model-list .swiper-slide .content-box {
   position: relative;
@@ -1412,13 +1414,12 @@ body, html {
 .model-wrapper .model-list-wrapper .model-dot-wrapper {
   display: flex;
   justify-content: center;
+  position: relative;
 }
-.model-wrapper .model-list-wrapper .model-dot-wrapper .model-dot-list {
-  display: flex;
-  align-items: center;
-  gap: 18px;
+.model-wrapper .model-list-wrapper .model-dot-wrapper .swiper-pagination {
+  position: static;
 }
-.model-wrapper .model-list-wrapper .model-dot-wrapper .model-dot-list li {
+.model-wrapper .model-list-wrapper .model-dot-wrapper .swiper-pagination .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   border-radius: 100%;
@@ -1426,7 +1427,7 @@ body, html {
   border: solid 2px transparent;
   background-clip: padding-box;
 }
-.model-wrapper .model-list-wrapper .model-dot-wrapper .model-dot-list li.on {
+.model-wrapper .model-list-wrapper .model-dot-wrapper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: transparent;
   border-color: #ffffff;
 }
