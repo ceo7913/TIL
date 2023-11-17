@@ -11,3 +11,5 @@
 - [반복문](./반복문(js).md)
 - [문자열](./문자열(js).md)
 - [JavaScript 시간, 날짜와 관련된 메서드](./Date(날짜,시간).md)
+- [JavaScript(Es6)](./ES6.md)
+- [JavaScript 배열](./Array(배열).md)
