@@ -178,6 +178,8 @@ body, html {
   line-height: 0px;
   color: #ffffff;
   text-align: center;
+  z-index: 9999;
+  background: #111111;
 }
 .skip-menu li a:focus {
   width: 100%;
