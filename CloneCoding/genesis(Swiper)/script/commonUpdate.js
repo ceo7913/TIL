@@ -4,6 +4,7 @@ window.onload = () => {
   sitemap();
   visualSlider();
   model();
+  award();
 }
 
 function gnbMenu(){
@@ -67,7 +68,7 @@ function gnbMenu(){
       menu.dataset.isOpen ='false';
       outMenuOver(menu);
   }
-  //onMenuOver
+ 
   function onMenuOver(menu){
       menu.style.display = 'block';
       const winH = window.innerHeight;
@@ -95,9 +96,8 @@ function gnbMenu(){
               })
           }
       })
-  }//onMenu
+  }//onMenuOver
 
-  //outMenu
   function outMenuOver(menu){
       if(!menu) return;
       menu.style.maxHeight = '0';
@@ -113,8 +113,6 @@ function gnbMenu(){
           }
       })
   }
-
-  
 } // gnbMenu
 
 // 검색기능
@@ -369,5 +367,54 @@ function model(){
             }
         }
     }
+
+}
+
+function award(){
+    let bullet = ['2023 CAR DESIGN AWARD','2023 RED DOT DESIGN AWARD','2023 MOTORTREND CAR OF THE YEAR',
+    '2022 RED DOT AWARDS','J.D POWER 2022 U.S.INITAL QUALITY STUDY','2022 IIHS TOP SAFETY PICK+']    
+    const textSwiper = new Swiper('.text-box .swiper-container',{
+        loop: true,
+        speed: 5000,
+        autoplay: { 
+            delay: 1000, // 1초마다 슬라이드
+        },
+        allowTouchMove: false,
+        effect: 'fade',
+        fadeEffect:{
+            crossFade: true, // effect: 'fade' 의 경우 컨텐츠가 바뀔때 겹치는 현상이 있기 때문에
+            // 해당 구문을 넣어줘야 이러한 오류를 막을 수 있다.
+        }
+    })
+    // 서브(textSwiper)가 되는 스와이퍼가 먼저 선언이 되어야 메인(imgSwiper)에서 참조가 가능하다.
+    const imgSwiper = new Swiper('.award-item.swiper-container',{
+        loop: true,
+        speed: 5000, // 슬라이드가 진행부터 완료되는 시간 
+        autoplay: { 
+            delay: 1000, // 1초마다 슬라이드
+        },
+        thumbs: {
+            swiper: textSwiper, // 메인이 되는 스와이퍼 요소에 textSwiper 의 컨트롤을 연결 => multy slider 기본요소 
+        },
+        allowTouchMove: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function(index, item){
+                // pagination bullet 에 텍스트(bullet) 추가
+                return `<div class="${item}"><span>${bullet[index]}</span></div>`
+            },
+        },
+        effect: 'fade',
+        fadeEffect:{
+            crossFade: true,
+        },
+    })
+    // function startAuto(){
+    //     imgSwiper.params.autoplay.delay = 1000;
+    //     imgSwiper.autoplay.start()
+    // }
+    // setTimeout(startAuto,5000);
+    
 
 }
