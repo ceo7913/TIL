@@ -46,7 +46,7 @@ function gnbMenu(){
   mainMenu.forEach((el, index)=>{
       el.addEventListener('click', ()=>{
           const currentMenu = subMenu[index];
-          console.log(currentMenu)
+        //   console.log(currentMenu)
           if(currentMenu.dataset.isOpen ==='true'){
               outMenuOver(currentMenu);
           }else{
@@ -226,15 +226,35 @@ function visualSlider(){
 // model 리팩토링
 function model(){
     init();
-    // modelTabEvent();
-    
     // 기본값 설정
+    window.addEventListener('resize', resizeMenu); // event => resize = 크기값을 받아온다.
+
     function init(){
         document.querySelectorAll('select').forEach((el)=>{
             createMenu(el);
         })
+        initMenu()
     }
 
+    function resizeMenu(){
+        const category = document.querySelector('.category');
+        if(window.innerWidth < 768){
+            category.classList.add('mobile');
+            console.log('mobile');
+        }else{
+            category.classList.remove('mobile');
+            console.log('pc');
+        }
+    }
+
+    function initMenu(){
+        const firstOpt = document.querySelector('.select-list li:first-child');
+        if(firstOpt){
+            const styleSelect = firstOpt.closest('.select').querySelector('.select-style'); // closest = 나를 감싸고 있는 최상위 요소를 찾음
+            const select = styleSelect.previousElementSibling;
+            listToggleMenu({target: firstOpt},styleSelect,select);
+        }
+    }
     // 객체 구조 생성
     function createMenu(el){
         const optNum = el.children.length;
@@ -243,6 +263,10 @@ function model(){
         createWrapper(el) // .select 생성
         const styleSelect = selectMenu(el); // 셀렉된 메뉴 생성
         const list = createList(styleSelect, el, optNum); // ul li 생성
+
+        // click envent
+        styleSelect.addEventListener('click',()=>toggleMenu(styleSelect, list));
+        list.addEventListener('click',(e)=>listToggleMenu(e, styleSelect, el));
     }
 
     function createWrapper(el){
@@ -276,5 +300,72 @@ function model(){
             listItem.setAttribute('data-target', el.children[i].value);
             list.appendChild(listItem);
         }
+        return list; // 함수내부에서 선언한 변수 return
     }
+
+    function toggleMenu(styleSelect, list){
+        styleSelect.classList.add('on');
+        list.style.display = list.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function closeMenu(styleSelect){
+        const activeSel = document.querySelector('.select-style.on');
+        if(activeSel === styleSelect){
+            activeSel.classList.remove('on');
+            activeSel.nextElementSibling.style.display = 'none'
+        }
+    }
+
+    function listToggleMenu(e, styleSelect, el){
+        const target = e.target;
+        // console.log(target); // => 클릭한 tage
+        // console.log(target.tagName); // => 클릭한 tage name / 대문자로
+        if(target.tagName.toLowerCase() === 'li'){ // toLowerCase() 소문자 변환
+            selectOpt(target, styleSelect, el);
+            contentTab(target)
+        }
+    }
+
+    function selectOpt(target, styleSelect, el){
+        styleSelect.textContent = target.textContent;
+        el.value = target.getAttribute('data-target'); // 선택한 target 의 data-target 명
+        // styleSelect.classList.remove('on');
+        // target.parentNode.style.display = 'none'
+        closeMenu(styleSelect)
+    }
+
+    function contentTab(target){
+        const activeClass = target.getAttribute('data-target');
+        const tabItem = document.querySelectorAll('.model-list-wrapper');
+        tabItem.forEach((el)=>{
+            el.style.display = el.classList.contains(activeClass)? 'block' : 'none';
+        })
+        initSwiper(activeClass);
+    }
+
+    function initSwiper(activeClass){
+        const tabItem = document.querySelector(`.model-list-wrapper.${activeClass}`); // 전달
+        if(tabItem){
+            const swiperContainer = tabItem.querySelector('.swiper-container');
+            if(!swiperContainer.classList.contains('.swiper-initialized')){ // contains() = 있는지 없는지 여부확인 
+                new Swiper(swiperContainer,{
+                    // mobile 기준
+                    slidesPerView : 1,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    // 반응형
+                    breakpoints:{
+                        // 768 보다 큰경우
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 40,
+                        }
+                    }
+                })
+            }
+        }
+    }
+
 }
