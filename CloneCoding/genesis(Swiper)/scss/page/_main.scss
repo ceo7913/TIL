@@ -519,7 +519,6 @@
         position: relative;
         top: 0px;
         left: 0px;
-
         .award-dot{
             position: absolute;
             top: 0px;
@@ -529,7 +528,6 @@
             display: flex;
             justify-content: end;
             flex-direction: column;
-
             .swiper-pagination{
                 padding-left: 330px;
                 padding-right: 140px;
@@ -602,7 +600,7 @@
             .swiper-container{
                 overflow: hidden;
             }
-            
+
             .content-title{
                 font-size: 42px;
                 color: $white;
@@ -940,7 +938,7 @@
         }
         .award-item{
             .award-dot{
-                .award-dot-list{
+                .swiper-pagination{
                     padding-left: 248px;
                     padding-right: 100px;
                 }
@@ -1032,7 +1030,6 @@
 }
 
 @include laptop02{
-
     .visual-wrapper{
         height: 0px;
         padding-top: 60%;
@@ -1094,11 +1091,11 @@
         }
         .award-item{
             .award-dot{
-                .award-dot-list{
+                .swiper-pagination{
                     padding-left: 220px;
                     padding-right: 75px;
-                    li{
-                        a{
+                    .swiper-pagination-bullet{
+                        span{
                             font-size: 12px;
                         }
                     }
@@ -1212,7 +1209,7 @@
         .award-item{
             .award-dot{
                 position: static; /*포지션 해제*/
-                .award-dot-list{
+                .swiper-pagination{
                     padding-left: 0px;
                     padding-right: 20px;
                     margin-top: 20px;
@@ -1397,9 +1394,9 @@
                 padding: 0px 30px;
                 box-sizing: border-box;
                 margin-bottom: 40px;
-                .award-dot-list{
+                .swiper-pagination{
                     overflow: hidden;
-                    li{
+                    .swiper-pagination-bullet{
                         /*
                         Flex Item의 크기를 설정한다. 이때 axis 방향으로의 크기를 설정한다.
                         즉 위의 상태에서 box에 flex-basis 값을 준 경우 box의 좌우 너비가 변하고, 
@@ -1408,7 +1405,7 @@
                         */
                         flex-shrink: 0;
                         width: 77%;
-                        a{
+                        span{
                             font-size: 14px;
                         }
                     }

@@ -1895,7 +1895,7 @@ body, html {
   .award-wrapper .title-box .title {
     font-size: 36px;
   }
-  .award-wrapper .award-item .award-dot .award-dot-list {
+  .award-wrapper .award-item .award-dot .swiper-pagination {
     padding-left: 248px;
     padding-right: 100px;
   }
@@ -2015,11 +2015,11 @@ body, html {
   .award-wrapper .title-box .title {
     font-size: 26px;
   }
-  .award-wrapper .award-item .award-dot .award-dot-list {
+  .award-wrapper .award-item .award-dot .swiper-pagination {
     padding-left: 220px;
     padding-right: 75px;
   }
-  .award-wrapper .award-item .award-dot .award-dot-list li a {
+  .award-wrapper .award-item .award-dot .swiper-pagination .swiper-pagination-bullet span {
     font-size: 12px;
   }
   .award-wrapper .award-item .text-box {
@@ -2113,7 +2113,7 @@ body, html {
   .award-wrapper .award-item .award-dot {
     position: static; /*포지션 해제*/
   }
-  .award-wrapper .award-item .award-dot .award-dot-list {
+  .award-wrapper .award-item .award-dot .swiper-pagination {
     padding-left: 0px;
     padding-right: 20px;
     margin-top: 20px;
@@ -2268,10 +2268,10 @@ body, html {
     box-sizing: border-box;
     margin-bottom: 40px;
   }
-  .award-wrapper .award-item .award-dot .award-dot-list {
+  .award-wrapper .award-item .award-dot .swiper-pagination {
     overflow: hidden;
   }
-  .award-wrapper .award-item .award-dot .award-dot-list li {
+  .award-wrapper .award-item .award-dot .swiper-pagination .swiper-pagination-bullet {
     /*
     Flex Item의 크기를 설정한다. 이때 axis 방향으로의 크기를 설정한다.
     즉 위의 상태에서 box에 flex-basis 값을 준 경우 box의 좌우 너비가 변하고, 
@@ -2281,7 +2281,7 @@ body, html {
     flex-shrink: 0;
     width: 77%;
   }
-  .award-wrapper .award-item .award-dot .award-dot-list li a {
+  .award-wrapper .award-item .award-dot .swiper-pagination .swiper-pagination-bullet span {
     font-size: 14px;
   }
   .award-wrapper .award-item .text-box {
