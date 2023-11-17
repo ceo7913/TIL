@@ -1289,6 +1289,32 @@ body, html {
   margin-left: auto;
   transform: rotate(180deg);
 }
+.model-wrapper .category.mobile {
+  width: 100%;
+  margin: 50px 0px;
+  padding: 0px 30px;
+  box-sizing: border-box;
+  border: none;
+}
+.model-wrapper .category.mobile .select-style {
+  display: none;
+}
+.model-wrapper .category.mobile .select-list {
+  display: flex;
+  width: 100%;
+  position: static;
+}
+.model-wrapper .category.mobile .select-list li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+}
+.model-wrapper .category.mobile .select-list li.on {
+  color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 255, 255);
+}
 .model-wrapper .category-m {
   width: 100%;
   margin: 50px 0px;

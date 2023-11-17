@@ -226,9 +226,10 @@ function visualSlider(){
 // model 리팩토링
 function model(){
     init();
-    // 기본값 설정
+    resizeMenu() // 기본실행
     window.addEventListener('resize', resizeMenu); // event => resize = 크기값을 받아온다.
-
+    
+    // 기본값 설정
     function init(){
         document.querySelectorAll('select').forEach((el)=>{
             createMenu(el);
@@ -240,10 +241,8 @@ function model(){
         const category = document.querySelector('.category');
         if(window.innerWidth < 768){
             category.classList.add('mobile');
-            console.log('mobile');
         }else{
             category.classList.remove('mobile');
-            console.log('pc');
         }
     }
 
@@ -329,9 +328,12 @@ function model(){
     function selectOpt(target, styleSelect, el){
         styleSelect.textContent = target.textContent;
         el.value = target.getAttribute('data-target'); // 선택한 target 의 data-target 명
-        // styleSelect.classList.remove('on');
-        // target.parentNode.style.display = 'none'
         closeMenu(styleSelect)
+        const list = document.querySelectorAll('.select-list > li');
+        list.forEach((el)=>{
+            el.classList.remove('on');
+        })
+        target.classList.add('on');
     }
 
     function contentTab(target){
