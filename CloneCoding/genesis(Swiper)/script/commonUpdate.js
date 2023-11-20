@@ -7,6 +7,8 @@ window.onload = () => {
   award();
   contentEvent();
   snsSlider();
+  mobileSnsTap();
+  topBtn();
 };
 
 function gnbMenu(){
@@ -444,7 +446,7 @@ function contentEvent(){
         // 스크롤 이벤트의 기초적인 구조
         sections.forEach((el,index)=>{
             if(scrollTop > sectionPosArr[index] - basePos){ // sectionPosArr[index] 은 현재 dom 요소에 깔려있는 section 의 위치값을 받는다.
-                el.classList.add('on');
+                el.classList.add('on', 'mobile');
             }
         })
     }
@@ -464,5 +466,41 @@ function snsSlider(){
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next'
         }
+    })
+};
+
+function mobileSnsTap(){
+    const snsMobile = document.querySelector('.f-sns-mobile'); // 얘가 display = 'block' 되야할 애
+    const snsBtn = document.querySelector('.f-sns-btn'); // 얘가 눌러야 이벤트 발생될 애
+    let isOpen = false;
+
+    snsBtn.addEventListener('click',()=>{
+        let toggle = (!isOpen ? 
+        (snsMobile.style.display='flex',isOpen=true) : 
+        (snsMobile.style.display='none',isOpen = false));
+        return toggle;
+        // console.log(isOpen);
+        // if(!isOpen){
+        //     snsMobile.style.display = 'flex';
+        //     isOpen = true;
+        // }else if(isOpen){
+        //     snsMobile.style.display = 'none';
+        //     isOpen = false;
+        // };
+    })
+};
+
+// f-top-btn 을 클릭했을때 top 으로 이동되는 기능
+function topBtn(){
+    const topBtn = document.querySelector('.f-top-btn');
+
+    topBtn.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior: 'smooth'});
+        // window.scrollTo(0,1000);
+        /*
+            scrollTo(x,y);
+            scrollTo({top, left, behavior})
+            behavior : 애니메이션 효과 => auto(애니메이션 없이 바로 이동, 기본값), smooth (스무스)
+        */
     })
 };

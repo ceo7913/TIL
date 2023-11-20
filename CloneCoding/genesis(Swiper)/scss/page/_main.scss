@@ -934,6 +934,7 @@
 
 @include laptop{
     .visual-wrapper{
+        
         .visual-text{
             padding-left: 248px;
             padding-top: 70px;
@@ -1525,7 +1526,7 @@
     .event-wrapper{
         margin-bottom: 150px;
         padding-top: 167%;
-        background-image: url(../../images/event-m.jpg);
+        
         .text-box{
             width: 100%;
             padding: 0px 30px;
@@ -1541,6 +1542,14 @@
             .dic-btn{
                 width: 100%;
                 height: 56px;
+            }
+        }
+
+        &.mobile{
+            .event-img-wrapper{
+                position: fixed;
+                top: 0;
+                left: 0;
             }
         }
     }

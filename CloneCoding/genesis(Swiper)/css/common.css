@@ -669,6 +669,9 @@ body, html {
 .f-container .f-sns {
   border-bottom: solid 1px rgba(255, 255, 255, 0.7);
   padding: 24px 0px;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 .f-container .f-sns .inner {
   display: flex;
@@ -716,8 +719,26 @@ body, html {
 .f-container .f-sns .inner .f-top-btn i {
   font-size: 20px;
 }
-.f-container .f-notice {
-  padding: 30px 0px;
+.f-container .f-sns .f-sns-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #111111;
+  width: 100%;
+  transform: translateY(-100%);
+  display: none;
+}
+.f-container .f-sns .f-sns-mobile ul {
+  display: flex;
+  gap: 30px;
+}
+.f-container .f-sns .f-sns-mobile ul li a {
+  color: #fff;
+  font-size: 50px;
 }
 .f-container .f-notice .inner {
   display: flex;
@@ -741,9 +762,7 @@ body, html {
   display: flex;
   gap: 12px;
   position: relative;
-}
-.f-container .f-notice .inner .f-notice-controls .swiper-button-prev, .f-container .f-notice .inner .f-notice-controls .swiper-button-next {
-  margin-top: 0;
+  align-items: baseline;
 }
 .f-container .f-notice .inner .f-notice-controls button {
   background: transparent;
@@ -2390,7 +2409,6 @@ body, html {
   .event-wrapper {
     margin-bottom: 150px;
     padding-top: 167%;
-    background-image: url(../../images/event-m.jpg);
   }
   .event-wrapper .text-box {
     width: 100%;
@@ -2408,6 +2426,11 @@ body, html {
   .event-wrapper .text-box .dic-btn {
     width: 100%;
     height: 56px;
+  }
+  .event-wrapper.mobile .event-img-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   .sns-wrapper {
     padding: 100px 0px 80px;
