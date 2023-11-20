@@ -5,6 +5,7 @@ window.onload = () => {
   visualSlider();
   model();
   award();
+  contentEvent()
 }
 
 function gnbMenu(){
@@ -416,5 +417,35 @@ function award(){
     // }
     // setTimeout(startAuto,5000);
     
+
+}
+
+function contentEvent(){
+    const sections = document.querySelectorAll('section'); // 모든 section
+    let sectionPosArr = []; // 빈 배열 선언
+    const basePos = window.innerHeight / 2; // 영역의 시작점을 Top 을 닫기 전에 나올 수 있게 해주는 셋팅값
+    
+    onResize() // 브라우저의 크기가 바뀌기 전, 최초의 값을 받아온다.
+    onScroll() // 브라우저 랜더링 후 바로 최초 값 받아옴
+    window.addEventListener('resize',onResize);
+    window.addEventListener('scroll',onScroll);
+
+    function onResize(){
+        sectionPosArr = Array.from(sections).map((el) => el.offsetTop) 
+        // sectionPosArr 에 sections 을 미리 넣지 않고 addEventListener 에서 배열로 받는 이유는
+        // 페이지가 고정값이 아닌 반응형으로 여러가지 사이즈를 출력해줘야 하기 때문
+        console.log(sectionPosArr);
+    }
+    function onScroll(){
+        const scrollTop = document.documentElement.scrollTop || window.pageXOffset // window.pageXOffset 구버전 호환
+        // console.log(scrollTop);
+
+        // 스크롤 이벤트의 기초적인 구조
+        sections.forEach((el,index)=>{
+            if(scrollTop > sectionPosArr[index] - basePos){ // sectionPosArr[index] 은 현재 dom 요소에 깔려있는 section 의 위치값을 받는다.
+                el.classList.add('on');
+            }
+        })
+    }
 
 }
