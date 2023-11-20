@@ -65,6 +65,11 @@
 
             .f-notice-list{
                 width: 100%;
+                overflow: hidden;
+                .swiper-slide{
+                    display: flex;
+                    align-items: center;
+                }
                 a{
                     display: block;
                     color: $white;
@@ -75,6 +80,10 @@
             .f-notice-controls{
                 display: flex;
                 gap: 12px;
+                position: relative;
+                .swiper-button-prev, .swiper-button-next{
+                    margin-top: 0;
+                }
                 button{
                     background: transparent;
                     border: none;
@@ -82,6 +91,10 @@
                     padding: 0px;
                     font-size: 20px;
                     cursor: pointer;
+                    position: static;
+                    &::after{
+                        display: none;
+                    }
                 }
             }
         }

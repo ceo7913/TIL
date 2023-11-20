@@ -726,6 +726,11 @@ body, html {
 }
 .f-container .f-notice .inner .f-notice-list {
   width: 100%;
+  overflow: hidden;
+}
+.f-container .f-notice .inner .f-notice-list .swiper-slide {
+  display: flex;
+  align-items: center;
 }
 .f-container .f-notice .inner .f-notice-list a {
   display: block;
@@ -735,6 +740,10 @@ body, html {
 .f-container .f-notice .inner .f-notice-controls {
   display: flex;
   gap: 12px;
+  position: relative;
+}
+.f-container .f-notice .inner .f-notice-controls .swiper-button-prev, .f-container .f-notice .inner .f-notice-controls .swiper-button-next {
+  margin-top: 0;
 }
 .f-container .f-notice .inner .f-notice-controls button {
   background: transparent;
@@ -743,6 +752,10 @@ body, html {
   padding: 0px;
   font-size: 20px;
   cursor: pointer;
+  position: static;
+}
+.f-container .f-notice .inner .f-notice-controls button::after {
+  display: none;
 }
 .f-container .f-sitemap {
   background: #151515;
@@ -1712,6 +1725,8 @@ body, html {
 }
 .event-wrapper .text-box .dic-btn {
   width: 240px;
+}
+.event-wrapper .text-box .dic-btn.on {
   transition-delay: 1000ms;
 }
 .event-wrapper.on .event-img-wrapper img.pc {

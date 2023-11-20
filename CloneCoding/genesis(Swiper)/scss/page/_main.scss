@@ -742,7 +742,9 @@
         }
         .dic-btn{
             width: 240px;
-            transition-delay: 1000ms;
+            &.on{
+                transition-delay: 1000ms;
+            }
         }
     }
 

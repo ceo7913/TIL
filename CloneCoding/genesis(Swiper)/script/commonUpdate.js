@@ -5,8 +5,9 @@ window.onload = () => {
   visualSlider();
   model();
   award();
-  contentEvent()
-}
+  contentEvent();
+  snsSlider();
+};
 
 function gnbMenu(){
   const mainMenu = document.querySelectorAll('.gnb-list > li >a');
@@ -114,7 +115,7 @@ function gnbMenu(){
           }
       })
   }
-} // gnbMenu
+}; // gnbMenu
 
 // 검색기능
 function search(){
@@ -144,7 +145,7 @@ function search(){
     searchWrapper.addEventListener('click',(e)=>{
         e.stopPropagation();
     })
-} // search
+}; // search
 
 // 햄버거 버튼 기능
 // sitemap function 리팩토링
@@ -178,7 +179,7 @@ function sitemap(){
         el.style.height = maxH
         document.body.style.overflowY = overFlowAction;
     }
-} // sitemap
+}; // sitemap
 
 function visualSlider(){
     const pausBtn = document.querySelector('.pause-btn');
@@ -220,7 +221,7 @@ function visualSlider(){
         }
     });
 
-}// visualSlider
+}; // visualSlider
 
 // model 리팩토링
 function model(){
@@ -369,7 +370,7 @@ function model(){
         }
     }
 
-}
+};
 
 function award(){
     let bullet = ['2023 CAR DESIGN AWARD','2023 RED DOT DESIGN AWARD','2023 MOTORTREND CAR OF THE YEAR',
@@ -418,7 +419,7 @@ function award(){
     // setTimeout(startAuto,5000);
     
 
-}
+};
 
 function contentEvent(){
     const sections = document.querySelectorAll('section'); // 모든 section
@@ -434,7 +435,7 @@ function contentEvent(){
         sectionPosArr = Array.from(sections).map((el) => el.offsetTop) 
         // sectionPosArr 에 sections 을 미리 넣지 않고 addEventListener 에서 배열로 받는 이유는
         // 페이지가 고정값이 아닌 반응형으로 여러가지 사이즈를 출력해줘야 하기 때문
-        console.log(sectionPosArr);
+        // console.log(sectionPosArr);
     }
     function onScroll(){
         const scrollTop = document.documentElement.scrollTop || window.pageXOffset // window.pageXOffset 구버전 호환
@@ -448,4 +449,20 @@ function contentEvent(){
         })
     }
 
-}
+};
+
+function snsSlider(){
+    const swiper = new Swiper('.f-notice-list.swiper-container',{
+        direction: 'vertical',
+        autoHeight: true, // 자동으로 auto 값 잡아줌
+        loop: true,
+        autoplay: {
+            delay: 2500,
+        },
+        speed: 1000,
+        navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next'
+        }
+    })
+};
