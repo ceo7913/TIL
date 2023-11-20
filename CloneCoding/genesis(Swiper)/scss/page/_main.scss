@@ -1547,9 +1547,11 @@
 
         &.mobile{
             .event-img-wrapper{
-                position: fixed;
-                top: 0;
-                left: 0;
+                .event-fixed-wrapper{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                }
             }
         }
     }

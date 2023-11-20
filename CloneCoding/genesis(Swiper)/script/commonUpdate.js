@@ -168,7 +168,7 @@ function sitemap(){
         // isOpen 이 변경되는 구문을 넣어주지 않았기 때문에
         // 로직의 순서상 isOpen 이 false 를 받아주기 위해 넣어줌
         // 그냥 변경되는 구문을 넣어도 상관 없음
-        console.log(isOpen); // => 첫번째 클릭 : false / 두번째 클릭 : true / => 즉 초기값 true
+        // console.log(isOpen); // => 첫번째 클릭 : false / 두번째 클릭 : true / => 즉 초기값 true
     })
     function toggleSiteMap(action,el){
         const winH = window.innerHeight;
@@ -445,8 +445,13 @@ function contentEvent(){
 
         // 스크롤 이벤트의 기초적인 구조
         sections.forEach((el,index)=>{
-            if(scrollTop > sectionPosArr[index] - basePos){ // sectionPosArr[index] 은 현재 dom 요소에 깔려있는 section 의 위치값을 받는다.
+            const sectionP = sectionPosArr[index] + el.offsetHeight;
+            const sectionT = scrollTop >= sectionPosArr[index];
+            const sectionB = scrollTop < sectionP; // bottom 값
+            if(sectionT && sectionB){ // sectionPosArr[index] 은 현재 dom 요소에 깔려있는 section 의 위치값을 받는다.
                 el.classList.add('on', 'mobile');
+            }else{
+                el.classList.remove('mobile');
             }
         })
     }

@@ -2427,7 +2427,7 @@ body, html {
     width: 100%;
     height: 56px;
   }
-  .event-wrapper.mobile .event-img-wrapper {
+  .event-wrapper.mobile .event-img-wrapper .event-fixed-wrapper {
     position: fixed;
     top: 0;
     left: 0;
