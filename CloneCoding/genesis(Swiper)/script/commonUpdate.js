@@ -425,6 +425,8 @@ function award(){
 
 function contentEvent(){
     const sections = document.querySelectorAll('section'); // 모든 section
+    const eventSection = document.querySelector('.event-wrapper');
+
     let sectionPosArr = []; // 빈 배열 선언
     const basePos = window.innerHeight / 2; // 영역의 시작점을 Top 을 닫기 전에 나올 수 있게 해주는 셋팅값
     
@@ -435,25 +437,36 @@ function contentEvent(){
 
     function onResize(){
         sectionPosArr = Array.from(sections).map((el) => el.offsetTop) 
+
         // sectionPosArr 에 sections 을 미리 넣지 않고 addEventListener 에서 배열로 받는 이유는
         // 페이지가 고정값이 아닌 반응형으로 여러가지 사이즈를 출력해줘야 하기 때문
         // console.log(sectionPosArr);
     }
     function onScroll(){
         const scrollTop = document.documentElement.scrollTop || window.pageXOffset // window.pageXOffset 구버전 호환
-        // console.log(scrollTop);
 
-        // 스크롤 이벤트의 기초적인 구조
         sections.forEach((el,index)=>{
-            const sectionP = sectionPosArr[index] + el.offsetHeight;
-            const sectionT = scrollTop >= sectionPosArr[index];
-            const sectionB = scrollTop < sectionP; // bottom 값
-            if(sectionT && sectionB){ // sectionPosArr[index] 은 현재 dom 요소에 깔려있는 section 의 위치값을 받는다.
-                el.classList.add('on', 'mobile');
-            }else{
-                el.classList.remove('mobile');
+            if(scrollTop >= sectionPosArr[index] - basePos){
+                // el.classList.add('on');
+                el.classList.add('on');
             }
+            // if(eventSection.scrollTop)
+
         })
+
+
+
+        // # issue
+        // sections.forEach((el,index)=>{
+        //     const sectionP = sectionPosArr[index] + el.offsetHeight;
+        //     const sectionT = scrollTop >= sectionPosArr[index];
+        //     const sectionB = scrollTop < sectionP; // bottom 값
+        //     if(sectionT && sectionB){ // sectionPosArr[index] 은 현재 dom 요소에 깔려있는 section 의 위치값을 받는다.
+        //         el.classList.add('on', 'mobile');
+        //     }else{
+        //         el.classList.remove('mobile');
+        //     }
+        // })
     }
 
 };
