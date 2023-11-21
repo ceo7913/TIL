@@ -85,7 +85,7 @@ react 에서는 import 방식을 통해서 외부파일을 불러온다.
 함수형 컴포넌트에 클래스형 컴포넌트의 기능을 사용할 수 있게 해주는 일종의 확장 기능이다.  
 대표적으로 useState, useEffect, useReducer 가 있다.
 
-###  useState
+### useState
 - 값을 저장하거나 변경해야 하는 객체에 주로 사용하며, 이벤트 요소와 함께 사용할 수 도 있다.  
 - 컴포넌트에서 전달 받아온 값을 state 라고 한다.
 
@@ -143,3 +143,9 @@ const Props = ({name, local, job, age}) => {\
     <Props name='Harry' local='LA' job='magician' age={10*10}/>
   </>
 ```
+
+### Props, useState
+props 는 읽기 전용으로만 불러오기 때문에 값을 변경하거나, 어떠한 조작도 할 수 없다. (단순한 참조 기능);
+useState 는 초기값과 변경될 값 두가지 값이 네이밍으로 연관되게 [state, setState]
+useState 는 "import React, { useState } from 'react'" 로 import 되어야 사용가능하다.
+
