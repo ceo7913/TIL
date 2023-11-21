@@ -1,9 +1,9 @@
 import './App.css';
-
+import State from './component/State';
 function App() {
   return (
     <div className="App">
-      <div className='box'>React</div>
+      <State/>
     </div>
   );
 }
