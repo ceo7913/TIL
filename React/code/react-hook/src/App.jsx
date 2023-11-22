@@ -1,11 +1,11 @@
 import './App.css';
-import { UseEffect } from './component/UseEffect';
+import { EffectMember } from './component/EffectMember';
 
 
 function App() {
   return (
     <div className="App">
-        <UseEffect/>
+        <EffectMember/>
     </div>
   );
 }
