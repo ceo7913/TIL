@@ -55,13 +55,37 @@ export const UseEffect = () => {
         useEffect(()=>{
          console.log(count);
         },[count])
+
+        // ===========================
+        // return 문 활용
+        const [timeCount,setTimeCount] = useState(0);
+        useEffect(()=>{
+            const timer = setInterval(()=>{
+                setTimeCount((prev)=>prev+1)
+            },1000) // 일정한 시간으로 반복되는 함수
+            /*
+                1. 여기서 return 문을 사용하지 않으면 
+                마운트 되는 동안도 쉬지 않고 반복되기 때문에
+                누적이되서 점점 +1 되는 식이 빨라진다.
+            */
+           return()=>{
+            clearInterval(timer);
+           }
+           // 3. 그래서 return 문을 사용해 한번 마운트 될때 마다 clearInterval 을 끊어주면
+           // 초가 누적 되지 않고 1초씩 + 하고 끊고 마운트 완료되면 다시 + 하는 형식으로
+           // 초가 누적되지 않게 만들 수 있다.
+        },[])
+        // 2. []를 넣으면 +1 이 완료 됐을때, 마운트 완료후 최초 실행이기 때문에 초가 누적되지 않는다.
+        // 하지만 index.jsx 에 React.React.StrictMode 가 실행되고 있다면, 두번씩 실행될 우려가 있다.
        return (
          <div>
-             <p>{count}</p>
+             {/* <p>{count}</p>
              <button onClick={onCountClick}>클릭!</button>
              
              <p>{num}</p>
-             <button onClick={onClick}>클릭!</button>
+             <button onClick={onClick}>클릭!</button> */}
+
+             <p>{timeCount}</p>
          </div>
        )
 }
