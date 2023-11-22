@@ -1,10 +1,11 @@
 import './App.css';
-import State from './component/State';
+import { UseEffect } from './component/UseEffect';
+
 
 function App() {
   return (
     <div className="App">
-        <State/>
+        <UseEffect/>
     </div>
   );
 }
