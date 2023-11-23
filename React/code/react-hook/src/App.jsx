@@ -1,14 +1,12 @@
 import './App.css';
-import { EffectMember } from './component/EffectMember';
-import { DarkModBtn, DarkMode } from './component/darkmode'
+import { ExGame } from './component/useRef/ExGame';
 
 
 function App() {
   return (
-    
-        <DarkMode>
-          <DarkModBtn/>
-        </DarkMode>
+    <>
+      <ExGame/>
+    </>
     
   );
 }
