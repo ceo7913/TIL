@@ -220,3 +220,15 @@ const onCountNum = () =>{
 
 활용 예제
 - [useRef 를 이용한 가위,바위,보 게임 만들기](./code/react-hook/src/component/useRef/ExGame.jsx)
+
+### useContext
+일반적으로 부모 컴포넌트에서 자식 컴포넌트로 props를 통해 데이터를 전달하는데, 만약 그 깊이가 깊어질수록   
+거쳐가야 하는 컴포넌트들이 많아지고 코드를 반복적으로 작성해야 하며 변수명이 바뀌면 거쳐가는 모든 컴포넌트에서   변수명을 수정해야 하는 등등.. 꽤나 비효율적인 일들이 발생할 수 도 있다. 
+(사실 별 신경 안 쓴다면 2중 3중으로 그냥 자식 컴포넌트들에게 전해주면 안될건 없다.)  
+useContext는 쉽게 말하면, 필요한 props를 글로벌하게 사용할 수 있게 도와준다고 말할 수 있다.  
+
+활용 예제
+- [useContext 를 이용한 DarkMode](./code/react-hook/src/component/darkmode/DarkMode.jsx)
+
+
+
