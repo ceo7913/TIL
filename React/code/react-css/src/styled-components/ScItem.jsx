@@ -2,7 +2,7 @@
 
 import React from 'react'
 // import 해오기
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const ScItem = () => {
   return (
@@ -13,6 +13,9 @@ export const ScItem = () => {
         <ButtonItem>버튼</ButtonItem>
         <ButtonItem fontColor={'blue'}>버튼</ButtonItem>
         <ButtonItem>버튼</ButtonItem>
+
+        <Box bgColor={'aqua'}></Box>
+        <Circle bgColor={'pink'}></Circle>
     </Container>
   )
 }
@@ -49,4 +52,29 @@ const ButtonItem = styled.button`
         // sass 의 들여쓰기 문법을 styled-componet 에서도 따라간다.
         opacity: 1;
     };
+`
+const Box = styled.div`
+    width: 200px;
+    height: 200px;
+    background: ${props => props.bgColor};
+`
+
+// 애니메이션 컴포넌트화 => 애니메이션을 사용하고 있는 컴포넌트 보다 먼저 선언되어야 함
+const CircleAni = keyframes` // keyframes import 필요
+    25%{
+        background: lightcyan;
+    }
+    50%{
+        background: lightsalmon;
+    }
+    75%{
+        background: lightskyblue;
+    }
+    100%{
+        background: lightyellow;
+    }
+`
+const Circle = styled(Box)` // const Box 가 가지고 있는 값을 참조 하고 싶을 때
+    border-radius: 100%;
+    animation: ${CircleAni} 3000ms infinite;
 `
