@@ -1,10 +1,10 @@
 import './App.css';
-import { ScItem } from './styled-components/ScItem';
+import { TailwindItem } from './tailwindCSS/TailwindItem';
 
 function App() {
   return (
     <div className="App">
-      <ScItem/>
+      <TailwindItem/>
     </div>
   );
 }

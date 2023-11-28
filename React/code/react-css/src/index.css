@@ -1,13 +1,7 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* 
+  보통 tailwind 는 css 최상위 요소인 index.css 
+  (최상위 요소가 index.css 가 아니라면 다른 css 도 상관없다)에 넣는다 
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -65,8 +65,8 @@ vscode-styled-components 설치
 
 - 설치 방법
 ```
-$ npm install -D tailwindcss // 패키지 설치
-$ npx tailwindcss init -p // tailwind config 파일 생성
+$ yarn add -D package // 패키지 설치
+$ yarn tailwind init -p // tailwind config 파일 생성
 ```
 
 그리고, 글로벌 css 나 최상위 css 파일(보통 index.css)에 
