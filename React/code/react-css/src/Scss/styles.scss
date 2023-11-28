@@ -1,0 +1,28 @@
+@import './component.scss';
+
+.container{
+    background: gray;
+    display: flex;
+    .box{
+        background: $colorCoral;
+        opacity: 0.5;
+        transition: 300ms;
+        @include square(1);
+        
+        &.orange{
+            background: $colorOrange;
+            @include square(2);
+        }
+        &.pink{
+            background: $colorPink;
+            @include square(4);
+        }
+        &.purple{
+            background: $colorPurple;
+            @include square(6);
+        }
+        &:hover{
+            opacity: 1;
+        }
+    }
+}

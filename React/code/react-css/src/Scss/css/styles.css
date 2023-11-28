@@ -1,0 +1,29 @@
+.container {
+  background: gray;
+  display: flex;
+}
+.container .box {
+  background: coral;
+  opacity: 0.5;
+  transition: 300ms;
+  width: 100px;
+  height: 100px;
+}
+.container .box.orange {
+  background: orange;
+  width: 200px;
+  height: 200px;
+}
+.container .box.pink {
+  background: pink;
+  width: 400px;
+  height: 400px;
+}
+.container .box.purple {
+  background: purple;
+  width: 600px;
+  height: 600px;
+}
+.container .box:hover {
+  opacity: 1;
+}

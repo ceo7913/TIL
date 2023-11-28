@@ -1,10 +1,10 @@
 import './App.css';
-import { Item } from './basicCss/Item';
+import { ScItem } from './styled-components/ScItem';
 
 function App() {
   return (
     <div className="App">
-      <Item/>
+      <ScItem/>
     </div>
   );
 }
