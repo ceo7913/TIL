@@ -39,13 +39,12 @@ export const ReducerEx = () => {
     <>
     <div>
         <div>
-            useState ver = 
             count : {count} 
             <button onClick={countPluse}>+</button>
             <button onClick={countMinus}>-</button>
-        </div><br/>
+        </div>
+        
         <div>
-            useReducer ver = 
             count : {state.count}
             <button onClick={()=>dispatch({type: 'countPluse'})}>+</button>
             <button onClick={()=>dispatch({type: 'countMinus'})}>-</button>
