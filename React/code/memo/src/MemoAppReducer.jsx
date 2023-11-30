@@ -66,9 +66,12 @@ export const MemoAppReducer = () => {
                     ...state, memo : state.updateMemo[action.payload], itemIndex : action.payload
                 }
             case 'SAVE_EDIT_MEMO':
+                console.log(state.itemIndex);
+                const editMemo = [...state.updateMemo];
+                editMemo[state.itemIndex] = state.memo;
                 return{
-
-                }
+                        ...state, updateMemo : editMemo, memo: '', itemIndex: -1
+                    }
             
             default: break;
         }
