@@ -52,18 +52,19 @@ count : {state.count}
 <button onClick={()=>dispatch({type: 'countPluse'})}>+</button>
 <button onClick={()=>dispatch({type: 'countMinus'})}>-</button>
 ```
-init = useState(0) 과 같은 역할을 한다. 이전 방법과 는 다르게 init 을 먼저 선언해주고 이후에 useReducer 에 담아주는 형식이라고 보면된다.
+init = useState(0) 과 같은 역할을 한다. 이전 방법과 는 다르게 init 을 먼저 선언해주고 이후에 useReducer 에 담아주는 형식이라고 보면된다. 또한 init 은 하나의 초기값이 아니라 여러개의 변수에 초기값을 선언해 줄 수 있다.
+* ex
+```
+const init ={
+    memo: '',
+    updateMemo: [],
+    itemIndex: -1,
+}
+```
 
 reducer = 함수는 useReducer 에 담길 함수이다. 상태값을 변경하기 위해 만들어진 함수라고 보면된다. 이것도 역시 먼저 선언하고 이후에 useReducer(reducer, init) 에 다음과 같이 담아주는 형태이다.
 
 state = state 는 useState 에서 현재 상태값을 가지고 있을 state 와 같다고 보면된다. 
 
-dispatch = 
-
-    /*
-        state : 상태값을 가질 변수
-        dispatch : 상태값을 변경하기 위해 일어나는 이벤트
-
-        reducer : reduer함수 자체를 의미 => 그냥 state 변경 함수인듯
-        init : 초기값을 의미 (useState 에 넣어주는 초기값)
-    */
+dispatch = dispatch 는 상태값을 변경하기 위해 일으키는 이벤트 같은거라고 보면 된다. 
+ex) dispatch({type:**}) => useReducer 에 존재하는 reducer 함수내에 case 문을 실행 시키거나 때에따라 case 문 내부에 있는 다른 값도 불러오거나 보내서 출력할 수 있다.
