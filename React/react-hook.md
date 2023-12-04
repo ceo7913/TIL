@@ -230,5 +230,8 @@ useContext는 쉽게 말하면, 필요한 props를 글로벌하게 사용할 수
 활용 예제
 - [useContext 를 이용한 DarkMode](./code/react-hook/src/component/darkmode/DarkMode.jsx)
 
+### useReducer
+활용예제 - [useReducer 를 활용한 메모장 만들기](./code/memo/src/MemoApp.jsx)
+
 
 
