@@ -1,0 +1,1 @@
+let hello: number = 123

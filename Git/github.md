@@ -138,7 +138,7 @@ iss53
 iss53 브랜치는 Merge한 브랜치로 목록에 나타난다. 또 * 기호가 붙어있지 않으므로 git branch -d 명령으로 삭제해도 되는 브랜치다.
 ```
 ```
---no-merged 옵션
+--no-merged 옵션br
 반대로 현재 Checkout한 브랜치에 Merge하지 않은 브랜치를 살펴본다.
 
 $ git branch --no-merged
