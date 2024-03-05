@@ -26,6 +26,15 @@
    ```
 */
 
-export default function Basice() {
-   return <h1>Hello NextJS!</h1>;
+import Navigation from "../components/navigation";
+
+export default function Home() {
+   return (
+      <div>
+         <div>
+            <Navigation />
+         </div>
+         <h1>Home</h1>
+      </div>
+   )
 }
