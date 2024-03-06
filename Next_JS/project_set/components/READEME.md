@@ -24,4 +24,7 @@ next.js application 의 모든 page 안에 모든 component 들은 next.js 가 �
 use client 는 오직 client 에서만 render 된다는 것을 의미하지 않고 backend 에서 render 되고 front 에서 hydrate 및 interactive 됨을 의미한다.
 즉 use client 는 페이지에 한번만 render 되고 다시는 render 될 일이 없다면 사용하지 않아도 된다. (useState, onClick 같은 event) 
 
-즉 server 에서 html 을 표시하고 js 를 다운 받을 때 use client 를 가진 components 의 js 코드만 다운 받는다. 이러면 사용자가 받아야할 js 의 코드양이 줄어들고 불필요한 로딩시간을 줄인다.
+즉 server 에서 html 을 표시하고 js 를 다운 받을 때 use client 를 가진 components 의 js 코드만 다운 받는다.
+use client 명령어를 가진 component 가 hydrate(여기서 hydration 은 랜더된 HTML 위에 react aplication 을 실행한다는 뜻으로 보면 된다.) 된다고 할 수 있다.
+이러면 사용자가 받아야할 js 의 코드양이 줄어들고 불필요한 로딩시간을 줄인다. 
+또한 hydrate, interactive 되지 않은 컴포넌트들은 DB 와 통신 할때 server 에서만 render 되기 때문에 API key 를 사용해서 API 를 fetch 한다고 하면 이 코드는 client 로는 넘어가지 않기 때문에 보안을 신경 쓰지 않아도 되는 장점이 있다.
