@@ -1,7 +1,7 @@
+"use client"
 /*
     해당 구문이 없을때는 usePathname 은 client component 에서만 작동한다는 오류를 발생시켰다.
 */
-"use client"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
