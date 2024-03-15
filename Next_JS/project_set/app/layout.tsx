@@ -1,5 +1,4 @@
 import Navigation from "../components/navigation"
-import AboutUs from "./about-us/page"
 
 export const metadata = {
   title: 'Next.js',
