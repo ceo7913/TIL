@@ -26,14 +26,9 @@
    ```
 */
 
-import Navigation from "../components/navigation";
-
 export default function Home() {
    return (
       <div>
-         <div>
-            <Navigation />
-         </div>
          <h1>Home</h1>
       </div>
    )
