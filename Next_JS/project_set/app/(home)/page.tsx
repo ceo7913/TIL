@@ -26,6 +26,21 @@
    ```
 */
 
+import { Metadata } from "next"
+
+/*
+  metadata 는 헤드에 표시되는 기본 정보
+  html 에 존재하는 meta 와 같다고 보면된다.
+  모든 페이지에서 같은 값을 주고 싶다면 app/layout.tsx 에 설정해주면되고
+  이런식으로 home page 에만 보여주고 싶다면 해당 루트의 컴포넌트에 기입해주면 된다.
+
+  여기서 알아두어야 하는 것은 page 컴포넌트 이외에 컴포넌트 파일에서는 metadate 를 내보낼 수 없고,
+  서버 컴포넌트에서만 존재할 수 있다 (client 컴포넌트에서는 내보낼 수 없다.)
+*/
+export const metadata: Metadata = {
+   title: 'Home',
+}
+
 export default function Home() {
    return (
       <div>
